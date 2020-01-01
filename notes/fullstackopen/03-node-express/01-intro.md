@@ -9,8 +9,6 @@ Transpiler (SWC)
 - The newest version of Node supports a large majority of the latest features of JS 
   so we can use the latest features without having to transpile our code
 
-<!-- - Our goal is to implement a backend that will work with the notes application from part 2 -->
-<!--   However, let's start with the basics by implementing a classic "hello world" application -->
 
 Simple web server:
 - Node.js uses CommonJS modules by default
@@ -20,7 +18,7 @@ Simple web server:
   This is necessary because the response.end() method expects a string or a buffer to send as the response body
 
 
-Express: setting up routes and handling requests with middleware
+Express: Setting up routes and handling requests with middleware
 - A template engine combines static HTML with dynamic data, replacing placeholders with actual values at runtime
   to generate the final HTML page sent to the user's browser
 - injects server data into HTML using placeholders, like React props
@@ -30,8 +28,10 @@ Express: setting up routes and handling requests with middleware
 <!-- - Yes, exactly! What a template engine does is a form of server-side rendering (SSR) -->
 <!-- - Server-Side Rendering (SSR): -->
 <!--   For websites where the server generates and serves HTML content (as opposed to sending just data or APIs to be rendered in the browser) -->
-<!-- - When Do You Need a Template Engine? -->
+<!-- - When Do You Need a Template Engine?:
 <!--   Dynamic Pages: When your web pages need to display dynamic content (like user profiles, blog posts, or product pages) -->
+<!--   Used to generate dynamic HTML for SSR -->
+
 
 Middleware: Runs before any route
 - Express is a lightweight and flexible routing framework with minimal 💡
@@ -54,7 +54,9 @@ Web and Express:
   environment that allows you to execute JavaScript code interactively
 
 
-REST:
+REST: Shows the state transfer
+- A style of API design (uses HTTP verbs) to perform actions on resources
+  You must send all needed info (like ID, Auth token, Request data) with every request
 https://youtu.be/EKCM1oQQrCM?si=h3y_RkRvQNifLi_d
 https://youtu.be/cJAyEOZQUQY?si=AT2Bf-3zUIaPFYvI
 ![Principles of REST](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F7dddcbec-355c-4697-9c52-b560eaa30fab_1600x900.png)
@@ -128,7 +130,7 @@ Receiving data:
 <!--   an empty line between the top row and the row specifying the HTTP headers -->
 
 
-About HTTP request types:
+About HTTP request types:❓
 - Safety means that the executing request must not cause any side effects on the server
 - All HTTP requests except POST should be idempotent:
   Methods can also have the property of "idempotence" in that (aside from error or expiration issues) the side-effects of N > 0 identical
@@ -155,13 +157,19 @@ Middleware: functions that can be used for handling request and response objects
   app.use(unknownEndpoint)`
 
 
+# To know
+Classic confusion in backend development??
+- JSON is just a string version of an object
+
 # Terms
 <!-- console.log(Math.floor(Math.random() * (max  min  1))  min) -->
-Request body - JSON data sent to the server using HTTP methods like POST/PUT
-Interface - Set of rules that dictate how different parts of system can interact
+Request body: JSON data sent to the server using HTTP methods like POST/PUT
+Interface: Set of rules that dictate how different parts of system can interact
+Endpoint: A specific URL and method that the client uses to ask the server to do something or return data
+- Different URLs (and methods) that point to different actions `GET /api/notes`
 
 # Vocab
-Cumbersome - Large or heavy and therefore difficult to carry or use
-Intriguing - Fascinating
-Idempotent - Repeatable
-Yield - Provide
+Cumbersome: Large or heavy and therefore difficult to carry or use
+Intriguing: Fascinating
+Idempotent: Repeatable
+Yield: Provide

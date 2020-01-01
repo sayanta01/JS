@@ -1,14 +1,95 @@
-🧰 - Mongoose vs MongoDB (the one you asked about)
-MongoDB = database
-Mongoose = tool to work with MongoDB in Node.js
-- Why do we even need of mangoose
+#
+Know Why?
+- What TCP & HTTP diff?
 
-📄 - Session vs Token (JWT)
 
-📡 - WebSockets vs HTTP
-HTTP: One-way (client asks, server responds)
-WebSockets: Two-way, persistent connection (like chat apps)
 
-🔐 6. Authentication vs Authorization
-Authentication: Who are you? (login)
-Authorization: What are you allowed to do?
+
+💡- A template engine lets you separate your HTML structure from your data, making the code cleaner and easier to maintain.
+Where is a Template Engine Used?
+Render HTML pages with dynamic content:
+Think of web pages like a blog where each page shows a post with a title, content, and author. You want to replace parts of the HTML template with actual post data.
+
+It helps keep your HTML structure separate from your JavaScript logic. This makes your app more organized and maintainable.
+
+
+Server-Side Rendering (SSR):
+For websites where the server generates and serves HTML content (as opposed to sending just data or APIs to be rendered in the browser).
+
+Why and For What is it Used?
+Dynamic Web Pages:
+
+Without a template engine, you would need to manually generate full HTML pages every time you need to send dynamic data to the browser. This can be error-prone and hard to manage as your app grows.
+
+Separation of Concerns:
+
+
+Rendering Dynamic Data:
+
+It lets you take data from your server (like user names, blog post titles, etc.) and inject it into pre-designed templates without having to manually build the HTML every time.
+
+Example: Using a Template Engine (EJS)
+Let’s say we use EJS (a popular template engine for Express) to render a page that shows a user profile:
+
+1. Install EJS
+bash
+Copy
+Edit
+npm install ejs
+2. Set EJS as the View Engine
+In your Express app, set up EJS to render your templates:
+
+js
+Copy
+Edit
+const express = require('express');
+const app = express();
+
+app.set('view engine', 'ejs');
+3. Create a Template (EJS file)
+Create an index.ejs file:
+
+html
+Copy
+Edit
+<!-- views/index.ejs -->
+<html>
+  <body>
+    <h1>Welcome, <%= user.name %>!</h1>
+    <p>Your email is: <%= user.email %></p>
+  </body>
+</html>
+4. Render the Template with Data
+In your route, send the data to the template:
+
+js
+Copy
+Edit
+app.get('/', (req, res) => {
+  const user = {
+    name: 'John Doe',
+    email: 'john@example.com'
+  };
+  res.render('index', { user });
+});
+5. Resulting HTML Sent to the Browser
+When the user visits the page, the server sends this HTML:
+
+html
+Copy
+Edit
+<html>
+  <body>
+    <h1>Welcome, John Doe!</h1>
+    <p>Your email is: john@example.com</p>
+  </body>
+</html>
+When Do You Need a Template Engine?
+Dynamic Pages: When your web pages need to display dynamic content (like user profiles, blog posts, or product pages), a template engine is super helpful.
+
+Rendering on the Server Side: If you're generating HTML on the server side to send to the client, you’ll typically use a template engine.
+
+Not for API-Only Apps: If you're building an API (just sending JSON), you don't need a template engine since you’re not serving HTML content.
+
+Conclusion
+In simple terms, a template engine allows Express to render dynamic HTML pages where you can inject data into a pre-defined template. This makes it easier to manage your app’s HTML and keeps the code clean and maintainable.

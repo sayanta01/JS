@@ -20,13 +20,9 @@ forEach - iterates over elements but does not return a new array (unlike map)
 #   console.log(n);
 # });
 
-JSON.stringify - Convertys a JS object to a JSON string
-JSON.parse - Convertys JSON string to a JSON object
-- Local storage only stores strings, not objects
-- Used for data exchange between server and web apps
-# const name = `["Spongebob", "Patrick", "Squidward", "Sandy"]`;
-# const jsonString = JSON.stringify(name);
-# console.log(jsonString);
+JSON.stringify: Converts a JS object to a JSON string & JSON.parse does the opposite
+- Because the client and server communicate over HTTP, which is a text-based protocol
+- localStorage only stores strings, not objects (2nd usage of JSON.stringify)
 
 # https://youtu.be/R8rmfD9Y5-c?si=5hOnH1vRqB3uiqSR
 const items = [
