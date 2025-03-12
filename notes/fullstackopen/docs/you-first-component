@@ -50,3 +50,30 @@ Nesting and organizing components:
 
 # Vocab
 Abbreviated - shortened
+
+# ------------------------------------------------------------------------------
+
+Importing and Exporting Components
+- The root component file?
+
+You can move a component in three steps:
+1. Make a new JS file to put the components in
+2. Export your function component from that file (using either default or named exports)
+3. Import it in the file where you’ll use the component (using the corresponding technique for importing default or named exports)
+
+Default vs named exports:
+- A file can only have one default export, but it can have numerous named exports!
+
+How you export your component dictates how you must import it:
+- When you write a default import, you can put any name you want after import
+- With named imports, the name has to match on both sides. That’s why they are called named imports!
+- Always give meaningful names to your component functions and the files that contain them
+
+Using a mix of default and named exports:
+# Gallery.js
+# - Exports the Profile component as a named export called Profile
+# - Exports the Gallery component as a default export
+# App.js
+# - Imports Profile as a named import called Profile from Gallery.js
+# - Imports Gallery as a default import from Gallery.js
+# - Exports the root App component as a default export

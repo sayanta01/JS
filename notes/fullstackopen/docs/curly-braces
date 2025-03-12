@@ -7,5 +7,3 @@ Using “double curlies”: CSS and other objects in JSX
   Objects are also denoted with curly braces, like { name: "Hedy Lamarr", inventions: 5 }
   to pass a JS object in JSX, you must wrap the object in another pair of curly braces: person={{ name: "Hedy Lamarr", inventions: 5 }}
 - The next time you see {{ and }} in JSX, know that it’s nothing more than an object inside the JSX curlies!
-
-
