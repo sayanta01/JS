@@ -1,0 +1,49 @@
+# Whatever we need to passing down the chain we need to return it from top of the chain
+
+Q: What if we want to continue execution even if any of my promise is failing, how to achieve this?
+A: By placing the .catch block at some level after which we are not concerned with failure
+createOrder(cart)
+  .then(function (orderId) {
+    proceedToPayment(orderId); // Handles successful (resolved) promise
+    return orderId;
+  })
+  .catch(function (err) {
+    // Whatever fails below it, catch won't care
+    // this block is responsible for code block above it
+    console.log(err);
+  });
+  .then(function (orderId) {
+    return proceedToPayment(orderId); // Ensure `proceedToPayment` returns a promise too
+  })
+  .then(function (paymentInfo) {
+    // Above `proceedToPayment` returns a promise, so we can consume using `.then`
+    console.log(paymentInfo);
+  })
+
+Static Method: Belongs to the class itself, not its objects. Called directly on the class
+- Adds extra functionality to the class without creating an instance
+# class Company {
+#   // Static method (called on the class, not an instance)
+#   static headquarters() {
+#     return "Google HQ is in California";
+#   }
+#   constructor(name, position) {
+#     this.name = name;
+#     this.position = position;
+#   }
+#   // Instance method (called on an object)
+#   getEmployeeInfo() {
+#     return `${this.name} works as ${this.position}`;
+#   }
+# }
+// ✅ Calling the static method on the class
+console.log(Company.headquarters());
+const employee = new Company("Sia", "Software Engineer");
+// ❌ Trying to call static method on an instance
+console.log(employee.headquarters()); // TypeErr! Static methods belong to the class, not objects
+// ✅ Calling an instance method on an object
+console.log(employee.getEmployeeInfo());
+
+# Terms:
+Producer & Consumer
+Utility/Helper

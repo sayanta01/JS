@@ -1,0 +1,101 @@
+# 19-Loop-like array methods, but they work in more functional way
+- Practice adding, deleting, and updating object properties
+
+# ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1629234430949/2x8IOF8kO.webp)
+Map: transforms each array element into a new array
+# const array = [5, 1, 3, 2, 6];
+# function binary(arr) {
+#   return arr.toString(2); // converts numbers into different bases
+# }
+# const binaryArr = array.map(binary);
+# console.log(binaryArr); // [ '101', '1', '11', '10', '110' ]
+
+Filter: creates a new array with elements that pass condition
+# const array = [5, 1, 3, 2, 6];
+# function isOdd(arr) {
+#   return arr % 2; // converts numbers into different bases
+# }
+# const oddArr = array.filter(isOdd);
+# console.log(oddArr); // [ 5, 1, 3 ]
+
+Reduce: transforms an array into a single value
+# const array = [5, 1, 3, 2, 6]; // find max inside array: Non functional programming way:
+# function findMax(arr) {
+#   let max = 0;
+#   // tells how many times the loop will execute
+#   for (i = 0; i < arr.length; i++) {
+#     if (array[i] > max) {
+#       // array[i]: gets the value at position `i` in the array
+#       // array[0] is 5 (the first element), and it just picks the value at that spot in the array
+#       max = array[i]; // updates max if the current element is greater
+#     }
+#   }
+#   return max;
+# }
+# console.log(findMax(array));
+
+// Using reduce
+# const output = array.reduce((accu, curr) => {
+#   if (curr > accu) {
+#     accu = current;
+#   }
+#   return accu;
+# }, 0);
+# console.log(output); // 6
+
+# const array = [70, 50, 90, 80, 65, 95];
+# function sum(accu, curr) {
+#   // current represent the current value of array
+#   return accu + curr; // in each iteration, the current value is added to accumulator
+# }
+# const total = array.reduce(sum);
+# console.log(total);
+
+# // count/report how many unique people have unique ages, like: {29 : 2, 75 : 1, 50 : 1}
+# // use reduce, why? we want to reduce some information from the array, basically we want to get a single object as output
+# const users = [
+#   { firstName: "Alok", lastName: "Raj", age: 26 },
+#   { firstName: "Ashish", lastName: "Kumar", age: 75 },
+#   { firstName: "Ankit", lastName: "Roy", age: 50 },
+#   { firstName: "Pranav", lastName: "Mukherjee", age: 26 },
+# ];
+# // accumulator: holds the result as the reduce method processes each array element
+# // - starts as empty {} and gets updated on each iteration
+# // current element: each user object from the users array is processed one by one
+# // - { firstName: "Alok", lastName: "Raj", age: 26 },
+#
+# const report = users.reduce((accu, curr) => {
+#   // checks if the current age exists in the accumulator or not
+#   if (accu[curr.age]) {
+#     accu[curr.age] = ++accu[curr.age]; // increments the count of that age
+#   } else {
+#     accu[curr.age] = 1; // adds the age with count 1, if not already present
+#   }
+#   return accu; // returns the updated accumulator every time
+# }, {}); // initial value of accu is an empty object, which is the second argument of reduce
+# console.log(report);
+
+# // First name of all people whose age is less than 30
+# const users = [
+#   { firstName: "Alok", lastName: "Raj", age: 23 },
+#   { firstName: "Ashish", lastName: "Kumar", age: 29 },
+#   { firstName: "Ankit", lastName: "Roy", age: 29 },
+#   { firstName: "Pranav", lastName: "Mukherjee", age: 50 },
+# ];
+# //Function Chaining
+# //const output = users
+# //  .filter((user) => user.age < 30)
+# //  .map((user) => user.firstName);
+# //console.log(output);
+#
+# // Using reduce
+# const output = users.reduce((accu, curr) => {
+#   if (curr.age < 30) {
+#     accu.push(curr.firstName);
+#   }
+#   return accu;
+# }, []);
+# console.log(output);
+
+# Vocab
+Acccumulate: gather together or acquire an increasing number or quantity of

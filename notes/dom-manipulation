@@ -1,0 +1,89 @@
+# Odin Project:
+# - You can also use relational selectors (firstElementChild or lastElementChild)
+#   So you can identify certain node based on its relationships to the nodes around it
+# DOM methods:
+# - When your HTML code is parsed by a web browser, it is converted to the DOM
+#   One of the primary differences is that these nodes are JavaScript objects that have many properties and methods attached to them
+#   These properties and methods are the primary tools we are going to use to manipulate our webpage
+# - Array vs NodeList??
+# Element creation:
+# - const div = document.createElement("div");
+# - This function does NOT put your new element into the DOM - it creates it in memory
+#   This is so that you can manipulate the element (by adding styles, classes, ids, text, etc) before placing it on the page
+# - The basic methods for finding, adding, removing, and altering DOM nodes
+# - Keep in mind that the JavaScript does not alter your HTML, but the DOM
+#   your HTML file will look the same, but the JavaScript changes what the browser renders
+
+Things you can select and manipulate in the DOM
+- ID, Class, Element, Attribute
+
+querySelector("#id")
+- CSS selectors .class, div, [attr]
+getElementsBy* - Limited to tag, class or id
+- Use only for auto-updating live collections
+
+Node - Everything in the DOM: elements, text, comments, attributes even the DOCTYPE declaration
+Element - Only actual HTML tags: <html> <head> <title> <body> <h1> <div> <p>
+- document.querySelectorAll("p"); // All matching elements (NodeList)
+- document.querySelector("h1"); // First matching element
+
+const div = document.createElement("div"); // Create new <div> element
+# div.textContent = "Hola"; // Add text
+# - label of <div> stores and updates text inside an element
+# - makes <div> useful by showing its purpose
+div.id = "myId";          // Best way to add ID
+div.classList.add("box"); // Best way to add class
+# div.style.color = "blue"; // Use inline style only for dynamic styles that change at runtime
+
+setAttribute() - For most attributes (Overwrites existing values, so use carefully)
+- div.setAttribute("data-user", "admin");
+- console.log(element.getAttribute("data-user"));
+classList - For class manipulation
+- add, remove, toggle, check without overwriting
+
+Attach to the DOM
+- append(), prepend(), before(), after()
+
+<div> inside another <div>
+# const parentDiv = document.createElement("div");
+# parentDiv.classList.add("parent");
+#
+# const childDiv = document.createElement("div");
+# childDiv.classList.add("child");
+# childDiv.textContent = "I'm inside parent div";
+#
+# parentDiv.append(childDiv); // Append child inside parent
+# document.body.append(parentDiv); // Append parent to body
+
+- el.addEventListener("click", cbFunc);
+- el.removeEventListener("click", cbFunc);
+
+Vocab:
+Traversal - the act of going from one place to another
+
+Event Handling:
+- Asynchronous DOM Updates
+- MutationObserver & IntersectionObserver
+https://youtu.be/Mi4EF9K87aM?si=YVidfFERBjnAWyWp
+
+Event Propagation (Bubbling & Capturing): Trickling Down, Bubbling Up
+https://youtu.be/aVSf0b1jVKk?si=n2ynQYLnPjfFYlVZ
+- Mechanism that dictates how events travel through the Document Object Model (DOM)
+# document.querySelector("#grandParent").addEventListener("click", () => {
+#   console.log("Grandparent Clicked!");
+# }, true);
+#
+# document.querySelector("#parent").addEventListener("click", () => {
+#   console.log("Parent Clicked!");
+# }, false ); // default is Bubbling up
+#
+# document.querySelector("#child").addEventListener("click", (e) => {
+#   console.log("Child Clicked!");
+#   e.stopPropagation();
+# }, false);
+
+Event Delegation handle multiple child events efficiently:
+https://youtu.be/3KJI1WZGDrg?si=RUiB_nLPozfzGx8y
+
+Debouncing/throttling (lodash.debounce)
+https://youtu.be/tJhA0DrH5co?si=AV5BekUScA3UYEzu

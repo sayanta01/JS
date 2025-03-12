@@ -1,0 +1,62 @@
+#
+let rapper = {
+  name: "Malicious",
+};
+rapper.name = "Malic"; // Change
+rapper["name"] = "No Malice"; // Access
+
+- In our mental model, all of the primitive values we’ve discussed— null,
+  undefined, booleans, numbers, and strings—have “always existed.” We can’t
+  create a new string or a new number, we can only “summon” that value # let musketeers = 3;
+- What makes objects different is that we can create more of them. Every time we
+  use the {} object literal, we create a brand new object value # let shrek = {};
+- The same goes for arrays, dates, and any other objects. For example, the []
+  array literal creates a new array value—a value that never existed before
+
+# Functions are Values, too just like numbers, strings, or objects
+for (let i = 0; i < 7; i++) { // How many different values does this code pass to console.log ?
+  console.log(function() {}); // The answer is seven
+}
+- Every time we execute a line of code that contains a function
+  expression, a brand new function value appears in our universe
+- Here, too, function() {} is an expression. Like any expression, a
+  function expression is a “question” to our JavaScript universe—which
+  answers us by creating a new function value every time we ask. This is
+  very similar to how {} creates a new object value when it executes. Functions are like objects!
+- Technically, functions are objects in JavaScript. We’ll keep treating them
+  as a separate fundamental type because they have unique capabilities
+  compared to regular objects. But, generally speaking, if you can do
+  something to an object, you can also do that to a function too. They are very special objects
+
+# Calling a Function
+# let countDwarves = function() { return 7; };
+# let dwarves = countDwarves;
+# console.log(dwarves); // You will see the function itself instead of the number 7
+- First, we created a new function value with a function() { } expression,
+  and pointed the countDwarves variable at this value
+- Next, we pointed the dwarves variable at the value that countDwarves
+  is pointing to—which is the same function value
+- Finally, we logged the value that dwarves is currently pointing to
+
+At no point did we call our function!
+
+- As a result, both countDwarves and dwarves  point to the same value, which
+  happens to be a function. See, functions are values. We can point variables to
+  them, just like we can do with numbers or objects
+
+let dwarves = countDwarves() means “Point dwarves to the value
+returned by the function that countDwarves is currently pointing to”
+
+- In fact, countDwarves() is also an expression. It’s known as a call expression
+- To “answer” a call expression, JavaScript runs the code inside our function, and
+  hands us the returned value as the result (in this example, it’s 7 )
+
+# Recap
+Primitive values (strings, numbers, etc...), which we encountered in the first part
+of our tour, have always existed in our universe. For example, writing 2 or
+"hello" always “summons” the same number or a string value. Objects and
+functions behave differently and allow us to generate our own values. Writing
+{} or function() {} always creates a brand new, different value
+
+# Vocab
+Summon - order someone to be present

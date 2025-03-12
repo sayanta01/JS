@@ -1,0 +1,36 @@
+# 9
+{
+  Compound statement = group
+  Block: groups multiple statements to execute together
+  Block scope: variables and functions only accessible inside the block
+}
+
+var: function/global-scoped
+- accessible globally if declared globally, not limited to block-scope
+- if declared inside a block, accessible outside due to hoisting
+# function ex() {
+#   if (true) {
+#     var a = 10; // accessible inside function # func-scope
+#     let b = 20; // accessible only inside block # block-scope
+#   }
+#   console.log(a); // accessible due to func-scope
+#   console.log(b); // RefErr: not accessible outside block
+# }
+
+let & const: block-scoped, can't be accessed before initialization # TDZ
+- stored in a diff memory space "block", can't be accessed outside the block
+- can't be re-declared in the same scope "illegal" # var can
+- let can be re-assigned # const can't
+- inaccessible after the block finishes executing # var can
+
+Shadowing & Variable Scope:
+- var shadows var because they share the same global memory space
+- let shadows let only within the scope; not in outer functions
+- inner variables shadow outer ones, regardless of depth nesting # like cascading
+- let can shadow var, but var can't shadow let
+
+Script Scope:
+- declared without var, let, or const
+- scriptVar = "value" becomes window.scriptVar
+- becomes part of the global window object
+- accessible via console.log(this.scriptVar)

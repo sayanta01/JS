@@ -1,0 +1,27 @@
+# 5
+Global Object
+- "window" in browser
+- "global" in node.js
+
+SHORTEST JS Program:
+Even in an empty file, the JS engine:
+- creates the Global Execution Context
+- sets up Global Memory # var-env
+
+Global Scope: "this" == "window" global object, holds all global variables/functions
+- global functions/variables are properties of the global object
+
+Inner functions: "this" won’t refer to the global object unless explicitly set
+
+Strict mode: "this" will be `undefined` if not explicitly bound in functions
+Non-strict mode: "this" refers to the global object unless explicitly bound
+
+"use strict" prevents using undeclared variables
+Non-strict mode allows undeclared variables and other relaxed rules
+
+# Terms
+Activation Object: holds function-specific data (parameters, declarations, variables and this value) during execution
+
+# 6-undefined vs not defined ---------------------------------------------------
+undefined = placeholder until a variable gets a value
+JS is loosely-typed language and doesn't attach variables to any datatype

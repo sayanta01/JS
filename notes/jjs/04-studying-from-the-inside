@@ -1,0 +1,24 @@
+# JavaScript Universe: A world of values, expressions, and variables
+Our mental model will not attempt to explain how a value is represented in the
+computer’s memory. The answer changes all the time! The answer even changes
+while your program is running. If you’ve heard a simple explanation about how
+JS “really” represents numbers, strings, or objects in memory, it is most likely wrong
+
+To us, each string is a value—not a “pointer” or a “memory address”—a value. In
+our universe, a value is good enough. Don’t allow “memory cells” and other low-
+level metaphors to distract you from building an accurate high-level mental
+model of JavaScript
+
+The foundation of our mental model is values. Each value belongs to a type
+Primitive values are immutable. We can point to values using “wires” we call
+variables. This foundation—this understanding of values—will help us continue
+building our mental model
+
+Focus on understanding values, variables, and types
+rather than worrying about how they’re implemented at low-level
+
+- The foundation of JavaScript is values—not memory addresses, not registers, just values
+- Each value belongs to a type like string, number, object, etc
+- Variables act like "wires" that point to values, rather than the values themselves being stored inside variables
+- let variable = "A wire pointing to a value"; // Variables don't store values, they reference them
+- Primitive values are immutable they can’t be changed directly

@@ -1,0 +1,18 @@
+# 17
+Never fully trust setTimeout:
+- it runs only after all other functions finish, even if the timer has expired
+- it all depends on callstack
+
+What if timeout = 0sec ?
+- setTimeout(fn, 0) schedules fn to run as soon as the call stack is empty
+
+The First Rule of JS:
+- never block the main thread; use async "setTimeout" for time-consuming tasks
+- JS has one call stack that's the beauty of single-threaded languages
+
+# Terms
+Concurrency model of JS: event-loop waits for call stack to be empty before running tasks
+DOM Breakpoints: used to pause code execution at specific points during DOM interactions
+
+# Vocab
+Defer: postpone

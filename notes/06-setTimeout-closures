@@ -1,0 +1,56 @@
+# 11
+Time, tide and JS wait for none.
+
+Q: Print 1 after 1 sec, 2 after 2 sec till 5 # tricky interview question
+# function x() {
+#   for (var i = 1; i <= 5; i++) {
+#     setTimeout(function () {
+#       console.log(i);
+#     }, i * 3000); // after 3000ms, it puts the function into the call stack and executes it
+#   }
+#   console.log('Namaste JS');
+# }
+# x(); // prints 6 only because of closure
+
+Reason:
+- when setTimeout stores the callback function and attaches timer to it
+- the callback remembers the reference to `i`, not its value # closure remembers the reference, not the value
+- since all 5 callbacks share the same reference to `i`, they all access its final value
+- after the loop ends, `i` becomes 6, so all callbacks print 6
+"var" creates one reference for all iterations of loop, which is why all callbacks share the same `i` value
+
+Solution:
+- let creates new variable for each loop iteration due to block-scoped, so each callback gets the correct `i` value
+- close(i) takes the current value of `i` from the loop iteration and passes it to close(x)
+- inside close(x), the value of `i` is captured and used by the setTimeout function
+
+# 12-Famous Interview Questions ft. Closures -----------------------------------
+outer()(); // first `()` returns inner function, second `()` executes it
+# function outer(str) {
+#   let a = 10;
+#   function inner() {
+#     console.log(a, str);
+#   }
+#   return inner;
+# }
+# outer("Hello")(); // 10 "Hello"
+
+https://youtu.be/Jdlo8ZDt5Jg?si=-Z_a2MRvW7_9i7wY # `this` refers to the object where it's used "context-dependent"
+- context-dependent: the value/meaning changes based on where and how it's used
+https://youtu.be/WPmAu26LZKo?si=Bvi0gHSPL8V_zD1d
+# function Counter() { // Constructor: special method for setting up an object's properties and methods
+#   var count = 0;
+#   this.incrementCounter = function() {
+#     count++;
+#     console.log(count);
+#   }
+#   this.decrementCounter = function() {
+#     count--;
+#     console.log(count);
+#   }
+# }
+# var counter = new Counter(); // creates new counter using the Counter blueprint
+# counter.incrementCounter();
+# counter.decrementCounter();
+
+Modern browsers smartly collect garbage variables from closures

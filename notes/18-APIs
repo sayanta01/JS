@@ -1,0 +1,44 @@
+#
+Promise APIs - Handle multiple promises efficiently
+- Takes an array of promises for parallel execution
+
+Promise.all() - All or None (Fail Fast)
+- Waits for all promises to resolve
+- Useful when all results are needed
+Promise.all([p1, p2, p3])
+  .then(results => console.log(results))    // ✅ Array of results
+  .catch(err => console.error(err));        // ❌ Rejects immediately if any promise fails; it does not wait for all
+
+Promise.allSettled(👍) - Waits for all (Success or Failure)
+- Waits for all promises to settle, regardless of resolve or reject
+- Returns an array of objects { status, value/reason } for each promise
+- Always returns an array of the same length as input promises
+- Useful when partial results are acceptable
+Promise.allSettled([p1, p2, p3])
+  .then(results => console.log(results));   // ✅ Array with {status, value/reason}
+
+Promise.race() - First to settled wins (Success or Failure)
+- Returns only the first settled value, not an array
+Promise.race([p1, p2, p3])
+  .then(result => console.log(result))      // ✅ First settled value
+  .catch(err => console.error(err));        // ❌ First settled error
+
+Promise.any() - First success wins (Ignores Failures)
+- Similar to race but waits for the first Successful promise
+- Resolves with the first fulfilled promise
+- Only rejects if all fail, and it will return an AggregateError
+Promise.any([p1, p2, p3])
+  .then(result => console.log(result))      // ✅ First fulfilled value
+  .catch(err => console.error(err.errors)); // ❌ All fail - AggregateError
+
+To Know:
+- You should never have Uncaught-Error # Always handle errors gracefully
+- Multiple iterables of JS: Array, String, Map, Set
+
+Lingos:
+Aggregate - Collect (related items of content) so as to display or link to them
+Settled  - Got the result
+       /   \
+Resolve    Reject
+Success    Failed
+Fulfilled  Rejected

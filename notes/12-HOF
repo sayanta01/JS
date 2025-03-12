@@ -1,0 +1,69 @@
+# 18
+First-Class Functions (First-Class Citizens)
+- functions treated like variables; they can be assigned, passed, and returned as values
+- Higher-Order Functions: that take other functions as arguments or return functions
+
+Functional Programming (based on Pure Functions) # const pureFunctionExample = (a, b) => a + b;
+- Predictable: same output for the same input 
+- Testable: no side effects, easy to test # doesn't modify external state
+- Composable: combine simple functions to create complex ones
+- Immutable: data can't be changed after creation
+- Maintainable: easy to read, update and refactor
+- DRY principle: avoid redundancy
+
+Best Practices:
+- Write small, reusable, modular functions
+- Reusability: use functions across the codebase
+- Modularity: break logic into independent functions
+
+https://youtu.be/E7Fbf7R3x6I?si=AboUNn0ewmSDvqzd
+- Imperative = "How"
+- Declarrative = "What"
+
+Array.prototype: refers to the prototype object of the Array constructor
+Array and Function are constructor functions that create new instances of arrays and functions:
+When to use `new Array()`? # avoid unless necessary
+- Use only for fixed-length arrays or subclassing
+When to use `new Function()`?
+- Rarely needed, but useful for creating dynamic functions at runtime
+
+# Terms
+Polyfill: code that enables new features to older environments
+
+"Everything is an object"
+# const car = {
+#     color: "red",
+#     drive() {
+#         return "Driving...";
+#     }
+# };
+# const sportsCar = Object.create(car); // sportsCar inherits from car
+# sportsCar.turbo = true;
+# console.log(sportsCar.color); // "red" (inherited from car)
+# console.log(sportsCar.turbo); // true (own property)
+# console.log(sportsCar.drive()); // "Driving..." (inherited method)
+
+- Every object has a prototype, by default
+- Prototype = blueprint/template for objects, providing default properties and methods
+- Prototypes let objects to share functionality, making code cleaner and more efficient
+- JS uses prototype-based inheritance (objects inherit directly from other objects)
+
+Inheritance Models # JS doesn't require classes for inheritance (though class syntax is supported now)
+Class-based: objects are instances of classes, inherit from parent classes
+Prototype-based: objects inherit directly from other objects via prototype chain
+
+Prototype Chain: JS checks the object, then its prototype, and keeps going up until it finds the property or reaches NULL
+Object.prototype: every object inherits from Object.prototype by default
+Prototype provides common methods like toString() and hasOwnProperty(), available to all objects
+Modifying Prototypes: you can add properties or methods to an object's prototype
+Constructor Functions and Prototypes: objects created with constructor function inherit from the constructor's prototype
+# function Person(name) {
+#   this.name = name;
+# }
+# Person.prototype.sayHello = function () {
+#   console.log("Hello, " + this.name);
+# };
+# const person1 = new Person("Alice");
+# const person2 = new Person("Bob");
+# person1.sayHello();
+# person2.sayHello();

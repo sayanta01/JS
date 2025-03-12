@@ -1,0 +1,159 @@
+# https://youtu.be/KD4YzAFYOEc?si=Pp6r915dZbIjwmg5
+# https://attachments.convertkitcdnn2.com/2103648/be21f4cb-3d30-471b-bd94-66601e23ccc5/java-script-roadmap.pdf
+
+Know:
+Reconciliation - You only change the words you edited without rewriting the entire document. (Efficient)
+- React compares the old UI with the new UI and updates only what's changed instead of re-rendering everything
+
+# Components - Life-cycle
+# Data usage - JSX - data flow
+
+# - How react works under the hood
+# Components, State, Rendering & Props
+
+State:
+- Manage Dynamic Data - Track changing values (e.g., form input, counters)
+- Stores dynamic data inside component and triggers re-renders when updated
+- Component-specific, (private & mutable data)
+- Triggers re-renders when updated
+- Trigger UI Updates - Automatically re-renders when state changes
+
+Props:
+- Pass data from parent to child - Read-only (immutable)
+- Make components reusable, use the same component with different values
+- Keep components pure (no unnecessary state)
+- Arguments of function
+- Keep components pure, avoid modifying state inside a component unnecessarily
+- Used for: text, styles, callbacks, API data
+- Prop drilling
+
+Hooks let us use state and other features in function components, making React simpler and more powerful:
+How hooks really works?
+Hooks: Used to manage state and lifecycle within a React component
+- useState returns the `initial` value and `function` to update it
+- use arrow function in useState to prevent re-executing complex initial values on re-renders
+
+- Effect - useEffect
+
+# Rendering:
+# List rendering with .map() (and why key prop matters)
+
+Routings:
+
+To Know:
+When the state changes, React re-renders the component to reflect the new state
+ 
+HTML: <table> <form> <input>
+
+Conditional statements:
+# switch - simplifies multiple if-else conditions
+# let testScore = 90;
+# let letterGrade;
+# switch (true) {
+#   case testScore >= 90:
+#     letterGrade = "A";
+#     break;
+#   default:
+#     letterGrade = "F";
+#     break;
+# }
+# console.log(`${letterGrade}`);
+
+# Loops: while - repeat some code WHILE some condition is true
+# let username = "";
+# while (username === "" || username === null) {
+#   username = window.prompt(`Enter you name`);
+# }
+# console.log(`Hello ${username}`);
+
+# // for...in - "in" means "inside the object" (keys)
+# - Loops over keys (properties) of an object
+# - Works on objects and arrays but returns keys, not values
+# const user = { name: "Alice", age: 26 };
+# for (const key in user) {
+#   console.log(key, user[key]);
+#   console.log(user[key]); // Retrieves the value (definition) of the key (word)
+# }
+
+# // for...of - "of" means "from the collection" (values)
+# - Loops over iterable objects (arrays, strings, maps, sets)
+# - Directly returns values, not keys
+# const playlist = {
+#   songs: ["Fix-You", "Ghost", "4-Din"],
+#   [Symbol.iterator]() {
+#     let index = 0;
+#     return {
+#       next: () => {
+#         if (index < this.songs.length) {
+#           return { value: this.songs[index++], done: false };
+#         } else {
+#           return { value: undefined, done: true };
+#         }
+#       },
+#     };
+#   },
+# };
+# // Use `for...of` to play each song:
+# for (const song of playlist) {
+#   console.log("Playing:", song);
+# }
+
+# Purpose of Generators:
+# - Run code, pause, resume, return values
+# Why Use Generators?
+# - Pause & resume execution
+# - Save memory, run only when needed
+# - Full control over execution
+# - Great for streaming, iterators, async tasks
+# - Streaming: processing data piece by piece instead of loading everything at once
+# - Yield: produce or provide 
+# function* watchEp() {
+#   yield "Ep-1"; // Pause here
+#   yield "Ep-2"; // Pause here
+# }
+# const ep = watchEp();
+# console.log(ep.next());
+# console.log(ep.next());
+# console.log(ep.next());
+
+# ![](https://miro.medium.com/v2/resize:fit:640/format:webp/1*DffsXkVfW-cTMnwTxJEZGg.png)
+# Ternary - literally means composed of three parts # condition ? trueValue : falseValue;
+
+# Type Coercion
+# Falsy Values - null, undefined, NAN, 0 and ""
+
+# Web Storage APIs - ways to store data in the browser
+
+ES6 Features:
+- Convert objects to JSON string
+
+# Modules - file that exports code
+# <script type="module" src="main.js"></script>
+# // Default exports: No {}, one per file
+# export default function greet() { 
+#   console.log("Hello!");
+# }
+
+# // Named exports: Use {}, multiple allowed
+# export function sayBye() {
+#   console.log("Goodbye!");
+# }
+# import greet from "./myModule.js";
+# import { sayBye } from "./myModule.js";
+# greet();
+# sayBye();
+
+# Optional?.Chaining - const value = obj?.property;  
+# - stops at null or undefined, returns undefined instead of error
+
+# Nullish Coalescing Operator:
+# Chooses the first defined value (provides defaults)
+# - const value = null ?? "Default";
+# Returns the right-hand value only if the left-hand value is null or undefined
+# - const result = undefined ?? 42;
+
+# Template Literals - combines strings with variables
+# - If the right side must be an expression, does this mean that simple things—
+#   numbers like 2 or strings like 'The Kraken' —written in code are also
+#   expressions? Yes! Such expressions are called literals—because we literally
+#   write down the values that they result in

@@ -1,0 +1,28 @@
+# 16
+![](js-runtime.png) # JRE: container which has everything to run JS code
+
+![](https://i0.wp.com/miro.medium.com/max/700/1%2AxMpj4sUa0yeBKP7bij7ajg.jpeg?resize=700%2C362&ssl=1)
+# ![](https://miro.medium.com/v2/resize:fit:2000/1*GuWInZljjvtDpdeT6O0emA.png)
+Parsing: breaks code into tokens, which are used by the syntax parser to create the AST
+Compilation:
+- Just-in-Time Compilation - uses both interpreter & compiler
+- compilation and execution happen together
+- the AST goes to the interpreter, which converts hi-level code to byte-code and moves it to execeution
+- while interpreting, and compiler also works together to compile and optimize code during runtime # that's why it's called JIT
+Execution:
+- memory heap # place where all memory is stored
+- call stack # tracks the order of function execution
+
+What does the compiler do to optimize code? # compiler optimization techniques
+- inlining: replaces function calls with function code to save time
+- copy elision: avoids unnecessary object copying, especially on return
+- inline caching: speeds up repeated method lookups by caching results
+
+https://v8.dev/blog
+# Interpreter: ignition
+# Compiler: turbo fan 
+# Garbage collector: orinoco
+- Mark & Sweep
+https://youtu.be/4qLf0FJMyf0?si=Xp1Q1IdlQBLI8NUo
+https://youtu.be/c32zXYAK7CI?si=aMvxUL6g2FfjH0O_
+- oilpan?

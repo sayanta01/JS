@@ -1,0 +1,49 @@
+# let reaction = "yikes";
+# reaction[0] = "l";
+# console.log(reaction);
+# This code will either print "yikes" or throw an error depending on whether you are in strict mode. It will never print "likes"
+
+# Primitive Values Are Immutable
+- We can’t change primitive values # But we can change array
+- Strings (which are primitive) and arrays (which are not) have some superficial similarities
+  an array is a sequence of items, and a string is a sequence of characters
+- It’s an important detail we need to add to our mental model. A string is a primitive
+  value, and all primitive values are immutable. “Immutable” is a fancy Latin way to
+  say “unchangeable.” Read-only. We can’t mess with primitive values. At all
+- Remember that in our JavaScript universe, all primitive values are distant stars
+  floating farthest from our code. We can point to them, but they will always stay
+  where they are, unchanged
+
+# Variables and Values—A Contradiction?
+Variables Are Wires - The universe we’re building is not going to have any boxes at all. It only has wires!
+# let pet = "Narwhal"; 
+# pet = "The Kraken"; // Re-assignment, can point pet to another value
+# console.log(pet); // "The Kraken" — "Narwhal" still in memory but disconnected from pet
+
+All I am doing here is instructing JS to point the variable, or a “wire”, on
+the left side (pet) to the value on the right side ("The Kraken")
+
+This might seem like it’s a contradiction, but it’s not. We said primitive values can’t
+change, but we didn’t say anything about variables! As we refine our mental
+model, we need to untangle a couple of related concepts:
+- Variables are not values
+- Variables point to values
+
+# Assigning a Value to a Variable
+- In our JavaScript universe, a variable is a wire that points to a value
+- For example, I can point the pet variable to the "Narwhal" value. I can also
+  say that I’m assigning the value "Narwhal" to the variable called pet
+
+# Nitpicking - The finding or pointing out of minor faults in a fussy or pedantic way
+You can’t pass a variable—at least not in JavaScript
+We can’t point variables to each other! Variables always point to values
+
+# Recap
+- Variables are not values. Each variable points to a particular value. We can
+  change which value it points to by using the = assignment operator
+- Variables are like wires. A “wire” is not a JavaScript concept—but it helps us
+  imagine how variables point to values. When we do an assignment, there’s
+  always a wire on the left, and an expression (resulting in a value) on the right
+
+# Vocab
+Colloquial - used in ordinary or familiar conversation; not formal or literary

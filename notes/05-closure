@@ -1,0 +1,29 @@
+# 10
+Function that "remembers" variables from its lexical scope
+Closure = function  it's Lex Env - function bundled along with it's lexical scope
+- allows function to access variables from its parent scope, even after the parent function has finished running
+
+# function x() {
+#   var a = 7;
+#   function y() {
+#     console.log(a);
+#   }
+#   return y; // function returns with its surrounding scope attached (y  lexical scope)
+# }
+# var z = x();
+# console.log(z); // z holds the entire function y, including its lexical scope
+
+Advantages of Closure:
+Data hiding and Encapsulation
+Module Design Pattern
+Memoization
+Curring - transforming
+setTimeouts and Asynchronous Programming
+
+Disadvantages of Closure:
+Memory Consumption
+Potential for Memory Leaks
+
+# Terms
+Object: group related data and properties
+Symbol: unique identifier for object properties

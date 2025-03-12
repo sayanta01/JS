@@ -1,0 +1,24 @@
+#
+- Keep related logic & markup together ensures that they stay in sync with each other on every edit
+- Details that are unrelated should be isolated from each other
+  Making it safer to change either of them on their own
+
+The Rules of JSX:
+1. Return a single root element 
+- To return multiple elements from a component, wrap them with a single parent tag
+
+Why do multiple JSX tags need to be wrapped? 
+! JSX looks like HTML, but under the hood it is transformed into plain JavaScript objects
+  You can’t return two objects from a function without wrapping them into an array
+
+2. Close all the tags
+- JSX requires tags to be explicitly closed:
+  self-closing tags like <img> must become <img />, and wrapping tags like <li>oranges must be written as <li>oranges</li>
+
+3. camelCase all most of the things!
+- JSX turns into JavaScript and attributes written in JSX become keys of JavaScript object properties
+  Use className instead of class to avoid JavaScript conflicts
+- For historical reasons, aria-* and data-* attributes are written as in HTML with dashes
+# https://react.dev/reference/react-dom/components/common
+
+Error messages will often point you in the right direction to fixing your markup

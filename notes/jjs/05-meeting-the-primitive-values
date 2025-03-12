@@ -1,0 +1,38 @@
+# ![](primitive-values.png) # Exploring to every value in our JavaScript universe
+
+# Fun Fact
+- null is the only value of its own type. However, null is also a liar. Due
+  to a bug in JavaScript, it pretends to be an object
+# console.log(typeof(null)); // "object" a lie!
+- You might think this means null is an object. Don’t fall into this trap! It is
+  a primitive value, and it doesn’t behave in any way like an object
+- Unfortunately, typeof(null) is a historical accident that we’ll have to
+  live with forever
+
+# Numbers
+- JavaScript numbers don’t behave exactly like regular mathematical
+  numbers due to the IEEE 754 floating-point standard
+# console.log(0.1 + 0.2 === 0.3); // false
+# console.log(0.1 + 0.2 === 0.30000000000000004); // true
+- This might look very surprising! Contrary to popular belief, this doesn’t mean that
+  JavaScript numbers are broken. This behavior is common in different
+  programming languages. It even has a name: floating-point math
+
+# Strings Aren’t Objects
+# let cat = 'Cheshire';
+# console.log(cat.length); // 8 // All strings have a few built-in properties
+# console.log(cat[0]); // "C"
+This doesn’t mean that strings are objects! String properties are special and don’t
+behave the way object properties do. For example, you can’t assign anything to cat[0]
+
+# Symbols
+Serve a similar purpose to door keys: they let you hide away some information inside an
+object and control which parts of the code can access it
+
+# Recap
+- Not all numbers can be perfectly represented in JavaScript. Their decimal
+  part offers more precision closer to 0, and less precision further away from it
+- Numbers from invalid math operations like 1 / 0  or 0 / 0  are special
+  NaN is one of such numbers. They may appear due to coding mistakes
+- typeof(NaN) is a number because NaN is a numeric value. It’s called “Not
+  a Number” because it represents the idea of an “invalid” number

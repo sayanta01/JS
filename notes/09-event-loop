@@ -1,0 +1,73 @@
+# 15
+WebAPIs:
+None of the below are part of Javascript! These are extra superpowers that browser has, Browser gives access to JS callstack to use these powers
+![](https://namaste-javascript-handbook.vercel.app/assets/images/eventloop2-a32e841c3d1d3c52669c3454f4ba99eb.jpg)
+# We get all these inside call stack through global object ie. window
+# - setTimeout() == window.setTimeout()
+
+![](https://namaste-javascript-handbook.vercel.app/assets/images/eventloop6-f8b232d201a82777b680dffbf5d3ccdf.jpg)
+# console.log("start"); // calls the console web API (through window)
+# setTimeout(function cb() {
+#   console.log("timer"); // calls the setTimeout web API, which provides the timer feature and stores the callback in the web API environment
+# }, 5000); 
+# console.log("End"); // after this GEC pops out from call stack
+
+After setTimeout() finishes, the callback enters the Callback Queue:
+- Event-Loop checks the queue, moves tasks to the Call Stack when it's empty, then executes them
+# But ----------------------------------
+Never fully trust setTimeout:
+- it runs only after all other functions finish, even if the timer has expired
+- setTimeout(fn, 0) schedules fn to run as soon as the call stack is empty
+- but setTimeout only runs after the call stack is empty
+
+# Call Stack (Chef's Hands): Chef (JS engine) handles one dish (function) at a time
+# Web APIs/Task Queue (Order Queue): Long tasks (like timers or API calls) go to the queue
+# Event Loop (Waiter): Checks if the chef is free and moves the next task from the queue to the chef
+# This setup lets the chef keep working without waiting for long tasks, thanks to the waiter managing the queue
+
+- eventListener persist in the Web API until removed or browser closed
+
+Q: Need of callback queue?
+- Ensures callbacks run orderly without blocking main thread
+
+# console.log("Start");
+# setTimeout(function cbT() {
+#   console.log("CB Timeout");
+# }, 5000);
+# fetch("https://api.netflix.com").then(function cbF() { // take 2 seconds to bring response
+#     console.log("CB Netflix");
+# }); 
+# // millions lines of code
+# console.log("End");
+
+- microtask Queue has higher priority than the Callback Queue, even if Callback Queue tasks are added first
+- cbF runs first from the microtask Queue, prints "CB Netflix," then cbF is removed
+- cbT runs next from the Callback Queue, prints "CB Timeout," then cbT is removed
+
+Some Important Questions??
+# When does the event loop actually start? # always running and doing its job
+# Are only asynchronous web api callbacks are registered in web api environment? # Yes
+# Does the web API environment stores only the callback function and pushes the same callback to queue/microtask queue? # Yes
+# How does it matter if we delay for setTimeout would be 0ms. Then callback will move to queue without any wait? # No
+
+# Terms
+Subsequent task: task that comes after the previous task
+Call Stack: DS that follows the Last-In, First-Out (LIFO) principle
+Event Queue: DS that follows First-In, First-Out (FIFO) principle
+
+# https://youtu.be/eiC58R16hb8?si=-tEJ7aXp1CKm1Ej4
+microtask Queue - smaller tasks higher priority
+- promise-based APIs, async/await and queueMicrotask
+- MutationObserver: detects DOM tree changes and executes the callback
+- starvation: microtask Queue keeps creating new tasks, blocking the callback queue # how to fix starvation?
+# Promise.resolve().then(() => console.log(1));
+# setTimeout(() => console.log(2), 10);
+# queueMicrotask(() => {
+#   console.log(3);
+#   queueMicrotask(() => console.log(4));
+# });
+# console.log(5);
+
+Macrotask Queue - larger tasks lower priority # AKA task-queue or event-queue
+- callback-based APIs, setTimeout/setInterval
+- stores web API callbacks and event handlers for later execution

@@ -1,0 +1,39 @@
+# https://youtu.be/NIq3qLaHCIs?si=qDN4CgnFNqPVKObU
+# https://youtu.be/UHZcJyVXtLo?si=HG8M0c1IGrMLLDAE
+Extract values from Arrays and Objects!
+
+# 80/20
+Object Destructuring
+- Function Params (Cleaner arguments)
+- API Responses (Extract only needed data)
+
+Array Destructuring
+- React Hooks (useState)
+- Swapping variables (Cleanest way to swap)
+
+Spread (...) - Merge & Clone
+- Unpack elements into individual values
+# const str = `hello`;
+# console.log([...str]);
+
+Rest (...) - Handle extra/unwanted data
+- Pack multiple arguments into an array
+# const func = (...data) => {
+#   console.log(data);
+# };
+# func(1, 2, 3, 4);
+
+Function Parameter Destructuring: (Most Common in React Props & APIs)
+- Cleaner function signature by avoiding obj.property everywhere inside the function
+- Only extracts needed properties instead of passing the whole object
+# const user = { name: "Alice", age: 25, city: "NY" };
+# function greet({ name, city }) {
+#   console.log(`Hello ${name} from ${city}`);
+# }
+# greet(user);
+
+Object Destructuring for Cleaner Code
+- Why? Avoids repeated user.name, user.age
+# const user = { name: "John", age: 30, email: "john@example.com" };
+# const { name, age } = user;
+# console.log(name, age);

@@ -1,0 +1,67 @@
+# https://react.dev/learn
+- React components are JavaScript functions that return markup
+- Component names must always start with a capital letter, while HTML tags must be lowercase
+- JSX is stricter than HTML. You have to close tags like <br /> Your component also can’t return multiple JSX tags
+
+- Some attribute names differ because JSX is JavaScript-based, and certain words are reserved in JS
+- CamelCase for Attributes: `onClick` instead of `onclick`
+- Boolean Attributes: `<input disabled={true}>` instead of `<input disabled>`
+HTML Attribute | JSX Equivalent	
+---------------|---------------
+class          | className
+for            | htmlFor
+
+Displaying data:
+All CSS properties use camelCase instead of kebab-case - {{ border-radius to borderRadius }}
+
+Conditional rendering:
+https://youtu.be/XvURBpFxdGw?si=-sm3wEVRmd-iu5k9
+
+Rendering lists:
+You will rely on JavaScript features like for loop and the array map() function to render lists of components
+`key` - Special attribute that helps React track items when rendering lists in the Virtual DOM
+
+Why is key Important?
+- React uses the Virtual DOM to update the UI efficiently
+- When updating list, React compares the new list with the previous one
+- `key` helps React track items, update only what changed instead of rebuilding everything
+- prevent unnecessary re-renders and makes UI updates faster
+- Prefer unique IDs over index if the list can change dynamically
+
+Analogy:  
+- `key` is like "seat-number", it helps React know which item sits where
+  without it, React might mix up items when updating the list
+
+Responding to events:
+# function MyButton() {
+#   function handleClick() {
+#     alert('You clicked me!');
+#   }
+#   return (
+#     <button onClick={handleClick}>
+#       Click me
+#     </button>
+#   );
+# }
+- Do not call the event handler function: you only need to pass it down
+  React will call your event handler when the user clicks the button
+
+Updating the screen:
+- Often, you’ll want your component to “remember” some information and display it
+  For example, maybe you want to count the number of times a button is clicked
+  To do this, add state to your component
+
+- You’ll get two things from useState: the current state (count), and the function that lets you update it (setCount)
+- If you render the same component multiple times, each will get its own state and doesn’t affect other buttons
+
+Using Hooks:
+- Functions starting with use are called Hooks. useState is a built-in Hook provided by React
+
+Sharing data between components:
+- Often you’ll need components to share data and always update together
+- To make both MyButton components display the same count and update together,
+  you need to move the state from the individual buttons “upwards” to the closest component containing all of them
+
+- Lift state to the nearest common parent
+- Pass state & update function as props to child components
+- Child components use the props instead of their own state

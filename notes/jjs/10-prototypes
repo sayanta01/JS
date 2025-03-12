@@ -1,0 +1,110 @@
+#
+__proto__ = property
+Any JavaScript object can choose another object as a prototype
+
+# ![Prototypes in Action](__proto__.png)
+- By specifying __proto__ (also known as our object’s prototype), we instruct
+  JavaScript to continue looking for missing properties on that object instead
+- This is similar to saying, “I don’t know, but Alice might know.” With __proto__
+  you instruct JavaScript to “ask another object”
+
+# The Prototype Chain
+- A prototype isn’t a special “thing” in JavaScript. A prototype is more like a
+  relationship. An object may point to another object as its prototype
+- This naturally leads to a question: but what if my object’s prototype has its own
+  prototype? And that prototype has its own prototype? Would that work?
+# let mammal = {
+#   brainy: true,
+# };
+# let human = {
+#   __proto__: mammal,
+#   teeth: 32
+# };
+# let gwen = {
+#   __proto__: human,
+#   age: 19
+# };
+# console.log(gwen.brainy); // true
+- This is similar to saying, “I don’t know, but Alice might know.” Then Alice might
+  say, “Actually, I don’t know either—ask Bob.” Eventually, you will either arrive at
+  the answer or run out of people to ask!
+- This sequence of objects to “visit” is known as our object’s prototype chain
+  However, unlike a chain you might wear, prototype chains can’t be circular!
+
+# Shadowing 
+- Once we find our property, we stop the search
+  it doesn’t check the prototype if the property is already found in the object itself
+- We can use obj.hasOwnProperty('something') to determine whether
+  our object has its own property called something
+
+# Assignment
+Rule of thumb: When we read a property that doesn’t exist on our object, we’ll keep looking for it
+on the prototype chain. If we don’t find it, we get undefined
+
+# The Object Prototype
+1. Objects Aren’t Truly Empty
+let obj = {}; // Not empty - has hidden __proto__ that points to something called the Object Prototype
+
+2. Prototype Inheritance & Built-in Methods
+console.log(obj.__proto__); // Not null or undefined! Contains hasOwnProperty, toString, etc
+
+3. Using Inherited Methods - Objects can access methods from their prototype, even if they don't have them directly
+let human = { teeth: 32 };
+console.log(human.hasOwnProperty("teeth")); // true
+console.log(human.toString()); // "[object Object]"
+
+human "the object": human.__proto__ points to the Object Prototype, so it can use hasOwnProperty
+┌───────────────────┐
+│ teeth: 32         │
+│ __proto__ "wire" -┼-------› Object Prototype
+└───────────────────┘         ┌──────────────────┐
+                              │ hasOwnProperty() │
+                              │ toString()       │
+                              └──────────────────┘
+Key Takeaways:
+- New objects inherit methods through __proto__ link
+- let obj = {}; // Automatically gets __proto__ link to Object.prototype
+- __proto__ links objects to the prototype chain
+- Setting __proto__: null removes all inherited methods # truly empty object
+
+# Polluting the Prototype - Avoid modifying shared prototypes!
+let obj = {};
+obj.__proto__.smell = "banana";
+- Modifying the prototype affects all objects!
+- Now, all objects inherit the "smell" property
+# console.log(sherlock.smell); // "banana"
+# console.log(watson.smell); // "banana"
+
+# __proto__ vs prototype
+// Creates a new object with the shape property set to "round"
+function Donut() {
+  return { shape: "round" };
+}
+
+// The eat method is added to the prototype, shared by all Donut objects
+Donut.prototype = { // Setting up the prototype property for the Donut function
+  eat() { console.log("Nom nom nom"); } // Set up the shared prototype
+};
+
+// `new` sets the object's __proto__ to Donut.prototype
+let donut1 = new Donut(); // Inherits from Donut.prototype
+let donut2 = new Donut(); // __proto__: Donut.prototype
+
+donut1.eat(); // "Nom nom nom"
+donut2.eat(); // "Nom nom nom"
+
+# Why Does This Matter?
+- JavaScript added classes to simplify object creation and inheritance
+- Understanding prototypes helps you know how JavaScript gets and sets properties in objects
+
+# Recap
+- When reading obj.something, if obj doesn’t have a something
+  property, JavaScript will look for obj.__proto__.something. Then it will
+  look for obj.__proto__.__proto__.something, and so on, until it either
+  finds our property or reaches the end of the prototype chain
+- When writing to obj.something, JavaScript will usually write to the object
+  directly instead of traversing the prototype chain
+- You probably won’t use prototypes much directly in practice. However, they
+  are fundamental to JavaScript objects, so it is handy to understand their
+  underlying mechanics. Some advanced JavaScript features, including classes,
+  can be expressed in terms of prototypes

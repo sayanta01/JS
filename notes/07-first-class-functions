@@ -1,0 +1,61 @@
+# 13
+Statement: performs an action but does not produce a value
+Expression: produces a value and can be used in assignment
+# - function expression: function acts like a value
+
+Anonymous Function: function without a name
+- used when functions are treated as values
+
+Parameters: variable defined in the function definition
+Arguments: actual values passed to the function when calling it
+
+First-Class Functions (First-Class Citizens)
+- functions are values that can be stored in variables, passed as arguments, and returned from other functions
+
+# // Function assigned to variable
+# const greet = function() {
+#   console.log("Hello!");
+# };
+
+# // Function passed as an argument
+# function run(fn) {
+#   fn();
+# }
+# run(greet);
+
+# // Function returned from another function
+# function outer() {
+#   return function() {
+#     console.log("Returned function!");
+#   };
+# }
+# const newFunc = outer();
+# newFunc();
+
+# // Array storing functions
+# const functionsArray = [
+#   function() { return "First function"; },
+#   function() { return "Second function"; },
+#   function() { return "Third function"; }
+# ];
+# // Calling functions from the array
+# console.log(functionsArray[0]());
+# console.log(functionsArray[1]());
+# console.log(functionsArray[2]());
+
+# // Object storing functions
+# const functionsObject = {
+#   greet: function(name) { return `Hello, ${name}!`; },
+#   farewell: function(name) { return `Goodbye, ${name}!`; }
+# };
+# // Calling functions from the object
+# console.log(functionsObject.greet("Alice"));
+# console.log(functionsObject.farewell("Bob"));
+
+Arrow Function: concise way to write function expression
+- cannot be used as constructors
+- no arguments object (use ...args) # rest parameters
+# let x = (param) => console.log("hellow")
+# function x(param) {
+#   console.log("hello");
+# }

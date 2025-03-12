@@ -1,0 +1,106 @@
+# `this` mtlb jis, jisne call kia
+
+// In the global scope
+console.log(this); // globalObject
+
+// Inside function - The value depends on strict/non-strict mode
+function x() {
+  console.log(this);
+}
+x()
+- In strict mode, `this` is undefined
+- In non-strict mode, if `this` is undefined or null, it defaults to `globalObject` due to `this substitution`
+
+// `this` keyword value depends on how the function is called
+x(); // undefined
+window.x() // globalObject
+
+// Inside object's method # A function inside an object is called method
+- The value of `this` is the object where that method is present
+# const student = {
+#   fname: "Sayanta",
+#   lname: "Chaudhary",
+#   fullName: function () {
+#     console.log(`${this.fname} ${this.lname}`);
+#   },
+# };
+#
+# const student2 = {
+#   fname: "P",
+#   lname: "J",
+# };
+# // Sharing Method
+# student.fullName.call(student2); // value of `this` == student2
+
+// call, apply, bind (Explicit Binding) - Manually set the value of `this`
+.call - Comma separated # func.call(thisArg, arg1, arg2, ...)
+- Pass arguments individually 
+# const person = { fname: "Sayanta", lname: "Chaudhary" };
+# function greet(greeting, punctuation) {
+#   console.log(`${greeting}, ${this.fname} ${this.lname}${punctuation}`);
+# }
+# greet.call(person, "Hello", "!");
+# greet.apply(person, ["Hello", "!"]);
+# greet.call(person, ...["Hello", "!"]); // Same as apply
+
+The only diff between call/apply is the way you pass arguments
+Both set `this` and call the function immediately
+
+.apply - Array list
+- [Pass arguments as an array]
+- ES6, use the spread operator (...) instead of apply to make call work like apply
+# let info = {
+#   fname: "Sayanta",
+#   lname: "Chaudhary",
+#   printFullName() {
+#     console.log(`${this.fname} ${this.lname}`);
+#   },
+# };
+# info.printFullName();
+# let info2 = { fname: "P", lname: "Jena" };
+# info.printFullName.apply(info2, ["Hello", "!"]); // Function Borrowing
+
+.bind()
+- Unlike call/apply, it does NOT call the function immediately
+- Instead, it returns a new function with `this` permanently set
+Useful for:
+- Fixing `this` in callbacks or event listeners
+- Partial application (pre-setting arguments)
+# const person = {
+#   name: "Alice",
+#   greet() {
+#     console.log(`Hello, ${this.name}`); // this == person
+#   },
+# };
+# const greetFn = person.greet.bind(person); // `this` is permanently set to `person` even if called elsewhere
+# greetFn();
+
+// Inside arrow function
+- Arrow functions do not have their own `this` binding
+  they inherit `this` from the enclosing lexical scope where they are defined
+# const obj = {
+#   a: 10,
+#   x: function () {
+#     // enclosing lexical context
+#     const y = () => {
+#       console.log(this);
+#     };
+#     y();
+#   },
+# };
+# obj.x(); // `this` in y() refers to obj, as arrow functions inherit `this` from their enclosing scope
+
+// Inside DOM elements - refers to the HTMLElement
+<button onclick="alert(this)">Click Me</button> // [object HTMLButtonElement] - `this` refers to the button element itself
+- In inline event handlers, `this` refers to the attached element
+
+// Inside Constructor function & Class
+
+# function showIcon() {
+#   return this.icon;
+# }
+# const js = {
+#   icon: "",
+# };
+# const showJSicon = showIcon.bind(js); // explicitly sets this for function
+# console.log(showJSicon());

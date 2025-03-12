@@ -1,0 +1,74 @@
+#
+An object cannot be “inside” of another object! If you have been
+visualizing nested objects, now is the time to change your mental model
+
+let sherlock = {
+  surname: "Holmes",
+  address: { city: "London" }, // address points to another object with a city property
+};
+
+let john = {
+  surname: "Watson",
+  address: sherlock.address, // References the same address object as Sherlock's
+};
+
+// Mutation Problem:
+// john.surname = "Lennon"; // OK - Only changes John's object
+// john.address.city = "Malibu"; // Problem! Also changes Sherlock's address
+
+// Solutions: ![best](new-addr-object.png)
+// 1. Create a new `address object` for John instead of modifying existing one
+john.address = { city: "Malibu" }; // Now, it points to a new address object, and sherlock.address remains unchanged
+- address = object, city = wire, Malibu = value
+
+// 2. Create an entirely `new object` for John
+john = {
+  surname: "Lennon",
+  address: { city: "Malibu" },
+};
+
+// Be mindful of object references to avoid unintended changes!
+// Always create new objects instead of modifying shared ones!
+
+console.log(sherlock.address.city); // ?
+console.log(sherlock.surname); // ?
+console.log(john.surname); // ?
+console.log(john.address.city); // ?
+
+No Nested Objects: Objects don’t truly “nest” inside each other; they are separate and can refer to each other
+  let obj1 = { data: { x: 1 } }; // Two separate objects, not nested
+- References, Not Copies: When one object points to another, it's a reference, not a copy
+  john.address = sherlock // John's address references Sherlock's object, not contains it
+- Modifying Shared Objects: Shared references = Shared changes
+  obj2.data.x = 2; // Affects both obj1 and obj2 since both reference the same object
+- No Actual Nesting: Even though one object seems to be inside another, they are still separate
+  Mental model: Think of objects as points or wires that reference each other
+- Mental models will help you come up with theories, but you need to confirm them
+  with console.log or a debugger
+
+# Let vs Const - Remember that const prevents variable reassignment—not object mutation
+// const shrek = { species: 'ogre' };
+// shrek = { species: 'human' }; // TypeError: Assignment to constant variable
+
+You can still mutate the object's properties:
+// shrek.species = 'human'; // Allowed, because you're modifying the object itself
+
+# Is Mutation Bad?
+- Don’t walk away thinking that mutation is “bad.” That’s a lazy oversimplification
+  that obscures real understanding. If data changes over time, a mutation happens
+  somewhere. The question is, what should be mutated, where, and when?
+- By the time you mutate an object, variables and properties may already be
+  pointing to it. Your mutation affects any code “following” those wires later
+- This is both a blessing and a curse. Mutation makes it easy to change some data
+  and immediately “see” the change across the whole program. However,
+  undisciplined mutation makes it harder to predict what the program will do
+- It’s worth noting that mutating new objects that you’ve just created is always okay
+  because there are no other wires pointing to them yet. In other cases, I advise you
+  to be very intentional about what you’re mutating and when. The extent to which
+  you’ll rely on mutation depends on your app’s architecture
+
+# Recap
+- Objects are never “nested” in our universe—pay close attention to the wires
+- If you mutate an object, your code will “see” that change via any wires
+  pointing to that object. Sometimes, this may be what you want. However,
+  mutating accidentally shared data may cause bugs
