@@ -23,7 +23,6 @@ function Content() {
       </p>
 
       <Total exercises={exercises1 + exercises2 + exercises3} />
-      {/* <Total exercises={{ exercises1, exercises2, exercises3 }} /> */}
     </>
   );
 }
