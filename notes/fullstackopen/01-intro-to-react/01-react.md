@@ -10,13 +10,18 @@ Do not render objects:
   The individual things rendered in braces must be primitive values, such as numbers or strings
   React also allows arrays to be rendered if the array contains values that are eligible for rendering (such as numbers or strings)
 
-The App component's body will approximately be as follows:
+- The only way to go fast, is to go well - "Uncle Bob"
+- Careful progress with small steps is even the only way to be fast - "Martin Fowler"
+
+! Place the objects into an [Array]
+  Do not pass different objects as separate props from the App component to the components Content and Total
+  Instead, pass them directly as an array
 
 # Terms
 Templating languages
 
 # Vocab
 Nevertheless - still
-<!-- Defining - Creating -->
-<!-- Logs - Prints -->
-<!-- Adjacent - next to each other -->
+Defining - Creating
+Logs - Prints
+Adjacent - next to each other

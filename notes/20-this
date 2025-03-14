@@ -62,7 +62,7 @@ Both set `this` and call the function immediately
 
 .bind()
 - Unlike call/apply, it does NOT call the function immediately
-- Instead, it returns a new function with `this` permanently set
+  instead, it returns a new function with `this` permanently set
 Useful for:
 - Fixing `this` in callbacks or event listeners
 - Partial application (pre-setting arguments)

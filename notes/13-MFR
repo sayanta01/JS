@@ -35,13 +35,13 @@ Reduce: transforms an array into a single value
 # console.log(findMax(array));
 
 // Using reduce
-# const output = array.reduce((accu, curr) => {
-#   if (curr > accu) {
-#     accu = current;
-#   }
-#   return accu;
-# }, 0);
-# console.log(output); // 6
+const output = array.reduce((accu, curr) => {
+  if (curr > accu) {
+    accu = current;
+  }
+  return accu;
+}, 0);
+console.log(output); // 6
 
 # const array = [70, 50, 90, 80, 65, 95];
 # function sum(accu, curr) {
