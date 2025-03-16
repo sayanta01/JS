@@ -1,0 +1,65 @@
+# State: A Component's Memory
+Components often need to change what’s on the screen as a result of an interaction
+- Typing into the form should update the input field
+- Clicking “next” on an image carousel should change which image is displayed
+- Clicking “buy” should put a product in the shopping cart
+Components need to “remember” things: the current input value, the current image, the shopping cart
+
+When a regular variable isn’t enough:
+- Local variables don’t persist between renders
+- Changes to local variables won’t trigger renders
+To update a component with new data, two things need to happen:
+- Retain the data between renders
+- Trigger React to render the component with new data (re-rendering)
+The useState Hook provides those two things:
+- A state variable to retain the data between renders
+- A state setter function to update the variable and trigger React to render the component again
+
+Adding a state variable:
+export default function Gallery() {
+  // let index = 0;
+  const [index, setIndex] = useState(0);
+
+  // function handleClick() {
+  //   index = index + 1;
+  // }
+  function handleClick() {
+    setIndex(index + 1);
+  }
+
+Meet your first Hook:
+- Hooks are special functions that are only available while React is rendering
+  They let you “hook into” different React features
+- "Hook into" simply means "connect to" or "use" React features inside component
+- Hooks are functions, but it’s helpful to think of them as unconditional declarations about your component’s needs
+
+ Anatomy of useState:
+- When you call useState, you are telling React that you want this component to remember something:
+# const [index, setIndex] = useState(0);
+- In this case, you want React to remember index
+
+Giving a component multiple state variables:
+- It is a good idea to have multiple state variables if their state is unrelated
+- But if you find that you often change two state variables together, it might be easier to combine them into one
+- For example, if you have a form with many fields
+  it’s more convenient to have a single state variable that holds an object than state variable per field
+
+How does React know which state to return??
+- Hooks rely on a stable call order on every render of the same component
+  Hooks will always be called in the same order
+- Internally, React holds an array of state pairs for every component
+  It also maintains the current pair index, which is set to 0 before rendering
+  Each time you call useState, React gives you the next state pair and increments the index
+! React Hooks: Not Magic, Just Arrays
+- Always call useState in the same order, or React gets confused
+
+State is isolated and private:
+- State is local to a component instance on the screen
+  In other words, if you render the same component twice, each copy will have completely isolated state!
+- State is fully private to the component declaring it. The parent component can’t change it
+- This lets you add state to any component or remove it without impacting the rest of the components
+- What if you wanted both galleries to keep their states in sync? The right way to do it in React is to remove state from child components and add it to their closest shared parent
+
+Recap:
+- You can have more than one state variable. Internally, React matches them up by their order
+- State is private to the component. If you render it in two places, each copy gets its own state

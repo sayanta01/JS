@@ -15,14 +15,12 @@ State:
 - Manage Dynamic Data - Track changing values (e.g., form input, counters)
 - Stores dynamic data inside component and triggers re-renders when updated
 - Component-specific, (private & mutable data)
-- Triggers re-renders when updated
 - Trigger UI Updates - Automatically re-renders when state changes
 
-Props:
+Props: - Arguments of function
 - Pass data from parent to child - Read-only (immutable)
 - Make components reusable, use the same component with different values
 - Keep components pure (no unnecessary state)
-- Arguments of function
 - Keep components pure, avoid modifying state inside a component unnecessarily
 - Used for: text, styles, callbacks, API data
 - Prop drilling
