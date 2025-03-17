@@ -1,6 +1,8 @@
-const square = p => {
-  console.log(p);
-  return p * p;
-};
+function sum(x, y, z) {
+  return x + y + z;
+}
 
-console.log(square(2));
+const numbers = [1, 2, 3];
+
+console.log(sum(...numbers));
+console.log(sum.apply(null, numbers));

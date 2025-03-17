@@ -39,6 +39,8 @@ const App = () => {
 
 export default App;
 
+// ----------------------------------------------------------------------------
+
 // const Hello = ({ name, age }) => {
 //   const bornYear = () => new Date().getFullYear() - age;
 //   return (
