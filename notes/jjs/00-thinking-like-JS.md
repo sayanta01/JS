@@ -1,6 +1,6 @@
 # https://www.youtube.com/watch?v=zD8CkabTJD0&list=PLUaw9xq0YUAG5H5JpjRkR4fHgNf4Qs5-t&index=2
 # https://github.com/denysdovhan/wtfjs
-# ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1667197259026/ouTgP5uuj.png?auto=compress,format&format=webp)
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1667197259026/ouTgP5uuj.png?auto=compress,format&format=webp)
 Primitive values # Pass by value - Goes to Stack
 - creates a copy of the value; even though they have the same value, they occupy different places in memory
 - to change the value, it copies the value and changes the copy, not the original

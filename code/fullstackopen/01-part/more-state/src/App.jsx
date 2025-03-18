@@ -59,9 +59,7 @@ const App = () => {
       <Button onClick={handleLeftClick} text="left" />
       <Button onClick={handleRightClick} text="right" />
       {right}
-      {/* <p>{allClick.join(" ")}</p> */}
-      {/* <p>total {total}</p> */}
-      <History allClick={allClicks} />
+      <History allClicks={allClicks} />
     </>
   );
 };

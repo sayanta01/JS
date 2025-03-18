@@ -33,7 +33,12 @@ Conditional rendering:
 
 Old React: https://react.dev/reference/react/Component
 
+Debugging React applications:🐞
+- Old-school, print-based debugging is always a good idea
+  If the component is not working as intended, it's useful to start printing its variables out to the console
+
 
 # Vocab
 Comprised - consist of
-Concatenate - Join
+Concatenate - join
+Throttling - limiting
