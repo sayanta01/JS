@@ -42,3 +42,4 @@ Debugging React applications:🐞
 Comprised - consist of
 Concatenate - join
 Throttling - limiting
+Baseline - reference

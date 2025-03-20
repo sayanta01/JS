@@ -15,7 +15,7 @@ x()
 x(); // undefined
 window.x() // globalObject
 
-// Inside object's method # A function inside an object is called method
+// Inside object's method # function inside an object is called method
 - The value of `this` is the object where that method is present
 # const student = {
 #   fname: "Sayanta",

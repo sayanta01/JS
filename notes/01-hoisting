@@ -17,7 +17,7 @@ Errors:
 - undefined: variable is declared but not assigned a value
 - not defined: variable is not declared anywhere in the code
 
-https://namaste-javascript-handbook.vercel.app/docs/lecture-3 # read examples
+https://namaste-javascript-handbook.vercel.app/docs/lecture-3 # examples
 
 # 4-Functions & Variable Environment -------------------------------------------
 Functions: the heart of JS and behave differently from other languages

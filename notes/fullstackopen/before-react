@@ -32,6 +32,7 @@ Hooks: Used to manage state and lifecycle within a React component
 - use arrow function in useState to prevent re-executing complex initial values on re-renders
 
 - Effect - useEffect
+why this is bad ?
 
 # Rendering:
 # List rendering with .map() (and why key prop matters)
@@ -122,9 +123,7 @@ Conditional statements:
 
 # Web Storage APIs - ways to store data in the browser
 
-ES6 Features:
-- Convert objects to JSON string
-
+ES6-Features:
 # Modules - file that exports code
 # <script type="module" src="main.js"></script>
 # // Default exports: No {}, one per file

@@ -17,4 +17,4 @@ Inversion of Control: Giving control to someone else (which can be risky)
   This is called `inversion of control` because we are dependant on that function
   What if parent function stopped working, what if it was developed by another programmer or callback runs two times or never run at all
 
-Moral of the story never depend to anyone.
+- Moral of the story never depend to anyone.

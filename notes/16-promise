@@ -64,7 +64,7 @@ How it works:
 # - Promise guarantee, it will callback the attached function once it has the fulfilled data. And it will call it only once. Just once
 #
 # // Understanding Promises with `fetch`
-# const URL = 'https://api.github.com/users/sayanta29';
+# const URL = 'https://api.github.com/users/sayanta01';
 # const response = fetch(URL); // Returns a pending Promise immediately
 # console.log(response); // Promise {<Pending>}
 #
@@ -99,7 +99,7 @@ new Promise((resolve) => {
   .then(result => result * 2)
   .then(result => console.log(result));
 
-Common PitFall:
+Common Pitfall:
 - We forget to return promise in Promise Chaining
 - The idea is promise/data returned from one .then become data for next .then
 # createOrder(cart)

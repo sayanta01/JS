@@ -38,7 +38,7 @@ Static Method: Belongs to the class itself, not its objects. Called directly on 
 # }
 // ✅ Calling the static method on the class
 console.log(Company.headquarters());
-const employee = new Company("Sia", "Software Engineer");
+const employee = new Company("Si", "Software Engineer");
 // ❌ Trying to call static method on an instance
 console.log(employee.headquarters()); // TypeErr! Static methods belong to the class, not objects
 // ✅ Calling an instance method on an object

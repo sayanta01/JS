@@ -21,8 +21,7 @@ What does the compiler do to optimize code? # compiler optimization techniques
 https://v8.dev/blog
 # Interpreter: ignition
 # Compiler: turbo fan 
-# Garbage collector: orinoco
+Garbage collector: 
 - Mark & Sweep
-https://youtu.be/4qLf0FJMyf0?si=Xp1Q1IdlQBLI8NUo
+- Orinoco
 https://youtu.be/c32zXYAK7CI?si=aMvxUL6g2FfjH0O_
-- oilpan?

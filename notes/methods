@@ -1,19 +1,23 @@
 # https://playcode.io/javascript/methods
 https://doesitmutate.xyz/
-
 ![80/20](https://public-files.gumroad.com/img9k2mfcg89l3cs9qa0tjs1wvfp)
 
 Array Methods:
-// forEach - iterates over elements but does not return a new array (unlike map)
+forEach - iterates over elements but does not return a new array (unlike map)
 # const numbers = [1, 2, 3];
 # numbers.forEach((n) => {
 #   console.log(n);
 # });
 
-// push??
+JSON.stringify - Convertys a JS object to a JSON string
+JSON.parse - Convertys JSON string to a JSON object
+- Local storage only stores strings, not objects
+- Used for data exchange between server and web apps
+# const name = `["Spongebob", "Patrick", "Squidward", "Sandy"]`;
+# const jsonString = JSON.stringify(name);
+# console.log(jsonString);
 
-Other Methods:
-- JSON.stringify(), JSON.parse()
-- toString() # on numbers - Converts to different bases
-- toString() # on objects - Returns string representation
-- custom toString() # controls how an object is stringified
+Both:
+toString - Controls how value is stringified
+- Converts numbers to different bases
+- Returns object's string representation

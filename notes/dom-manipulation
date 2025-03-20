@@ -82,7 +82,7 @@ https://youtu.be/aVSf0b1jVKk?si=n2ynQYLnPjfFYlVZ
 #   e.stopPropagation();
 # }, false);
 
-Event Delegation handle multiple child events efficiently:
+Event Delegation handle multiple child events efficiently
 https://youtu.be/3KJI1WZGDrg?si=RUiB_nLPozfzGx8y
 
 Debouncing/throttling (lodash.debounce)

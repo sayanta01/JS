@@ -2,7 +2,6 @@
 # https://youtu.be/UHZcJyVXtLo?si=HG8M0c1IGrMLLDAE
 Extract values from Arrays and Objects!
 
-# 80/20
 Object Destructuring
 - Function Params (Cleaner arguments)
 - API Responses (Extract only needed data)

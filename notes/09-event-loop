@@ -55,7 +55,7 @@ Subsequent task: task that comes after the previous task
 Call Stack: DS that follows the Last-In, First-Out (LIFO) principle
 Event Queue: DS that follows First-In, First-Out (FIFO) principle
 
-# https://youtu.be/eiC58R16hb8?si=-tEJ7aXp1CKm1Ej4
+# https://www.lydiahallie.com/blog/event-loop
 microtask Queue - smaller tasks higher priority
 - promise-based APIs, async/await and queueMicrotask
 - MutationObserver: detects DOM tree changes and executes the callback

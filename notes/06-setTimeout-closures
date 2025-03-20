@@ -53,4 +53,4 @@ https://youtu.be/WPmAu26LZKo?si=Bvi0gHSPL8V_zD1d
 # counter.incrementCounter();
 # counter.decrementCounter();
 
-Modern browsers smartly collect garbage variables from closures
+- Modern browsers smartly collect garbage variables from closures
