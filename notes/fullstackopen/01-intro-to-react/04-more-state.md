@@ -92,6 +92,17 @@ Programming is hard, that is why I will use all the possible means to make it ea
 - When I ask for help in the course Discord channel or elsewhere I formulate my questions properly
 
 ![](https://fullstackopen.com/static/e6925d394dfcafd08329c96230a68841/5a190/kerningham.png)
+https://www.comp.nus.edu.sg/~damithch/pages/SE-quotes.htm
+https://egghead.io/courses/the-beginner-s-guide-to-react ...
+
+const App = () => {
+  // Function body (variable, state, logic)
+  return (
+    <>
+      {/* JSX content goes here */}
+    </>
+  );
+};
 
 # Vocab
 Comprised - consist of
@@ -99,3 +110,4 @@ Concatenate - join
 Throttling - limiting
 Baseline - reference
 Flawed - imperfection
+Anecdotes - short and interesting story
