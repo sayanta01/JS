@@ -5,7 +5,7 @@ Primitive values # Pass by value - Goes to Stack
 - creates a copy of the value; even though they have the same value, they occupy different places in memory
 - to change the value, it copies the value and changes the copy, not the original
 
-Non-primitive values # Object references - Goes to Heap
+Non-primitive values # Objects are passed by reference - Goes to Heap
 - instead of copying, it creates references to the same object in the memory
 - mutating the non-primitive value affects both variables since they reference the same object
 - ask youself: whether this value is primitive or non-primitive, whether it's an object or not

@@ -1,9 +1,8 @@
-# https://github.com/lydiahallie/javascript-questions
-# 5/day, 20-30 mins
+# 4/day, 20-min
+https://github.com/lydiahallie/javascript-questions
 
 4: Type Coercion, Type Conversion
 5: Bracket notation evaluates the expression inside [first]
-
 6: When you change one object, you change all of them
 7: == operator (Equality operator), it only checks whether it has the same value
    === operator (Strict equality operator), both value and type should be the same
@@ -12,4 +11,8 @@
 9: Duh!
 10: Everything besides primitive types are objects. A function is a special type of object
 
-11:
+11:?
+12: When using new, this refers to the new empty object we create
+    However, if you don't add new, this refers to the global object!
+13: Capturing - Target - Bubbling
+14:?

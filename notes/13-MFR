@@ -43,37 +43,38 @@ const output = array.reduce((accu, curr) => {
 }, 0);
 console.log(output); // 6
 
-# const array = [70, 50, 90, 80, 65, 95];
-# function sum(accu, curr) {
-#   // current represent the current value of array
-#   return accu + curr; // in each iteration, the current value is added to accumulator
-# }
-# const total = array.reduce(sum);
-# console.log(total);
+const array = [70, 50, 90, 80, 65, 95];
+function sum(accu, curr) {
+  console.log("hello", accu, curr)
+  // current represent the current value of array
+  return accu + curr; // in each iteration, the current value is added to accumulator
+}
+const total = array.reduce(sum);
+console.log(total);
 
-# // count/report how many unique people have unique ages, like: {29 : 2, 75 : 1, 50 : 1}
-# // use reduce, why? we want to reduce some information from the array, basically we want to get a single object as output
-# const users = [
-#   { firstName: "Alok", lastName: "Raj", age: 26 },
-#   { firstName: "Ashish", lastName: "Kumar", age: 75 },
-#   { firstName: "Ankit", lastName: "Roy", age: 50 },
-#   { firstName: "Pranav", lastName: "Mukherjee", age: 26 },
-# ];
-# // accumulator: holds the result as the reduce method processes each array element
-# // - starts as empty {} and gets updated on each iteration
-# // current element: each user object from the users array is processed one by one
-# // - { firstName: "Alok", lastName: "Raj", age: 26 },
-#
-# const report = users.reduce((accu, curr) => {
-#   // checks if the current age exists in the accumulator or not
-#   if (accu[curr.age]) {
-#     accu[curr.age] = ++accu[curr.age]; // increments the count of that age
-#   } else {
-#     accu[curr.age] = 1; // adds the age with count 1, if not already present
-#   }
-#   return accu; // returns the updated accumulator every time
-# }, {}); // initial value of accu is an empty object, which is the second argument of reduce
-# console.log(report);
+// count/report how many unique people have unique ages, like: {29 : 2, 75 : 1, 50 : 1}
+// use reduce, why? we want to reduce some information from the array, basically we want to get a single object as output
+const users = [
+  { firstName: "Alok", lastName: "Raj", age: 26 },
+  { firstName: "Ashish", lastName: "Kumar", age: 75 },
+  { firstName: "Ankit", lastName: "Roy", age: 50 },
+  { firstName: "Pranav", lastName: "Mukherjee", age: 26 },
+];
+// accumulator: holds the result as the reduce method processes each array element
+// - starts as empty {} and gets updated on each iteration
+// current element: each user object from the users array is processed one by one
+// - { firstName: "Alok", lastName: "Raj", age: 26 },
+
+const report = users.reduce((accu, curr) => {
+  // checks if the current age exists in the accumulator or not
+  if (accu[curr.age]) {
+    accu[curr.age] = ++accu[curr.age]; // increments the count of that age
+  } else {
+    accu[curr.age] = 1; // adds the age with count 1, if not already present
+  }
+  return accu; // returns the updated accumulator every time
+}, {}); // initial value of accu is an empty object, which is the second argument of reduce
+console.log(report);
 
 # // First name of all people whose age is less than 30
 # const users = [

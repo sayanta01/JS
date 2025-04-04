@@ -81,6 +81,8 @@ Passing Event Handlers to Child Components:
 Do Not Define Components Within Components
 - Never define components inside of other components
   The application still appears to work, but don't implement components like this!
+- The biggest problems are because React treats a component defined inside of another component as a new component in every render
+  This makes it impossible for React to optimize the component
 
 Web programmers oath:
 Programming is hard, that is why I will use all the possible means to make it easier

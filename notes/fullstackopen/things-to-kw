@@ -1,0 +1,38 @@
+#
+- JSX is just syntatic sugar for function calls and object construction
+
+https://react.dev/reference/react/memo
+- memo lets you skip re-rendering a component when its props are unchanged
+  lets you cache the result of a calculation between re-renders
+
+useRef: is like a sticky note on your desk
+- You jot something down and refer back to it anytime
+  It stays the same through updates and doesn’t cause re-render
+- Holds value that persists across renders (like a variable that doesn’t reset)
+  Does not trigger re-renders when the value changes
+  Provides direct access to DOM nodes
+
+useEffect: Do this after rendering is done
+Purpose: Manage side effects in React components (code that runs outside of rendering)
+By default, it runs after every component render, unless you control it with the dependency array
+- Fetching data from an API
+- Setting up timers (setTimeout, setInterval)
+- Manipulating the DOM directly
+- Subscribing to events (e.g., WebSocket, resize)
+- Logging, analytics
+https://react.dev/learn/you-might-not-need-an-effect # use-less 🤏
+
+# Pending ----------------------------------------------------------------------
+When do i need return in a function, and when not?
+
+Reconciliation: You only change the words you edited without rewriting the entire document (Efficient)
+- React compares the old UI with the new UI and updates only what's changed instead of re-rendering everything
+# Think of the Virtual DOM like a spot-the-difference game between two pictures (before and after)
+# React plays the game, finds the differences, and only redraws the changed parts
+Reconciliation - comparison - diffing
+- State as a Snapshot?
+
+# Terms
+Derived state - state that can be computed from other state or props
+Business logic?
+Web components?

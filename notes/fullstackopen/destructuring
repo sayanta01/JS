@@ -11,7 +11,7 @@ Array Destructuring
 - Swapping variables (Cleanest way to swap)
 
 Spread (...) - Merge & Clone
-- Unpack elements into individual values
+- Expand an array or string into individual elements or properties
 # const str = `hello`;
 # console.log([...str]);
 

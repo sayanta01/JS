@@ -1,21 +1,23 @@
 # Odin Project:
-# - You can also use relational selectors (firstElementChild or lastElementChild)
-#   So you can identify certain node based on its relationships to the nodes around it
-# DOM methods:
-# - When your HTML code is parsed by a web browser, it is converted to the DOM
-#   One of the primary differences is that these nodes are JavaScript objects that have many properties and methods attached to them
-#   These properties and methods are the primary tools we are going to use to manipulate our webpage
-# - Array vs NodeList??
-# Element creation:
-# - const div = document.createElement("div");
-# - This function does NOT put your new element into the DOM - it creates it in memory
-#   This is so that you can manipulate the element (by adding styles, classes, ids, text, etc) before placing it on the page
-# - The basic methods for finding, adding, removing, and altering DOM nodes
-# - Keep in mind that the JavaScript does not alter your HTML, but the DOM
-#   your HTML file will look the same, but the JavaScript changes what the browser renders
+- You can also use relational selectors (firstElementChild or lastElementChild)
+  So you can identify certain node based on its relationships to the nodes around it
+DOM methods:
+- When your HTML code is parsed by a web browser, it is converted to the DOM
+  One of the primary differences is that these nodes are JavaScript objects that have many properties and methods attached to them
+  These properties and methods are the primary tools we are going to use to manipulate our webpage
+- Array vs NodeList??
+Element creation:
+- const div = document.createElement("div");
+- This function does NOT put your new element into the DOM - it creates it in memory
+  This is so that you can manipulate the element (by adding styles, classes, ids, text, etc) before placing it on the page
+- The basic methods for finding, adding, removing, and altering DOM nodes
+- Keep in mind that the JavaScript does not alter your HTML, but the DOM
+  your HTML file will look the same, but the JavaScript changes what the browser renders
+
+# ------------------------------------------------------------------------------
 
 Things you can select and manipulate in the DOM
-- ID, Class, Element, Attribute
+- Element, ID, Class, Attribute
 
 querySelector("#id")
 - CSS selectors .class, div, [attr]

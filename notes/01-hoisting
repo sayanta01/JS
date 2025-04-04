@@ -22,5 +22,5 @@ https://namaste-javascript-handbook.vercel.app/docs/lecture-3 # examples
 # 4-Functions & Variable Environment -------------------------------------------
 Functions: the heart of JS and behave differently from other languages
 - function variables are only accessible within the function, unless explicitly returned or accessed outside
-# https://youtu.be/HlgG395PQWw?si=mTXOopwK6EfIc5W7
+# https://youtu.be/HlgG395PQWw?si=mTXOopwK6EfIc5W7 - Never install locally
 # https://youtu.be/nuML9SmdbJ4?si=tb9gOHSMWsv0-ZCQ

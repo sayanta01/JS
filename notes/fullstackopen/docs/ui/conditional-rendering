@@ -1,0 +1,62 @@
+#
+- Display different things depending on different conditions
+  You can conditionally render JSX using JavaScript syntax like if statements, &&, and ? : operators
+
+Conditionally returning JSX:
+# function Item({ name, isPacked }) {
+#   // Creating branching logic with JavaScript’s if and return statements
+#   if (isPacked) {
+#     return <li className="item">{name} ✅</li>;
+#   }
+#   return <li className="item">{name}</li>;
+# }
+
+Conditionally returning nothing with null:
+- When you won’t want to render anything at all
+# if (isPacked) {
+#   return null;
+# }
+# return <li className="item">{name}</li>;
+- Instead of returning null, decide in the parent whether to render the component at all
+
+Conditionally including JSX: Don't Repeat Yourself - "duplication is evil"
+
+Conditional (ternary) operator (? :) - {cond ? <A /> : <B />} means “if cond, render <A />, otherwise <B />
+# return (
+#   <li className="item">
+#     {isPacked ? name + ' ✅' : name}
+#   </li>
+# );
+
+Are these two examples fully equivalent? 
+- Yes, Both conditionally add the ✅ based on isPacked
+  JSX elements are just descriptions (blueprint) of the UI, not actual DOM nodes or objects with state
+  So React treats them the same way # Preserving and Resetting State?
+
+Logical AND operator (&&) - {cond && <A />} means “if cond, render <A />, otherwise nothing”
+- Render some JSX when the condition is true, or render nothing otherwise
+# return (
+#   <li className="item">
+#     {name} {isPacked && "✅" }
+#   </li>
+# )
+- Don’t put numbers on the left side of &&
+const messageCount = 0;
+🔴 messageCount && <p>New messages</p>
+🟢 messageCount > 0 && <p>New messages</p>
+
+Conditionally assigning JSX to a variable:
+- When the shortcuts get in the way of writing plain code, try using an if statement and a variable
+  You can reassign variables defined with `let`
+# function Item({ name, isPacked }) {
+#   let itemContent = name;
+#   if (isPacked) {
+#     itemContent = name + "✅";
+#   }
+#   return (
+#     <li className="item">
+#       {itemContent}
+#     </li>
+#   );
+# }
+- This style is the most verbose, but it’s also the most flexible

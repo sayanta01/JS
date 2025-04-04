@@ -17,6 +17,44 @@ JSON.parse - Convertys JSON string to a JSON object
 # const jsonString = JSON.stringify(name);
 # console.log(jsonString);
 
+# https://youtu.be/R8rmfD9Y5-c?si=5hOnH1vRqB3uiqSR
+const items = [
+  { name: "Bike", price: 100 },
+  { name: "TV", price: 200 },
+  { name: "Album", price: 10 },
+  { name: "Book", price: 5 },
+  { name: "Computer", price: 1000 },
+  { name: "Keyboard", price: 25 },
+];
+
+const total = items.reduce((accu, curr) => {
+  return accu + curr.price;
+}, 0);
+
+const filteredItems = items.filter((item) => {
+  return item.price <= 100;
+});
+
+const itemName = items.map((item) => {
+  return item.name;
+});
+
+const foundItem = items.find((item) => {
+  return item.name == "Book";
+});
+
+items.forEach((item) => {
+  console.log(item.name);
+});
+
+const hasInexpensiveItems = items.some((item) => {
+  return item.price <= 100;
+});
+
+const array = [1, 2, 3, 4, 5]
+const includesTwo = array.includes(2);
+console.log(includesTwo)
+
 Both:
 toString - Controls how value is stringified
 - Converts numbers to different bases

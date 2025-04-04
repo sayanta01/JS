@@ -1,0 +1,20 @@
+#
+- Hooks can only be called inside the body of a function component
+- Don’t call Hooks inside loops, conditions, or nested functions
+  Instead, always use Hooks at the top level of your React function, before any early returns
+
+✅ Call them at the top level in the body of a function-component / custom-Hook
+
+It’s not supported to call Hooks (functions starting with use) in any other cases, for example:
+🔴 Do not call Hooks inside conditions or loops # to fix, move it outside!
+🔴 Do not call Hooks in event handlers # to fix, move it outside!
+🔴 Do not call Hooks inside functions passed to useMemo, useReducer, or useEffect # to fix, move it outside!
+🔴 Do not call Hooks after a conditional return statement # to fix, move it before the return!
+🔴 Do not call Hooks in class components # to fix, write a function component instead of a class!
+
+# https://react.dev/learn/reusing-logic-with-custom-hooks
+- Custom Hooks may call other Hooks (that’s their whole purpose)
+  This works because custom Hooks are also supposed to only be called while a function component is rendering
+
+Mismatching Versions of React and React DOM
+`npm ls react-dom` `npm ls react-native` # check which version you’re using

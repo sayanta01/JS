@@ -1,15 +1,17 @@
-# https://youtu.be/KD4YzAFYOEc?si=Pp6r915dZbIjwmg5
-# https://attachments.convertkitcdnn2.com/2103648/be21f4cb-3d30-471b-bd94-66601e23ccc5/java-script-roadmap.pdf
+# https://products.thecodedose.com/javascript-mastery#curriculum
+https://kentcdodds.com/blog/javascript-to-know-for-react
+https://v3.tailwindcss.com/docs/guides/vite#react
+https://www.patterns.dev/react/
 
-Know:
-Reconciliation - You only change the words you edited without rewriting the entire document. (Efficient)
-- React compares the old UI with the new UI and updates only what's changed instead of re-rendering everything
+Beginner React Mistakes??
+
+# Terms
+React Query ??
+Coupled/Decoupled ??
+Why does React use useState instead of just regular variables?
 
 # Components - Life-cycle
 # Data usage - JSX - data flow
-
-# - How react works under the hood
-# Components, State, Rendering & Props
 
 State:
 - Manage Dynamic Data - Track changing values (e.g., form input, counters)
@@ -20,10 +22,8 @@ State:
 Props: - Arguments of function
 - Pass data from parent to child - Read-only (immutable)
 - Make components reusable, use the same component with different values
-- Keep components pure (no unnecessary state)
-- Keep components pure, avoid modifying state inside a component unnecessarily
-- Used for: text, styles, callbacks, API data
-- Prop drilling
+# - Keep components pure (no unnecessary state)
+# - Used for: text, styles, callbacks, API data
 
 Hooks let us use state and other features in function components, making React simpler and more powerful:
 How hooks really works?
@@ -31,16 +31,7 @@ Hooks: Used to manage state and lifecycle within a React component
 - useState returns the `initial` value and `function` to update it
 - use arrow function in useState to prevent re-executing complex initial values on re-renders
 
-- Effect - useEffect
-why this is bad ?
-
-# Rendering:
-# List rendering with .map() (and why key prop matters)
-
 Routings:
-
-To Know:
-When the state changes, React re-renders the component to reflect the new state
  
 HTML: <table> <form> <input>
 
@@ -140,7 +131,7 @@ ES6-Features:
 # greet();
 # sayBye();
 
-# Optional?.Chaining - const value = obj?.property;  
+# Optional?.Chaining - const value = obj?.property; - "Elvis Operator"
 # - stops at null or undefined, returns undefined instead of error
 
 # Nullish Coalescing Operator:

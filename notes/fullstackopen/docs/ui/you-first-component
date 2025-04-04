@@ -45,7 +45,6 @@ Nesting and organizing components:
 #   // ...
 # }
 - When a child component needs some data from a parent, pass it by props instead of nesting definitions
-
 ! Components all the way down
 
 # Vocab

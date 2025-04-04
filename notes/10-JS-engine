@@ -11,7 +11,7 @@ Compilation:
 - while interpreting, and compiler also works together to compile and optimize code during runtime # that's why it's called JIT
 Execution:
 - memory heap # place where all memory is stored
-- call stack # tracks the order of function execution
+- call stack # tracks the order of function execution - short-term memory, based on the Stack data structure
 
 What does the compiler do to optimize code? # compiler optimization techniques
 - inlining: replaces function calls with function code to save time

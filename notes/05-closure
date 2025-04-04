@@ -16,7 +16,7 @@ Closure = function  it's Lex Env - function bundled along with it's lexical s
 Advantages of Closure:
 Data hiding and Encapsulation
 Module Design Pattern
-Memoization
+Memoization - saving function results to avoid re-computing
 Curring - transforming
 setTimeouts and Asynchronous Programming
 

@@ -14,7 +14,7 @@ const users = [
   { firstName: "Pranav", lastName: "Mukherjee", age: 50 },
 ];
 
-// function chaining
+// Function chaining
 //const output = users
 //  .filter((user) => user.age < 30) // (user) == parameter of anonymous/arrow function
 //  .map((user) => user.firstName);

@@ -27,8 +27,6 @@ const App = () => {
   );
 };
 
-export default App;
-
 // -----------------------------------------------------------------------------
 
 // import List from "./List";
@@ -57,10 +55,13 @@ export default App;
 //
 //   return (
 //     <>
+//       <h1 className="text-3xl text-amber-400 font-bold underline">
+//         Hello world!
+//       </h1>
 //       {fruits.length > 0 ? <List items={fruits} category="Fruits" /> : null}
 //       {vegetables.length > 0 && ( <List items={vegetables} category="Vegetables" />)}
 //     </>
 //   );
 // }
-//
-// export default App;
+
+export default App;

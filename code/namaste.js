@@ -1,12 +1,3 @@
-// Ep-3
-getName();
-console.log(x);
-var x = 7;
-function getName() {
-  console.log("Namaste JS");
-}
-console.log(getName);
-
 // Ep-14
 // parameter == placeholder, when you call the function, you replace it with actual values (arguments)
 function printStr(str, cb) {
@@ -50,7 +41,7 @@ function x() {
 x();
 
 // Ep-19
-// Find max inside array: Non functional programming way:
+// Find max inside array: Non functional programming way
 const array = [5, 1, 3, 2, 6];
 function findMax(array) {
   let max = 0;
@@ -64,16 +55,16 @@ function findMax(array) {
 console.log(findMax(array));
 
 // Misc
-//setTimeout(function() {
-//  console.log("timer");
-//}, 3000);
-//
-//function x(y) {
-//  // x runs first, then calls the y function passed as a parameter
-//  console.log("x");
-//  y();
-//}
-//
-//x(function y() {
-//  console.log("y");
-//});
+setTimeout(function() {
+ console.log("timer");
+}, 3000);
+
+function x(y) {
+ // x runs first, then calls the y function passed as a parameter
+ console.log("x");
+ y();
+}
+
+x(function y() {
+ console.log("y");
+});
