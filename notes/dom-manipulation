@@ -84,8 +84,17 @@ https://youtu.be/aVSf0b1jVKk?si=n2ynQYLnPjfFYlVZ
 #   e.stopPropagation();
 # }, false);
 
-Event Delegation handle multiple child events efficiently
+Event Delegation way to handle events more efficiently in JavaScript
 https://youtu.be/3KJI1WZGDrg?si=RUiB_nLPozfzGx8y
 
-Debouncing/throttling (lodash.debounce)
+Debouncing: - lodash.debounce
 https://youtu.be/tJhA0DrH5co?si=AV5BekUScA3UYEzu
+What - Ignore operations that happen too close together during a specific interval, and combine them into a single invocation"
+Why  - To avoid too many calls (e.g., typing, resizing, scrolling)
+
+Debouncing vs Throttling:
+https://youtu.be/tJhA0DrH5co?si=Eb6pLcHv0X4caI0N
+- Limiting the rate of function calls
+
+Throttling: originally meant slowing down the rate of fluid flow using an obstruction
+https://youtu.be/81NGEXAaa3Y?si=WcEVt8xfuhcs9CU_

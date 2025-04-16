@@ -1,0 +1,16 @@
+# https://react.dev/learn/your-first-component#nesting-and-organizing-components
+Input lose focus on typing - Never define a component inside another component
+
+# https://react.dev/learn/queueing-a-series-of-state-updates
+State doesn’t update immediately - setState batches updates — order matters
+
+# https://react.dev/reference/react/useEffect#my-effect-keeps-re-running-in-an-infinite-cycle
+Infinite re-renders - Misused useEffect
+
+# https://react.dev/reference/react/useState#ive-updated-the-state-but-the-screen-doesnt-update
+State mutation not triggering re-render - Immutability needed
+
+# Memory leaks on async updates - need cleanup
+# Hydration - SSR & client mismatch
+
+# Async Effects Race Conditions, Context re-renders, Stale closures??

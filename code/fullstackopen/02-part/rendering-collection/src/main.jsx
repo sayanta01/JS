@@ -1,6 +1,5 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css"
 import App from "./App.jsx";
 
 // const notes = [
@@ -23,6 +22,11 @@ import App from "./App.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
+    {/* <ul> */}
+    {/*   {notes.map((note) => { */}
+    {/*     <li key={note.id}>{note.name}</li>; */}
+    {/*   })} */}
+    {/* </ul> */}
     <App />
   </StrictMode>,
 );

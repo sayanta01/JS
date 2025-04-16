@@ -26,7 +26,7 @@ Handling arrays:
 - join() returns a new string by joining array elements with a specified separator
 
 Update of the state is asynchronous:
-💡 State update in React happens asynchronously, i.e. not immediately but "at some point" before the component is rendered again
+- State update in React happens asynchronously, i.e. not immediately but "at some point" before the component is rendered again 💡
 
 Conditional rendering:
 - React elements depending on the state of the application. This is called conditional rendering
@@ -63,7 +63,7 @@ Event Handling Revisited:
 
 `<button onClick={setValue(0)}>button</button>` 🔁 - to fix, set the function to be called on click
 - When the component is rendered the function setValue(0) gets executed which in turn causes the component to be re-rendered
-  Re-rendering in turn calls setValue(0) again, resulting in an infinite recursion
+  Re-rendering in turn calls setValue(0) again, resulting in an infinite recursion 💡
 
 Executing a particular function call when the button is clicked can be accomplished like this:
 `<button onClick={() => console.log("clicked the button")}>btn</button>`
@@ -107,9 +107,9 @@ const App = () => {
 };
 
 # Vocab
-Comprised - consist of
+Comprised - Consist of
 Concatenate - join
-Throttling - limiting
-Baseline - reference
-Flawed - imperfection
-Anecdotes - short and interesting story
+Throttling - Limiting
+Baseline - Reference
+Flawed - Imperfection
+Anecdotes - Short and interesting story

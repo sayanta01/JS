@@ -7,11 +7,25 @@ Beginner React Mistakes??
 
 # Terms
 React Query ??
+Thunks for Redux
 Coupled/Decoupled ??
 Why does React use useState instead of just regular variables?
 
-# Components - Life-cycle
-# Data usage - JSX - data flow
+# Data usage, JSX, Data flow 
+# function App() {
+#   const [count, setCount] = useState(0); // State
+#
+#   return (
+#     <div>
+#       <h1>Count: {count}</h1>            // JSX with state
+#       <Button handleClick={() => setCount(count + 1)} />
+#     </div>
+#   );
+# }
+#
+# function Button({ handleClick }) {       // Props
+#   return <button onClick={handleClick}>Click me</button>;
+# }
 
 State:
 - Manage Dynamic Data - Track changing values (e.g., form input, counters)

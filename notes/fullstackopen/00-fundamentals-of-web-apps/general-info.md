@@ -67,10 +67,6 @@ https://auth0.com/blog/how-to-manage-javascript-fatigue/
 https://youtu.be/-A3n5N8XwpQ?si=ldab6pFo878oF3th
 - Always keep it mind that knowledge of Vanilla JavaScript will help you to become a much better developer.
 
-# Terms:
-Pagination
-Sequence Diagram
-
 # Vocab:
 Amid - surrounded by
 Depict - represent

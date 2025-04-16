@@ -21,9 +21,12 @@ By default, it runs after every component render, unless you control it with the
 - Subscribing to events (e.g., WebSocket, resize)
 - Logging, analytics
 https://react.dev/learn/you-might-not-need-an-effect # use-less 🤏
+Component Lifecycle
+
 
 # Pending ----------------------------------------------------------------------
 When do i need return in a function, and when not?
+Server Components?
 
 Reconciliation: You only change the words you edited without rewriting the entire document (Efficient)
 - React compares the old UI with the new UI and updates only what's changed instead of re-rendering everything
@@ -34,5 +37,4 @@ Reconciliation - comparison - diffing
 
 # Terms
 Derived state - state that can be computed from other state or props
-Business logic?
-Web components?
+Business logic - the rules that drive how your app functions

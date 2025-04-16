@@ -33,6 +33,7 @@ Controlled component: 💡 Where the form value is handled by React state
 - concat() method immutable
 `https://react.dev/learn/updating-objects-in-state#why-is-mutating-state-not-recommended-in-react` - Never mutate state directly
 
+
 Filtering Displayed Elements:
 - New functionality to application that allows us to only view the important notes
 - If the value of showAll is false
@@ -40,16 +41,16 @@ Filtering Displayed Elements:
   Filtering is done with the help of the array filter() method
 
 Controlled <input>
-- value prop (bound to state)
-- onChange handler (updates state on input)
-- state controls input value, not the DOM
+- value={} - The input’s value comes from React state <!-- value prop (bound to state) -->
+- onChange={} - Every time you type, it updates the state
+- State controls input value, not the DOM
 
 NB: When you are working on new functionality, it's often useful to "hardcode" some dummy data into your application
 Search Feature ℹ️ https://youtu.be/E1cklb4aeXA?si=UEgYTvzOEHs_wB3j
 Do Not Define Component in Another Component
 
 # Vocab
-Correspond - match
-Concat - combine
-Idiomatic - natural
-Derived ❌- obtain
+Correspond - Match
+Concat - Combine
+Idiomatic - Natural
+Derived ❌- Obtain

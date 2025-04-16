@@ -2,7 +2,15 @@
 https://doesitmutate.xyz/
 ![80/20](https://public-files.gumroad.com/img9k2mfcg89l3cs9qa0tjs1wvfp)
 
-Array Methods:
+# Array Methods:
+Mutating Array Method:
+- splice(), shift(), unshift(), sort()??
+
+Non-Mutating:
+- flat(), split()??
+- slice(start, end) – returns a shallow copy of part of an array or string into a new array object
+  start is inclusive, end is exclusive
+
 forEach - iterates over elements but does not return a new array (unlike map)
 # const numbers = [1, 2, 3];
 # numbers.forEach((n) => {
@@ -55,7 +63,15 @@ const array = [1, 2, 3, 4, 5]
 const includesTwo = array.includes(2);
 console.log(includesTwo)
 
-Both:
+
+# Object Methods:
+- freeze() - Freezing an object is the highest integrity level that JavaScript provides
+- seal() - New properties cannot be added, existing properties cannot be removed
+  Values of existing properties can still be changed as long as they are writable
+- assign(target, source) copies properties from source(s) to target??
+
+
+# Both:
 toString - Controls how value is stringified
 - Converts numbers to different bases
 - Returns object's string representation

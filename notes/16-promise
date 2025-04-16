@@ -2,7 +2,7 @@
 # https://www.promisejs.org/
 
 Promises: used to handle async operations # new Promise((resolve, reject) => { Async code })
-- Promise: object represents the eventual completion or failure of async operation
+- Promise: object representing the eventual completion or failure of an asynchronous operation
 - A placeholder (container) for a future value until an async operation completes
 - Empty object until an async operation completes
 - Automatically fills with data once the operation finishes

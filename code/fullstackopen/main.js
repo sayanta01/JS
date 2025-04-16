@@ -1,6 +1,6 @@
 // -----------------------------------------------------------------------------
 
-// const name = `["Spongebob", "Patrick", "Squidward", "Sandy"]`;
+// const people = ["Spongebob", "Patrick", "Squidward", "Sandy"];
 // const person = {
 //   name: "Songebob",
 //   age: 30,

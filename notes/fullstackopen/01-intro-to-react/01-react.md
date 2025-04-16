@@ -21,7 +21,7 @@ Do not render objects:
 Templating languages
 
 # Vocab
-Nevertheless - still
+Nevertheless - Still
 Defining - Creating
 Logs - Prints
-Adjacent - next to each other
+Adjacent - Next to each other
