@@ -3,10 +3,9 @@ import { useState, useEffect } from "react";
 import Note from "./components/Note";
 import Notification from "./components/Notification";
 import noteService from "./services/notes";
-import "./index.css";
 
 function App() {
-  const [notes, setNotes] = useState(null);
+  const [notes, setNotes] = useState([]);
   const [newNote, setNewNote] = useState("");
   const [showAll, setShowAll] = useState(true);
   const [message, setMessage] = useState({

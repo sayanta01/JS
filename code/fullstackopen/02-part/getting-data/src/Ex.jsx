@@ -1,13 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-// pass - sk$$@Ki48
-// Your API Key: b6475782325901234aed5bd1
-
 const Ex = () => {
   const [value, setValue] = useState("");
   const [rates, setRates] = useState({});
-  const [currency, setCurrency] = useState(null);
+  // const [currency, setCurrency] = useState(null);
 
   // useEffect(() => {
   //   console.log("effect run, currency is now", currency);
@@ -27,6 +24,7 @@ const Ex = () => {
   //   setCurrency(value);
   // };
 
+  // Without useEffect, making the API requests directly in the form submit handler function: 💡
   const onSearch = (event) => {
     event.preventDefault();
     axios.get(`https://open.er-api.com/v6/latest/${value}`).then((res) => {
@@ -44,7 +42,7 @@ const Ex = () => {
         currency: <input value={value} onChange={handleChange} />
         <button type="submit">exchange rate</button>
       </form>
-      {/* <h1>{rates}</h1> */}
+
       <pre>{JSON.stringify(rates, null, 2)}</pre>
     </div>
   );

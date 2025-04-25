@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import Pb from "./Pb.jsx";
 import Ex from "./Ex.jsx";
+import Ct from "./Ct.jsx";
 import "./index.css";
 
 // const promise = axios.get("http://localhost:3001/notes");
@@ -29,6 +30,7 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     {/* <App /> */}
     {/* <Pb /> */}
-    <Ex />
+    {/* <Ex /> */}
+    <Ct />
   </StrictMode>,
 );

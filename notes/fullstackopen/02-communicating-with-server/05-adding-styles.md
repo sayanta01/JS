@@ -34,7 +34,3 @@ Couple of important remarks:
   The principle is that the effect is always executed after the first render of the component
   and when the value of the second parameter changes
 - Use conditional logic to prevent unnecessary API calls
-
-
-# Terms
-Masked - hiding the real problem

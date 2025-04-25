@@ -10,7 +10,7 @@ const Phonebook = () => {
     { name: "Dan Abramov", number: "12-43-234345", id: 3 },
     { name: "Mary Poppendieck", number: "39-23-6423122", id: 4 },
   ]);
-  const [newName, setNewName] = useState(""); // newName state is for controlling the form input element 💡
+  const [newName, setNewName] = useState(""); // controlling the form input element 💡
   const [newNumber, setNewNumber] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -21,6 +21,7 @@ const Phonebook = () => {
     //   alert(`${newName} is already added to phonebook`);
     //   return; // stop execution if name exists
     // }
+
     const nameObject = {
       name: newName,
       number: newNumber,

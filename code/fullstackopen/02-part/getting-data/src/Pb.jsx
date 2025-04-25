@@ -40,11 +40,12 @@ function Pb() {
       if (confirmUpdate) {
         const updatedPerson = { ...existingPerson, number: newNumber };
 
-        personService
+        personService // 💡
           .update(existingPerson.id, updatedPerson)
           .then((returnedPerson) => {
             setPersons((prev) =>
               prev.map((person) =>
+                // returns true if the value or type is different, otherwise false
                 person.id !== existingPerson.id ? person : returnedPerson,
               ),
             );
@@ -57,6 +58,7 @@ function Pb() {
               type: "error",
             });
             setTimeout(() => setMessage(null), 4000);
+            // keep only the persons whose id is not equal to updatedPerson.id
             setPersons(persons.filter((p) => p.id !== updatedPerson.id));
           });
       }
@@ -78,14 +80,14 @@ function Pb() {
   // const handleNameChange = (event) => setNewName(event.target.value);
   // const handleNumberChange = (e) => setNewNumber(e.target.value);
 
+  // axios.delete(`http://localhost:3001/persons/${id}`).then(() => {
+  //   setPersons(persons.filter((person) => person.id !== id));
+  // });
   const handleDelete = (id) => {
-    // axios.delete(`http://localhost:3001/persons/${id}`).then(() => {
-    //   setPersons(persons.filter((person) => person.id !== id));
-    // });
-
     const personToDel = persons.find((p) => p.id === id);
     const confirmDel = confirm(`Delete ${personToDel.name} contact`);
 
+    // if confirmDel is false
     if (!confirmDel) {
       console.log("Cancelled");
       return;

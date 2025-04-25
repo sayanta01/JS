@@ -1,4 +1,4 @@
-function List({ category = "Category", items = [] }) { // default props
+function List({ items = [], category = "Category" }) { // default props
   const listItems = items.map((item) => (
     <li key={item.id}>
       {item.name}: &nbsp; {item.calories}

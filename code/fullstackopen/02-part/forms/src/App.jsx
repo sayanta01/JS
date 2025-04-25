@@ -3,8 +3,7 @@ import Note from "./components/Note";
 
 const App = ({ notes }) => {
   const [note, setNotes] = useState(notes);
-  // App component's newNote state reflects the current value of the input
-  const [newNote, setNewNote] = useState("a new note...");
+  const [newNote, setNewNote] = useState("a new note..."); // this state reflects the current value of the input
   const [showAll, setShowAll] = useState(true);
 
   const addNote = (event) => {
@@ -20,7 +19,6 @@ const App = ({ notes }) => {
     setNewNote("");
   };
 
-  // The event handler is called every time a change occurs in the input element
   const handleNoteChange = (event) => {
     // console.log(event.target.value);
     setNewNote(event.target.value); // refers to the input value of that element
