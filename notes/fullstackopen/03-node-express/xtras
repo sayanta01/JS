@@ -1,0 +1,14 @@
+🧰 - Mongoose vs MongoDB (the one you asked about)
+MongoDB = database
+Mongoose = tool to work with MongoDB in Node.js
+- Why do we even need of mangoose
+
+📄 - Session vs Token (JWT)
+
+📡 - WebSockets vs HTTP
+HTTP: One-way (client asks, server responds)
+WebSockets: Two-way, persistent connection (like chat apps)
+
+🔐 6. Authentication vs Authorization
+Authentication: Who are you? (login)
+Authorization: What are you allowed to do?
