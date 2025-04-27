@@ -7,16 +7,18 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon persons.json",
-    "dev": "node --watch persons.js",
+    "start": "nodemon persons.js",
+    "dev": "node --watch index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "co": "^4.6.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "node-fetch": "^3.3.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.9"
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.10"
   }
 }

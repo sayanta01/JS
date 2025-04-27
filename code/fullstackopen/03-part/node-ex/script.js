@@ -1,19 +1,17 @@
 const express = require("express");
+const morgan = require("morgan");
 const app = express();
+
+app.use(morgan("tiny"));
 
 let notes = [
   {
     id: "1",
-    content: "HTML is easy",
-    important: true,
-  },
-  {
-    id: "2",
-    content: "Browser can execute only JavaScript",
+    content: "HTML is easy & Browser can execute only JavaScript",
     important: false,
   },
   {
-    id: "3",
+    id: "2",
     content: "GET and POST are the most important methods of HTTP protocol",
     important: true,
   },
@@ -69,9 +67,7 @@ app.post("/api/notes", (req, res) => {
 
   notes = notes.concat(note);
   res.json(note);
-
   // console.log(note);
-  // res.send("<h1>Hello World!</h1>");
 });
 
 const port = 3001;

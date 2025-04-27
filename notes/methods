@@ -4,7 +4,7 @@ https://doesitmutate.xyz/
 
 # Array Methods:
 Mutating Array Method:
-- splice(), shift(), unshift()??
+- splice(), shift(), unshift(), 
 sort()
 - Converts elements into strings then compares Unicode values default sort order is ascending
 - Uses compareFn() for numbers or custom sorting

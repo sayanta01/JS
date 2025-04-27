@@ -1,5 +1,15 @@
 const express = require("express");
+const morgan = require("morgan");
 const app = express();
+
+morgan.token("host-body", function (req, res) {
+  return `Host: ${req.hostname}, Body: ${JSON.stringify(req.body)}`;
+});
+app.use(
+  morgan(
+    `🚪:method :url 💬:status 📏:res[content-length] ⏳:response-time ms 🌍:host-body`,
+  ),
+);
 
 let persons = [
   {
@@ -14,9 +24,8 @@ let persons = [
   },
 ];
 
-app.use(express.json());
-
 // json-parser is listed before requestLogger, because otherwise request.body will not be initialized when the logger is executed!
+app.use(express.json());
 
 const requestLogger = (request, response, next) => {
   console.log("Method:", request.method);
@@ -57,20 +66,17 @@ app.delete("/api/persons/:id", (req, res) => {
 app.put("/api/persons/:id", (req, res) => {
   const id = req.params.id;
   const person = persons.find((person) => person.id === id);
-
   if (!person) {
     return res.status(404).json({ error: "Person not found" });
   }
 
   const { name, number } = req.body;
-
   if (!name || !number) {
     return res.status(400).json({ error: "Name and number are required" });
   }
 
   person.name = name;
   person.number = number;
-
   res.json(person);
 });
 

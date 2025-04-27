@@ -149,18 +149,16 @@ Middleware: functions that can be used for handling request and response objects
 - Middleware placed
   Before routes - Parsing, logging, authentication
   After routes  - Error handling, 404 (Not Found)
-`const unknownEndpoint = (request, response) => {
-  response.status(404).send({ error: 'unknown endpoint' })
-}
-app.use(unknownEndpoint)`
+  `const unknownEndpoint = (request, response) => {
+    response.status(404).send({ error: 'unknown endpoint' })
+  }
+  app.use(unknownEndpoint)`
 
 
 # Terms
 <!-- console.log(Math.floor(Math.random() * (max  min  1))  min) -->
 Request body - JSON data sent to the server using HTTP methods like POST/PUT
-Interface  - Set of rules that dictate how different parts of system can interact
-
-Generators - functions that can pause and resume execution
+Interface - Set of rules that dictate how different parts of system can interact
 
 # Vocab
 Cumbersome - Large or heavy and therefore difficult to carry or use

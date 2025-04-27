@@ -1,7 +1,36 @@
 # 10
 Function that "remembers" variables from its lexical scope
 Closure = function  it's Lex Env - function bundled along with it's lexical scope
-- allows function to access variables from its parent scope, even after the parent function has finished running
+- Allows function to access variables from its parent scope, even after the parent function has finished running
+
+# function outer() {
+#   const message = "Hello from outer!";
+#
+#   function inner() {
+#     console.log(message);
+#   }
+#
+#   return inner;
+# }
+#
+# const myFunc = outer();  // Step 1
+# myFunc();                // Step 2
+
+You call outer()
+ ↓
+outer() runs:
+  - Creates variable: message = "Hello from outer!"
+  - Defines function: inner()
+  - RETURNS inner() (but doesn't call it yet)
+ ↓
+outer() is DONE (execution finishes)
+ ↓
+BUT WAIT: The returned inner() still REMEMBERS "message"!
+ ↓
+You call myFunc() (which is inner())
+ ↓
+inner() runs:
+  - It PRINTS "Hello from outer!" because it remembers message!
 
 # function x() {
 #   var a = 7;

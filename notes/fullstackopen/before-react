@@ -44,8 +44,6 @@ How hooks really works?
 Hooks: Used to manage state and lifecycle within a React component
 - useState returns the `initial` value and `function` to update it
 - use arrow function in useState to prevent re-executing complex initial values on re-renders
-
-Routings:
  
 HTML: <table> <form> <input>
 
@@ -102,21 +100,18 @@ Conditional statements:
 #   console.log("Playing:", song);
 # }
 
-# Purpose of Generators:
-# - Run code, pause, resume, return values
-# Why Use Generators?
-# - Pause & resume execution
+# Generators:
+# - Run, pause, resume, return values
 # - Save memory, run only when needed
 # - Full control over execution
 # - Great for streaming, iterators, async tasks
 # - Streaming: processing data piece by piece instead of loading everything at once
-# - Yield: produce or provide 
+# - Yield: provide/pass
 # function* watchEp() {
-#   yield "Ep-1"; // Pause here
-#   yield "Ep-2"; // Pause here
+#   const data1 = yield fetch("https://api.example.com/data1"); // pause until data fetched
+#   const data2 = yield fetch("https://api.example.com/data2");
 # }
 # const ep = watchEp();
-# console.log(ep.next());
 # console.log(ep.next());
 # console.log(ep.next());
 
@@ -159,3 +154,8 @@ ES6-Features:
 #   numbers like 2 or strings like 'The Kraken' —written in code are also
 #   expressions? Yes! Such expressions are called literals—because we literally
 #   write down the values that they result in
+
+# Regex - . ^ $ * - ? () [] {} \ |
+- Validate Text
+- Search through Text
+https://cheatography.com/davechild/cheat-sheets/regular-expressions/

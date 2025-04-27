@@ -1,83 +1,44 @@
-#
-- Node.js is designed for I/O-intensive tasks, not CPU-intensive ones ??
-  you can't do cpu intensive task in event loop, because when you block event loop, your all code will be stuck/slow
-- Rest APi is Imp?? what is rest full form means ?
-  Stateful vs non state - is node js is stateful or not 
-- REST API is REpresentational State Transfer Application Programming Interface.
-what does this means
-- list all rest methods
+# https://youtu.be/RkD6S-3AGWQ?si=86JkgKwg6pQ2P89a - 27:00
+- Node.js is designed for I/O-intensive tasks, not CPU-intensive ones
+  can't do CPU-intensive task, because when you block event loop, all code will be stuck/slow
+
+All lanuage have these 3 things:
+- sequence  - the logical sequence of event
+- selection - the conditional operator you can use to divert the code flow
+- iteration - how many types of loops & methods for working with array
+
+What are the 20% of things done in the backend that are used 80% of the time?
+- Confusing for...in and for...of Loops
 
 
-# JS
-generators and yield??
-- All lanuage has these 3 things
-- sequence - logical sequence of event
-- selection - what conditional operator you can use to divert the code flow
-- iteration - how many types of loops, array key value pairs
+https://endler.dev/2025/best-programmers/#know-your-tools-really-well
+- its history: who created it? Why? To solve which problem?
+- its present: who maintains it? Where do they work? On what?
+- its limitations: when is the tool not a good fit? When does it break?
+- its ecosystem: what libraries exist? Who uses it? What plugins?
 
-variable
-- scope
-- context
-- closure
-
-13:00 - imp
-27:00 - imp
-
-understand pitfalls of js - what you should avoid doing
-event driven model ??
-
-
-# Node
-what are the top things to learn of js to learn node js
-what are the top things that used in node js of javascript
-
-what are the 20% of things that done in backend wha tis used in 80% of the time
-my friend says it's crud
-
-how node is diff that js?
-
-where node js is suitable, and where not ?
-
-list all the multithreading concepts?
-locs?
-Resources sharing?
-
-To know a tool well, you have to know:
-
-its history: who created it? Why? To solve which problem?
-its present: who maintains it? Where do they work? On what?
-its limitations: when is the tool not a good fit? When does it break?
-its ecosystem: what libraries exist? Who uses it? What plugins?
-
-rest standard
-
-
-- lodash library is utiliy library
-list types of library ?
-- what is jwt ?
-
+- lodash library is utility library
+  list types of libraries ?
 
 Resources:
-https://www.youtube.com/watch?v=ENrzD9HAZK4&t=96s
-https://www.youtube.com/watch?v=ooBxSg1Cl1w
-https://www.youtube.com/watch?v=CCRTu3AQQeY
 https://nodeschool.io/
-https://nodejs.org/en/learn/getting-started/introduction-to-nodejs
-https://www.youtube.com/watch?v=DwQ7psiU23I
-https://youtu.be/Vej327jN8WI?si=PoU8vhpHSAP9UuXR
-# https://www.youtube.com/watch?v=H9M02of22z4
-https://youtu.be/RkD6S-3AGWQ?si=86JkgKwg6pQ2P89a - interview last part is imp
+https://dhanushnehru.github.io/Ultimate-NodeJs-Resources/
+
+Namespace: folder for names that groups variables, functions, classes together to avoid name conflicts
+EventEmitter === EventListener - Node.js equivalent features like the Browser
+- Just event & callback 💡
+- Almost everything important is event-based
+`const { EventEmitter } = require("events"); // EventEmitter is Class
+const emitter = new EventEmitter();
+// listen to the event
+emitter.on("lunch", () => {
+  console.log("yum"); // callback
+});
+// trigger the event
+emitter.emit("lunch");`
 
 
-
-
-
-
-
-
-
-
-# Docs
+# Docs -------------------------------------------------------------------------
 - A Node.js app runs in a single process, without creating a new thread for every request
   Node.js provides a set of asynchronous I/O primitives in its standard library that prevent JavaScript code from blocking
   https://nodejs.org/api/ - standard library
@@ -119,26 +80,16 @@ NPM:
 --no-save installs but does not add the entry to the package.json file dependencies
 --save-optional installs and adds the entry to the package.json file optionalDependencies
 --no-optional will prevent optional dependencies from being installed
-
-- The package.json file supports a format for specifying command line tasks that can be run by using
-- Instead of typing those long commands, which are easy to forget or mistype, you can run
-- npm run <task-name>
-  "scripts": {
-    "start-dev": "node lib/server-development",
-    "start": "node lib/server-production"
-    "server": "json-server -p 3001 db.json"
-  }
-
+- The package.json file supports a format for specifying command line tasks - npm run <task-name>
 
 ECMAScript 2015 (ES6) and beyond: https://node.green/
 
-
 There is no difference between development and production in Node.js
-- However, a few libraries in the npm registry recognize using the NODE_ENV variable and default it to a development setting
-  Always run your Node.js with the NODE_ENV=production set
+- Always run your Node.js with the NODE_ENV=production set
 - A popular way of configuring your application is by using the twelve factor methodology
   https://12factor.net/
 
 
 # Vocab
-Quest - search for something
+Context - Environment
+Quest - Search for something
