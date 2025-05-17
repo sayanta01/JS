@@ -78,16 +78,19 @@ app.get("/api/notes", (request, response) => {
   });
 });
 
-app.get("/api/notes/:id", (req, res) => {
-  const id = req.params.id; // 💡
-  const note = notes.find((note) => note.id === id);
-  // console.log(req.params); // request object that contains route parameters
-
-  if (note) {
-    res.json(note);
-  } else {
-    res.status(404).end("4O4"); // ends the response with no body
-  }
+app.get("/api/notes/:id", (request, response) => {
+  Note.findById(request.params.id).then((note) => {
+    response.json(note);
+  });
+  // const id = req.params.id; // 💡
+  // const note = notes.find((note) => note.id === id);
+  // // console.log(req.params); // request object that contains route parameters
+  //
+  // if (note) {
+  //   res.json(note);
+  // } else {
+  //   res.status(404).end("4O4"); // ends the response with no body
+  // }
 });
 
 app.delete("/api/notes/:id", (req, res) => {

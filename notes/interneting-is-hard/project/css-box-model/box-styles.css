@@ -1,0 +1,46 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1,
+p {
+  background-color: #dde0e3;
+  /* Vertical Horizontal */
+  padding: 20px 10px;
+  margin-top: 25px;
+  margin-bottom: 50px;
+}
+
+em,
+strong {
+  background-color: #b2d6ff;
+  display: inline;
+}
+
+h1 {
+  padding: 50px;
+  border-bottom: 1px solid #000000;
+}
+
+div {
+  color: #fff;
+  background-color: #5995d9;
+  font-weight: bold;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 5px;
+
+  width: 200px;
+  box-sizing: border-box;
+  /* Vertical  Horizontal */
+  margin: 20px auto;
+}
+
+body {
+  text-align: center;
+}

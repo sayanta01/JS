@@ -71,27 +71,26 @@ Why does React need keys?
   Instead, use a stable ID based on the data
 - Note that your components won’t receive key as a prop. It’s only used as a hint by React itself
   If your component needs an ID, you have to pass it as a separate prop: <Profile key={id} userId={id} />
-
-- When you extract a component, don’t forget to leave the key outside the JSX?
+- When you extract a component, don’t forget to leave the key outside the JSX
 
 # Terms
-Interfaces - way for different parts of a system to communicate with each other
+Interface - way for different parts of a system to communicate with each other
 
-
-  return (
-    <>
-      {courses.map((course) => (
-        <div key={course.id}>
-          <h2>{course.name}</h2>
-          <ul>
-            {course.parts.map((part) => (
-              <li key={part.id}>
-                {part.name}: {part.exercises}
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
-    </>
-  );
-
+```js
+return (
+  <>
+    {courses.map((course) => (
+      <div key={course.id}>
+        <h2>{course.name}</h2>
+        <ul>
+          {course.parts.map((part) => (
+            <li key={part.id}>
+              {part.name}: {part.exercises}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </>
+);
+```

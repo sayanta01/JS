@@ -1,0 +1,30 @@
+#
+Variables
+- var()
+Functions
+- calc() clamp()
+Animations 
+- transition
+- bézier curve
+
+Architecture & Methodology
+- OOCSS (Object-Oriented CSS)
+- SMACSS (Scalable and Modular Architecture for CSS)
+Styling Best Practices
+- modular CSS
+- avoiding global styles
+Performance Optimization
+- critical CSS
+- minify
+
+- list classic CSS quirks/problems still relevant in modern web development
+- CSS topics i should learn to avoid relying on frameworks
+
+# Resources
+https://www.joshwcomeau.com/css/custom-css-reset/
+https://css-tricks.com/snippets/
+https://rehansaeed.com/css-general-rules-of-thumb
+https://youtu.be/vmJ9j6BdX_g?si=kksZx0s3l0i2C-aU
+
+Tailwind CSS: utility-first framework
+https://necolas.github.io/normalize.css/

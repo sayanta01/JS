@@ -1,4 +1,4 @@
-#
+# Why
 - The idea will be to save the notes to the server, saving them to the json-server
 - The React code fetches the notes from the server and renders them to the screen
 - Whenever a new note is added to the application

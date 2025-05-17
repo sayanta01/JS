@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="115px"
+   height="34px"
+   viewBox="0 0 115 34"
+   version="1.1"
+   id="svg4"
+   sodipodi:docname="social-icons.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="3.6782609"
+     inkscape:cx="57.5"
+     inkscape:cy="-4.6217494"
+     inkscape:window-width="1196"
+     inkscape:window-height="1037"
+     inkscape:window-x="716"
+     inkscape:window-y="35"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="social-icons" />
+  <!-- Generator: Sketch 3.7.1 (28215) - http://www.bohemiancoding.com/sketch -->
+  <title
+     id="title1">social-icons</title>
+  <desc
+     id="desc1">Created with Sketch.</desc>
+  <defs
+     id="defs1" />
+  <g
+     id="Page-1"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd">
+    <g
+       id="example-mockup"
+       transform="translate(-952.000000, -311.000000)"
+       fill="#5995DA">
+      <g
+         id="social-icons"
+         transform="translate(951.000000, 310.000000)">
+        <g
+           id="Group-4"
+           transform="translate(24.645253,0.502656)">
+          <path
+             d="m 17.084564,0.48582861 c -9.0751271,0 -16.43269659,7.35756949 -16.43269659,16.43269639 0,9.076952 7.35756949,16.432696 16.43269659,16.432696 9.076039,0 16.432696,-7.355744 16.432696,-16.432696 0,-9.0751269 -7.356657,-16.43269639 -16.432696,-16.43269639 z m 3.5209,16.43908439 h -2.303461 v 8.20996 h -3.412299 v -8.20996 H 13.26706 v -2.900317 h 1.622644 V 12.14733 c 0,-1.344294 0.637924,-3.4442407 3.443328,-3.4442407 l 2.527967,0.010039 v 2.8154427 h -1.834373 c -0.298428,0 -0.72371,0.148758 -0.72371,0.790332 v 1.704781 h 2.601889 z"
+             id="Shape" />
+        </g>
+        <g
+           id="Group-2"
+           transform="translate(62.781355,0.502656)">
+          <ellipse
+             id="Oval"
+             cx="16.79921"
+             cy="17.091011"
+             rx="3.2909198"
+             ry="3.1887059" />
+          <path
+             d="m 21.89256,17.269885 c 0,2.724181 -2.280646,4.933642 -5.093351,4.933642 -2.811793,0 -5.093351,-2.209461 -5.093351,-4.933642 0,-0.489166 0.07484,-0.96008 0.210816,-1.406353 h -1.504003 v 6.921336 c 0,0.358661 0.292952,0.649788 0.6507,0.649788 h 11.408705 c 0.358661,0 0.6507,-0.291127 0.6507,-0.649788 v -6.921336 h -1.441032 c 0.136893,0.44536 0.210816,0.916274 0.210816,1.406353 z"
+             id="path2" />
+          <path
+             d="m 20.527275,13.995392 h 1.851713 c 0.405205,0 0.7374,-0.332195 0.7374,-0.738312 v -1.765014 c 0,-0.406117 -0.332195,-0.738312 -0.7374,-0.738312 h -1.851713 c -0.406117,0 -0.738312,0.332195 -0.738312,0.738312 v 1.765014 c 0,0.40703 0.331282,0.738312 0.738312,0.738312 z"
+             id="path3" />
+          <path
+             d="m 16.783694,0.69299412 c -9.076039,0 -16.43269587,7.35756948 -16.43269587,16.43269588 0,9.076952 7.35665687,16.432696 16.43269587,16.432696 9.075127,0 16.432696,-7.355744 16.432696,-16.432696 0,-9.0742138 -7.358482,-16.43269588 -16.432696,-16.43269588 z M 24.975401,23.215626 c 0,1.156294 -0.94639,2.101771 -2.102684,2.101771 H 10.695584 c -1.1572065,0 -2.103597,-0.945477 -2.103597,-2.101771 V 11.03758 c 0,-1.1572066 0.9463905,-2.1026844 2.103597,-2.1026844 h 12.177133 c 1.156294,0 2.102684,0.9463905 2.102684,2.1026844 z"
+             id="path4" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
