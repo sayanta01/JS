@@ -67,8 +67,8 @@ https://youtu.be/cJAyEOZQUQY?si=AT2Bf-3zUIaPFYvI
 <!--   Every resource has an associated URL which is the resource's unique address -->
 - One convention for creating unique addresses is to combine 💡
   the name of the resource type with the resource's unique identifier
-- If we define the resource type of note to be notes
-  then the address of a note resource with the identifier 10, has the unique address www.example.com/api/notes/10
+- If we define the resource type of note to be notes then
+  the address of a note resource with the identifier 10, has the unique address www.example.com/api/notes/10
   ![](REST-operations.png) - specific URLs (and methods) that point to different actions
 - This is how we manage to roughly define what REST refers to as a uniform interface
   which means a consistent way of defining interfaces that makes it possible for systems to cooperate

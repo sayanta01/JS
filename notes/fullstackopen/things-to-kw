@@ -50,4 +50,4 @@ Reconciliation - comparison - diffing
 
 # Terms
 Derived state: State that can be computed from other state or props
-Business logic: The rules that drive how your app functions
+Business logic: The rules that define how your application works / what it should do

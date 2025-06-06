@@ -68,14 +68,14 @@ Conditional statements:
 # }
 # console.log(`Hello ${username}`);
 
-# // for...in - "in" means "inside the object" (keys)
-# - Loops over keys (properties) of an object
-# - Works on objects and arrays but returns keys, not values
-# const user = { name: "Alice", age: 26 };
-# for (const key in user) {
-#   console.log(key, user[key]);
-#   console.log(user[key]); // Retrieves the value (definition) of the key (word)
-# }
+// for...in - "in" means "inside the object" (keys)
+- Loops over keys (property name) of an object
+- Works on arrays too, but returns indexes (as strings), not actual values
+const user = { name: "Alice", age: 26 };
+for (const key in user) {
+  console.log(key, user[key]);
+  console.log(user[key]); // Retrieves the value (definition) of the key (word)
+}
 
 # // for...of - "of" means "from the collection" (values)
 # - Loops over iterable objects (arrays, strings, maps, sets)

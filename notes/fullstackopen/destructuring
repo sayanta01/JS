@@ -10,12 +10,13 @@ Array Destructuring
 - React Hooks (useState)
 - Swapping variables (Cleanest way to swap)
 
-Spread (...) - Merge & Clone
+Spread (...) - Clone & Merge
 - Expand an array or string into individual elements or properties
+- An operator is a symbol/keyword that performs an action on values/operands
 # const str = `hello`;
 # console.log([...str]);
 
-Rest (...) - Handle extra/unwanted data
+Rest of the parameters (...) - Handle extra/unwanted data
 - Pack multiple arguments into an array
 # const func = (...data) => {
 #   console.log(data);

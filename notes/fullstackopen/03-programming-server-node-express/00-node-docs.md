@@ -3,9 +3,9 @@
   can't do CPU-intensive task, because when you block event loop, all code will be stuck/slow
 
 All lanuage have these 3 things:
-- sequence  - the logical sequence of event
-- selection - the conditional operator you can use to divert the code flow
-- iteration - how many types of loops & methods for working with array
+- sequence  - The logical sequence of event
+- selection - The conditional operator you can use to divert the code flow
+- iteration - How many types of loops & methods for working with array
 
 What are the 20% of things done in the backend that are used 80% of the time?
 - Confusing for...in and for...of Loops
@@ -18,10 +18,9 @@ https://endler.dev/2025/best-programmers/#know-your-tools-really-well
 - its ecosystem: what libraries exist? Who uses it? What plugins?
 
 - lodash library is utility library
-  list types of libraries ?
+  list types of libraries?
 
 Resources:
-https://nodeschool.io/
 https://dhanushnehru.github.io/Ultimate-NodeJs-Resources/
 
 Namespace: folder for names that groups variables, functions, classes together to avoid name conflicts
@@ -67,20 +66,19 @@ The V8 JavaScript Engine that powers Google Chrome:
   This key feature enabled the rise of Node.js. V8 was chosen to be the engine that powered Node.js
 - V8 is always evolving, just like the other JavaScript engines around, to speed up the Web and the Node.js ecosystem
 
-Compilation:
+# Compilation
 - JavaScript is generally considered an interpreted language
   but modern JavaScript engines no longer just interpret JavaScript, they compile it
-What gets compiled v interpreted?
+What gets compiled vs interpreted?
 - Rarely used code - Interpreted
 - Frequently run code - Compiled with JIT to speed up
 
-
-NPM:
---save-dev installs and adds the entry to the package.json file devDependencies
---no-save installs but does not add the entry to the package.json file dependencies
---save-optional installs and adds the entry to the package.json file optionalDependencies
---no-optional will prevent optional dependencies from being installed
-- The package.json file supports a format for specifying command line tasks `npm run <task-name>`
+# NPM
+<!-- --save-dev installs and adds the entry to the package.json file devDependencies -->
+<!-- --no-save installs but does not add the entry to the package.json file dependencies -->
+<!-- --save-optional installs and adds the entry to the package.json file optionalDependencies -->
+<!-- --no-optional will prevent optional dependencies from being installed -->
+<!-- - The package.json file supports a format for specifying command line tasks `npm run <task-name>` -->
 
 ECMAScript 2015 (ES6) and beyond: https://node.green/
 
@@ -88,7 +86,6 @@ There is no difference between development and production in Node.js
 - Always run your Node.js with the NODE_ENV=production set
 - A popular way of configuring your application is by using the twelve factor methodology
   https://12factor.net/
-
 
 # Vocab
 Context: Environment

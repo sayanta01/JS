@@ -1,0 +1,114 @@
+# https://www.lydiahallie.com/blog/promise-execution
+# https://www.promisejs.org/
+
+Promises: used to handle async operations # new Promise((resolve, reject) => { Async code })
+- Promise: object representing the eventual completion or failure of an asynchronous operation
+- A placeholder (container) for a future value until an async operation completes
+- Empty object until an async operation completes
+- Automatically fills with data once the operation finishes
+
+- Promise has 3 states: pending | fulfilled | rejected
+- Once fulfilled/rejected, it updates the empty object that was undefined in the pending state
+- A promise resolves only once and is immutable
+- We attach functions to Promise, we don’t pass them
+
+Before Promise:
+# const cart = ['shoes', 'pants', 'kurta'];
+
+# // Below two functions are asynchronous and dependent on each other
+# const orderId = createOrder(cart);
+# proceedToPayment(orderId);
+#
+# // with Callback (Before Promise)
+# // Below here, it is the responsibility of createOrder function to first create the order then call the callback function
+# createOrder(cart, function () {
+#   proceedToPayment(orderId);
+# });
+# // Above there is the issue of `Inversion of Control`
+
+// Fixing Inversion of Control
+const cart = ['shoes', 'pants', 'kurta'];
+
+// Before Promise (Callback Issue)
+createOrder(cart, function () {
+  proceedToPayment(orderId); // createOrder controls execution ⚠
+});
+
+// Using Promise (Better Approach)
+const orderPromise = createOrder(cart); // Returns a Promise
+orderPromise.then(proceedToPayment); // Proceeds only after order is created
+
+How it works:
+- JS continues execution without waiting
+- Once `createOrder` resolves, the Promise updates with `orderId`
+- `.then()` ensures `proceedToPayment` runs only when `orderId` is ready
+
+# Q: How we will get to know response is ready?
+# A: So, we will attach a callback function to the promise object using then to get triggered automatically when result is ready
+# const cart = ['shoes', 'pants', 'kurta'];
+#
+# const promiseRef = createOrder(cart); // this promiseRef has access to `then`
+#
+# // {data: undefined}
+# // Initially it will be undefined so below code won't trigger
+# // After some time, when execution has finished and promiseRef has the data then automatically the below line will get triggered
+#
+# promiseRef.then(function () {
+#   proceedToPayment(orderId);
+# });
+
+# Q: How it is better than callback approach?
+# - In Earlier solution we used to pass the function and then used to trust the function to execute the callback
+# - But with promise, we are attaching a callback function to a promiseObject
+# - There is difference between these words, passing a function and attaching a function
+# - Promise guarantee, it will callback the attached function once it has the fulfilled data. And it will call it only once. Just once
+#
+# // Understanding Promises with `fetch`
+# const URL = 'https://api.github.com/users/sayanta01';
+# const response = fetch(URL); // Returns a pending Promise immediately
+# console.log(response); // Promise {<Pending>}
+#
+# promiseState:
+# - pending: Initial state, neither fulfilled nor rejected
+# - fulfilled: Operation succeeded
+# - rejected: Operation failed
+# promiseResult: Holds the data returned from the API call
+#
+# // Handling the Promise:
+# user.then(console.log); // Logs the response when fulfilled
+# Promise guarantees that it could be resolved only once, either it could be `success` or `failure`
+
+Promise Object are immutable 💡
+- Once promise is fulfilled and we have data we can pass here and there and we don't have to worry that someone can mutate that data
+  So over above we can't directly mutate user promise object, we will have to use .then
+
+# ------------------------------------------------------------------------------
+Promise Chaining: Avoid 'callback hell' by keeping code vertical
+- A common mistake: Not returning a value inside `.then()`
+  Always return a value so the next `.then()` can use it
+- `.then()` returns a Promise
+  This allows us to chain multiple `.then()` calls in sequence,
+  passing the result from one to the next
+- Besides creating a Promise Reaction, then also returns a Promise
+  This means that we can chain multiple .then to each other
+
+new Promise((resolve) => {
+   resolve(1)
+})
+  .then(result => result * 2)
+  .then(result => result * 2)
+  .then(result => console.log(result));
+
+Common Pitfall:
+- We forget to return promise in Promise Chaining
+- The idea is promise/data returned from one .then become data for next .then
+# createOrder(cart)
+#   .then(function (orderId) {
+#     return proceedToPayment(orderId);
+#   })
+#   .then(function (paymentInf) {
+#     return showOrderSummary(paymentInf);
+#   })
+#   .then(function (balance) {
+#     return updateWalletBalance(balance);
+#   });

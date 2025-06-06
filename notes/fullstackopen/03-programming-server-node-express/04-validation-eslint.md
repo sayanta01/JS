@@ -15,9 +15,7 @@
 # Deploying the database backend to production
 - The environment variables defined in dotenv will only be used when the backend is not in production mode, i.e. Fly.io or Render
   For production, we have to set the database URL in the service that is hosting our app
-- When the app is being developed, it is more than likely that something fails
-  The browser console & network tab has to be open all the time!
-  It is also vital to follow continuously the server logs
+- The browser console & network tab has to be open all the time, also vital to follow continuously the server logs
 - You will also need to whitelist the fly.io app's IP address in MongoDB Atlas. If you don't MongoDB will refuse the connection
 - You shall NOT be deploying the frontend directly at any stage of this part
   It is just backend that is deployed throughout the whole part, nothing else (Monolithic / Combined Deployment)

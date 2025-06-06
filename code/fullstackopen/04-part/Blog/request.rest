@@ -1,0 +1,19 @@
+GET http://localhost:3003/api/blogs/
+
+###
+POST http://localhost:3003/api/blogs/
+Content-Type: application/json
+
+{
+  "title": "AI is Creating a Generation of Illiterate Programmers",
+  "author": "Neo",
+  "url": "https://nmn.gl/blog/ai-illiterate-programmers",
+  "likes": 1
+}
+
+###
+PUT http://localhost:3003/api/blogs/683e03359ffc74055bc7f4bd/upvote
+Content-Type: application/json
+
+###
+DELETE http://localhost:3003/api/blogs/683e031475273dbeee4d25d7

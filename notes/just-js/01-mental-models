@@ -1,0 +1,39 @@
+#
+Approximations of how something works in your head are known as "mental models"
+Intuitions (like "boxiness" of variables) influence how we read code our whole lives
+
+# Coding, Fast and Slow
+"fast" system is good at pattern matching and "gut reactions". But it’s not good at planning
+"slow" system is responsible for complex step-by-step reasoning
+
+Because using the “slow” system is so mentally draining, we tend to default to the
+“fast” one—even when dealing with intellectual tasks like coding
+
+When we use the “fast” system, we guess what the code does based on its overall
+structure, naming conventions and comments. Using the “slow” system, we
+retrace what the code does step by step—a tiring and time-consuming process
+
+This is why having an accurate mental model is so important. Simulating a
+computer in your head is hard, and when you have to fall back to the “slow”
+thinking system, your mental model is all you can rely on. With the wrong mental
+model, you’ll fundamentally misunderstand what to expect from your code, and all
+your effort will be wasted
+
+# Vocab
+Introspect - Examine one's own thoughts or feelings
+Spatial - Relating to space
+Inferred - Assumed
+Laborious - Requiring considerable time and effort
+
+# ------------------------------------------------------------------------------
+Mental model of how JavaScript works??
+How variables, values, and object mutations really work:
+- what happens in your mind when you see an assignment?
+- what does nested object really mean?
+- what can you do with different kinds of values?
+- why do you sometimes get undefined, and sometimes a crash?
+- why does changing one thing affect another thing?
+- why aren’t two objects equal?
+You’ll always make mistakes. We all do. That’s okay. The difference is that you will now see them
+and a mistake you can see is a mistake you can fix
+No need for guessing!!
