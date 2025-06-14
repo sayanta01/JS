@@ -3,17 +3,57 @@ GET http://localhost:3003/api/blogs/
 ###
 POST http://localhost:3003/api/blogs/
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvdCIsImlkIjoiNjg0YjM5YzFjMjJhN2FhYjRmOTExNTdmIiwiaWF0IjoxNzQ5OTI0OTU1fQ.sjIuq5x7OEV1cxAtoOe1ip6IU0FYKVYfaFtYT4dF8YU
 
 {
-  "title": "AI is Creating a Generation of Illiterate Programmers",
-  "author": "Neo",
-  "url": "https://nmn.gl/blog/ai-illiterate-programmers",
-  "likes": 1
+  "title": "React patterns",
+  "author": "Michael Chan",
+  "url": "https://reactpatterns.com/",
+  "likes": 3,
+  "userId": "684b39c1c22a7aab4f91157f"
 }
+
+# {
+#   "title": "AI is Creating a Generation of Illiterate Programmers",
+#   "author": "Neo",
+#   "url": "https://nmn.gl/blog/ai-illiterate-programmers",
+#   "likes": 7
+# }
+
+###
+# {
+#   "title": "Go To Statement Considered Harmful",
+#   "author": "Edsger W. Dijkstra",
+#   "url": "http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html",
+#   "likes": 5,
+# },
 
 ###
 PUT http://localhost:3003/api/blogs/683e03359ffc74055bc7f4bd/upvote
 Content-Type: application/json
 
 ###
-DELETE http://localhost:3003/api/blogs/683e031475273dbeee4d25d7
+DELETE http://localhost:3003/api/blogs/684dc649d4e32a87c267816b
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvdCIsImlkIjoiNjg0YjM5YzFjMjJhN2FhYjRmOTExNTdmIiwiaWF0IjoxNzQ5OTI0OTU1fQ.sjIuq5x7OEV1cxAtoOe1ip6IU0FYKVYfaFtYT4dF8YU
+
+### USER #######################################################################
+GET http://localhost:3003/api/users/
+
+### 
+POST http://localhost:3003/api/users/
+Content-Type: application/json
+
+{
+  "name": "Sayanta",
+  "username": "bot",
+  "password": "idkThePswd"
+}
+
+### LOGIN #######################################################################
+POST http://localhost:3003/api/login
+Content-Type: application/json
+
+{
+  "username": "bot",
+  "password": "idkThePswd"
+}

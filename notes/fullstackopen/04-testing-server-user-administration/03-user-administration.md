@@ -52,17 +52,43 @@ MongoDB:  Does the actual work (creates a unique index)
 
 # Populate: Lets you reference documents in other collections
 - Fill the specified paths in the document with documents from other collections
-- We would like our API to work in such a way, that when an HTTP GET request is made to the /api/users route
-  the user objects would also contain the contents of the user's notes and not just their id
 ## Problem: Document databases do not properly support join queries between collections
-## Solution: Mongoose accomplishes the join by doing multiple queries (populate method)
+## Solution: Mongoose accomplishes the join by doing multiple queries
 <!-- - Different from join queries in relational databases which are transactional -->
 <!--   meaning that the state of the database does not change during the time that the query is made -->
 <!-- - With join queries in Mongoose, nothing can guarantee that the state between the collections being joined is consistent -->
-- Use the populate method for choosing the fields you want to include from the documents
-  `const users = await User.find({}).populate("notes", { content: 1, important: 1 })`
 - The functionality of the populate method of Mongoose is based on the fact that ⚠️
   we have defined "types" to the references in the Mongoose schema with the ref option
+
+# Lifecycle of populate Method
+Blog.find({}).populate("user", { name: 1, username: 1 })
+    ↓
+Mongoose checks Blog schema: does "user" field have ref to another model?
+- if Yes > Go to User collection
+    ↓
+Find User by ObjectId (fetch only name, username fields)
+- ObjectId comes from request.body.userId sent in POST /api/blogs
+```js
+const user = await User.findById(request.body.userId);
+user: user._id, // store ObjectId in blog to link user
+```
+    ↓
+Replace ObjectId with selected User fields
+    ↓
+Return populated blog documents
+<!-- ```js -->
+<!-- { -->
+<!--   user: "684b39c1c22a7aab4f91157f" // <-- ObjectId -->
+<!-- } -->
+<!--   ↓ -->
+<!-- { -->
+<!--   user: { -->
+<!--     name: "Sayanta", -->
+<!--     username: "bot", -->
+<!--     id: "684b39c1c22a7aab4f91157f" -->
+<!--   } -->
+<!-- } -->
+<!-- ``` -->
 
 # Terms
 One-to-Many Relationship: Users <> Notes (Each user can have many notes)

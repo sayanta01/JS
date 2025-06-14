@@ -107,9 +107,9 @@ const App = () => {
 };
 
 # Vocab
-Comprised - Consist of
-Concatenate - join
-Throttling - Limiting
-Baseline - Reference
-Flawed - Imperfection
-Anecdotes - Short and interesting story
+Comprised: Consist of
+Concatenate: Join
+Throttling: Limiting
+Baseline: Reference
+Flawed: Imperfection
+Anecdotes: Short and interesting story

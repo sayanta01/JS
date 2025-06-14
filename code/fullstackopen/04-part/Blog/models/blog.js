@@ -1,12 +1,17 @@
 import mongoose from "mongoose";
 
 const blogSchema = mongoose.Schema({
+  url: String,
   title: String,
   author: String,
-  url: String,
   likes: {
     type: Number,
     default: 0,
+  },
+  // one blog > belongs to only one user, so no array needed
+  user: {
+    type: mongoose.Schema.Types.ObjectId, // store ObjectId of User document 
+    ref: "User",
   },
 });
 

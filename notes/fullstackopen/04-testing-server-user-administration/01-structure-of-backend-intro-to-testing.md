@@ -9,12 +9,12 @@ https://youtu.be/JLtXoru-ipo?si=CsQKM4ANGwEw8O7t - MVC pattern
 
 ├─1 models            # Defines Mongoose schemas
 │   └── note.js       # Note schema (import in controller)
-├─2 controllers       # Route handlers (logic for each endpoit)
+├─2 controllers       # Route handlers (logic for each endpoint)
 │   └── notes.js      # Handles /api/notes routes (import in app.js)
 ├─3 utils
 │   ├── config.js     # Env vars DB, PORT (import in app.js/server.js)
 │   ├── logger.js     # Custom logging functions
-│   └── middleware.js # Custom middleware
+│   └── middleware.js # Custom reusable middleware
 ├── app.js            # Sets up the Express app (middleware, routes)
 ├── index.js          # Connects to the database & Starts the server
 
@@ -67,36 +67,36 @@ https://youtu.be/DUg2SWWK18I?si=dxSrfmxEC6sVAA8H
 The JOEL Test
 https://youtu.be/fc6o1gwqZuA?si=qSxBqcc02Zld1r_G - Three-Layer Architecture 
 
-# Full Lifecycle of Express.js
+# Lifecycle of Express.js
 Client sends HTTP request
     ↓
 Express server receives request and creates req, res objects
     ↓
 Middleware exe in order (application-level > route-level) ℹ️
-Execute application-level middleware (body parser, CORS) 🥇
+Execute application-level middleware (body parser, CORS)
     ↓
 Match route (based on method, path)
 - if no match > send 404 response
 - if matched > continue
     ↓
-Execute route-level middleware (authentication, validation) 🥈
+Execute route-level middleware (authentication, validation) 🔐
 - if fail > send 401/403 response (Unauthorized, Forbidden)
 - if pass > proceed to route handler
     ↓
 Execute route handler
     ↓
-Process business logic (DB queries, validations) 🗄️>-----------------┐
-- if success > send JSON response to client                          |
-- if error > pass to error-handling middleware                       |
-                                                                     |
-# Full Lifecycle of MongoDB/Mongoose                                 |
-Define Mongoose Schema & Create Model (validation, type-checking)    |
-    ↓                                                                |
-Connect to MongoDB using Mongoose (during app startup)               |
-    ↓                                                                |
-Express receives HTTP request (CRUD operation)                       |
-    ↓                                                                ↓
-A Mongoose query is created using model methods (.find(), .save()) 🚂🔐
+Process business logic (DB queries, validations) 🗄️>---------------┐
+- if success > send JSON response to client                        |
+- if error > pass to error-handling middleware                     |
+                                                                   |
+# Lifecycle of MongoDB/Mongoose                                    |
+Define Mongoose Schema & Create Model (validation, type-checking)  |
+    ↓                                                              |
+Connect to MongoDB using Mongoose (during app startup)             |
+    ↓                                                              |
+Express receives HTTP request (CRUD operation)                     |
+    ↓                                                              ↓
+A Mongoose query is created using model methods (.find(), .save()) 🚂
     ↓
 Query executes inside route handler or service layer❗
     ↓
@@ -111,3 +111,34 @@ Mongoose transforms BSON into JavaScript objects (documents)?
 Express handles result or passes error to error-handling middleware  
     ↓
 Express sends JSON response to client
+
+# Lifecycle of populate Method
+Blog.find({}).populate("user", { name: 1, username: 1 })
+    ↓
+Mongoose checks Blog schema: does "user" field have ref to another model?
+- if Yes > Go to User collection
+    ↓
+Find User by ObjectId (fetch only name, username fields)
+- ObjectId comes from request.body.userId sent in POST /api/blogs
+```js
+const user = await User.findById(request.body.userId);
+user: user._id, // store ObjectId in blog to link user
+```
+    ↓
+Replace ObjectId with selected User fields
+    ↓
+Return populated blog documents
+
+```js
+{
+  user: "684b39c1c22a7aab4f91157f" // <-- ObjectId
+}
+  ↓
+{
+  user: {
+    name: "Sayanta",
+    username: "bot",
+    id: "684b39c1c22a7aab4f91157f"
+  }
+}
+```

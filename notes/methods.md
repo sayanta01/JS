@@ -23,8 +23,8 @@ forEach - iterates over elements and executes a provided function once for each 
 <!--   console.log(n); -->
 <!-- }); -->
 
-JSON.stringify: Converts a JS object to a JSON string & JSON.parse does the opposite
-- Because the client and server communicate over HTTP, which is a text-based protocol
+JSON.stringify: Converts JS object into JSON string & JSON.parse does the opposite
+- Because the client and server communicate over HTTP, which is text-based protocol
 - localStorage only stores strings, not objects (2nd usage of JSON.stringify)
 
 [](https://youtu.be/R8rmfD9Y5-c?si=5hOnH1vRqB3uiqSR)
@@ -66,13 +66,11 @@ const hasInexpensiveItems = items.some((item) => {
 const includesTwo = [1, 2, 3, 4, 5].includes(2);
 ```
 
-
 # Object Methods
 - freeze() - Freezing an object is the highest integrity level that JavaScript provides
 - seal() - New properties cannot be added, existing properties cannot be removed
   Values of existing properties can still be changed as long as they are writable
 - assign(target, source) copies properties from source(s) to target??
-
 
 # Both
 toString - Controls how value is stringified

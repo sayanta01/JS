@@ -6,17 +6,18 @@
 
 # Test environment
 https://github.com/node-config/node-config
-- Separate modes for development, production and testing <!-- - `npm install cross-env` to make NODE_ENV work on windows -->
+- Separate modes/utils for development, production and testing <!-- - `npm install cross-env` to make NODE_ENV work on windows -->
 - Beneficial to implement the backend tests by mocking the database instead of using a real database
   achieve by running Mongodb-memory-server or by using Docker containers
-- Separate utils function also for production and development
-- The middleware that outputs information about the HTTP requests is obstructing the test execution output
-  Let us modify the logger so that it does not print to the console in test mode
 
 # supertest: Testing the API
 - injects requests directly into > app.js no need to .listen() on a port
 - NODE_ENV config flow `package.json > note_api.test.js > app.js > config.js`
   - Run a single test file with `NODE_ENV=test node --test tests/note_api.test.js`
+
+- Separate utils function also for production and development
+- The middleware that outputs information about the HTTP requests is obstructing the test execution output
+  Let us modify the logger so that it does not print to the console in test mode
 
 # Initializing the database before tests
 - Reset the test database and generate the needed test data before testing
@@ -63,7 +64,6 @@ https://github.com/node-config/node-config
 
 # To Know
 - Testing where multiple components of the system are being tested as a group is called `integration testing`
-- `--test-concurrency=1` executed multiple test sequentially, not simultaneously
 <!-- - Full Lifecycle of Testing? -->
 
 # Terms

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "NODE_ENV=development node --watch server.js",
+    "start": "NODE_ENV=development nodemon server.js",
     "test": "NODE_ENV=test node --test"
   },
   "keywords": [],
@@ -12,10 +12,13 @@
   "devDependencies": {
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "mongoose": "^8.15.0"
+    "mongoose": "^8.15.0",
+    "nodemon": "^3.1.10"
   },
   "dependencies": {
     "assert": "^2.1.0",
+    "bcrypt": "^6.0.0",
+    "jsonwebtoken": "^9.0.2",
     "supertest": "^7.1.1"
   }
 }

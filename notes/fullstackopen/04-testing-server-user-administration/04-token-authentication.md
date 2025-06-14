@@ -1,5 +1,5 @@
-- Users must be able to log into our application
-- And when a user is logged in their user information must automatically be attached to any new notes they create
+<!-- - Users must be able to log into our application -->
+<!-- - And when a user is logged in their user information must automatically be attached to any new notes they create -->
 
 https://www.digitalocean.com/community/tutorials/the-ins-and-outs-of-token-based-authentication#how-token-based-works
 ![Token-Based Authentication](https://fullstackopen.com/static/259c9dce6b3d1d77bedb04e799ac7dd3/5a190/16new.png)
@@ -13,9 +13,9 @@ Example: https://jwt.io/#Debugger
   * We get the user data FROM INSIDE the token
 
 # First implement the functionality for logging in `jsonwebtoken`
-- Find username
-- Compare password
-- if correct > Generate token
+<!-- - Find username -->
+<!-- - Compare password -->
+<!-- - if correct > Generate token -->
 
 # Problem: Only allow logged-in users to create new notes (i.e. have a valid token)
 - Change creating new notes so that it is only possible if the post request has a valid token attached
@@ -50,19 +50,27 @@ if invalid > return 401 error || if valid > gives you decoded user data (e.g., u
 
 # Full Lifecycle of Authentication
 ## Register
-- User provide username/password
-- Server hashes password with bcrypt and saves user to database
-- Send success response to client
+User provide username/password
+    ↓
+Server hashes password with bcrypt and saves user to database
+    ↓
+Send 201 response to client
 ## Login
-- User send username/password
-- Server finds user and checks password using bcrypt.compare()
+User send username/password
+    ↓
+Server finds user and checks password using bcrypt.compare()
+- if invalid, send 401 response to client
 - if valid, generates JWT token with user's ID, and send token to client
+    ↓
 - Client store it in (localStorage or React state)
 ## Access Protected Routes (Authorization) 🚂
-- Client send token in the Authorization header (Bearer <token>)
-- Server extract and verifies token with jwt.verify() (tokenExtractor)
+Client send token in the Authorization header (Bearer <token>)
+    ↓
+Server extract and verifies token with jwt.verify() (tokenExtractor)
 - if valid, extract user ID > Attach to request object (userExtractor)
-- Grant access to route handler
+    ↓
+Grant access to route handler
+
 ## Extra
 - Routes need to identify who's making the request (DRY)
 - Access Control Models (like Role-Based Access Control)
@@ -75,10 +83,7 @@ if invalid > return 401 error || if valid > gives you decoded user data (e.g., u
 
 ## Exercise
 - Don't validate password with Mongoose — use Express instead (the controller)
-- `--test-concurrency=1` executed multiple test sequentially, not simultaneously
 - JWT is not related to password; bcrypt is
-<!-- app.use('/api/blogs', middleware.userExtractor, blogsRouter) // use the middleware in all routes -->
-<!-- router.post('/', userExtractor, async (request, response) => {}) // registered only for individual routes -->
 
 # Vocab
 Bearer: Thing that carries or holds something (authentication scheme)

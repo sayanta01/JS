@@ -57,6 +57,6 @@ Refactoring the components:
 - We can use destructuring to get only the required fields from props
 
 # Vocabs
-Streamline - Increasing speed and ease of movement
-Evaluate - Compute
-Composed - Made up of smaller parts that work together
+Streamline: Increasing speed and ease of movement
+Evaluate: Compute
+Composed: Made up of smaller parts that work together
