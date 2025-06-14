@@ -26,8 +26,7 @@ https://youtu.be/JLtXoru-ipo?si=CsQKM4ANGwEw8O7t - MVC pattern
 controllers/notes.js
 - Create router
 - Define routes/middleware - Route object must only define the relative parts
-app.js
-- Mount router to app
+- Mount router to app.js
 
 ## Finally understood the MVC
 ![](./mvc.png)
@@ -66,49 +65,49 @@ https://youtu.be/DUg2SWWK18I?si=dxSrfmxEC6sVAA8H
 
 # Terms
 The JOEL Test
-Three-Layer Architecture
+https://youtu.be/fc6o1gwqZuA?si=qSxBqcc02Zld1r_G - Three-Layer Architecture 
 
 # Full Lifecycle of Express.js
 Client sends HTTP request
-        ↓
-Express server receives request
-        ↓
-Middleware runs in order (global > route-specific) ℹ️
-Run global middleware (parser, CORS)
-        ↓
-Match specific route (based on method and path)
-if no match > send 404 response
-if matched > execute route handler
-        ↓
-Run route-specific middleware > Authentication 🔐
-if auth fails > send 401 response
-if auth passes > proceed to route handler
-        ↓
+    ↓
+Express server receives request and creates req, res objects
+    ↓
+Middleware exe in order (application-level > route-level) ℹ️
+Execute application-level middleware (body parser, CORS) 🥇
+    ↓
+Match route (based on method, path)
+- if no match > send 404 response
+- if matched > continue
+    ↓
+Execute route-level middleware (authentication, validation) 🥈
+- if fail > send 401/403 response (Unauthorized, Forbidden)
+- if pass > proceed to route handler
+    ↓
 Execute route handler
-        ↓
-Process business logic (DB queries / validations) 🗄️>--------------------┐
-if success > send response to client                                     |
-if error > pass to error-handling middleware                             |
-                                                                         |
-# Full Lifecycle of MongoDB/Mongoose                                     |
-Define Mongoose schema and model (validation, type-checking)             |
-        ↓                                                                |
-Connect to MongoDB (during app startup)                                  |
-        ↓                                                                |
-Express receives HTTP request (CRUD operation)                           |
-        ↓                                                                ↓
-A Mongoose query is created and executed using model (.find(), .save()) 🚂🔐
-        ↓
-Query runs inside route handler or service layer❗
-        ↓
-Mongoose compiles query and sends it to MongoDB ???
-        ↓
+    ↓
+Process business logic (DB queries, validations) 🗄️>-----------------┐
+- if success > send JSON response to client                          |
+- if error > pass to error-handling middleware                       |
+                                                                     |
+# Full Lifecycle of MongoDB/Mongoose                                 |
+Define Mongoose Schema & Create Model (validation, type-checking)    |
+    ↓                                                                |
+Connect to MongoDB using Mongoose (during app startup)               |
+    ↓                                                                |
+Express receives HTTP request (CRUD operation)                       |
+    ↓                                                                ↓
+A Mongoose query is created using model methods (.find(), .save()) 🚂🔐
+    ↓
+Query executes inside route handler or service layer❗
+    ↓
+Mongoose compiles/validates query and sends to MongoDB via driver
+    ↓
 MongoDB processes operation (find, insert, update, or delete)
-        ↓
-MongoDB returns result or error to Mongoose
-        ↓
-Mongoose formats result into JavaScript objects (documents)
-        ↓
+    ↓
+MongoDB returns result (BSON) or error to Mongoose
+    ↓
+Mongoose transforms BSON into JavaScript objects (documents)?
+    ↓
 Express handles result or passes error to error-handling middleware  
-        ↓
-Express sends response to client
+    ↓
+Express sends JSON response to client

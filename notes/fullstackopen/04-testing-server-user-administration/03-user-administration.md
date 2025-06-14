@@ -56,10 +56,9 @@ MongoDB:  Does the actual work (creates a unique index)
   the user objects would also contain the contents of the user's notes and not just their id
 ## Problem: Document databases do not properly support join queries between collections
 ## Solution: Mongoose accomplishes the join by doing multiple queries (populate method)
-- Different from join queries in relational databases which are transactional
-  meaning that the state of the database does not change during the time that the query is made
-- With join queries in Mongoose, nothing can guarantee that the state between the collections being joined is consistent
-
+<!-- - Different from join queries in relational databases which are transactional -->
+<!--   meaning that the state of the database does not change during the time that the query is made -->
+<!-- - With join queries in Mongoose, nothing can guarantee that the state between the collections being joined is consistent -->
 - Use the populate method for choosing the fields you want to include from the documents
   `const users = await User.find({}).populate("notes", { content: 1, important: 1 })`
 - The functionality of the populate method of Mongoose is based on the fact that ⚠️

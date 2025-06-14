@@ -1,20 +1,24 @@
-<!-- - Testing where multiple components of the system are being tested as a group is called integration testing -->
+# Why we test
+- Check Edge
+- Verify Error
+- Prevent Regression
+- Document Behavior 
 
 # Test environment
 https://github.com/node-config/node-config
-- It is common practice to define separate modes for development, production and testing
+- Separate modes for development, production and testing
   <!-- - `npm install cross-env` to make NODE_ENV work on windows -->
 - Beneficial to implement the backend tests by mocking the database instead of using a real database
   achieve by running Mongodb-memory-server or by using Docker containers
 
 # supertest: Testing the API
-- injects requests directly into the app.js `app.use("/api/notes", notesRouter)` no need to .listen() on a port
-- Tests only use the Express application defined in the app.js file, which does not listen to any ports
+- injects requests directly into > app.js no need to .listen() on a port
 - NODE_ENV config flow `package.json > note_api.test.js > app.js > config.js`
-  - Run a single test file with NODE_ENV=test `NODE_ENV=test node --test tests/note_api.test.js`
+  - Run a single test file with `NODE_ENV=test node --test tests/note_api.test.js`
 
-<!-- Separate utils function also for production and development -->
-<!-- The middleware that outputs information about the HTTP requests is obstructing the test execution output. Let us modify the logger so that it does not print to the console in test mode: -->
+<!-- - Separate utils function also for production and development -->
+<!-- - The middleware that outputs information about the HTTP requests is obstructing the test execution output -->
+<!--   Let us modify the logger so that it does not print to the console in test mode -->
 
 # Initializing the database before tests
 - Reset the test database and generate the needed test data before testing
@@ -25,8 +29,8 @@ https://github.com/node-config/node-config
   Accomplishing this with the `only` method & `npm test -- --test-only` ⚠️
 
 # async/await
-<!-- Problem  - http://callbackhell.com/ -->
-<!-- Solution - https://javascript.info/promise-chaining (The then-chain is alright, but we can do better) -->
+<!-- ## Problem: http://callbackhell.com/ -->
+<!-- ## Solution: https://javascript.info/promise-chaining (The then-chain is alright, but we can do better) -->
 <!-- - The generator functions introduced in ES6 provided a clever way of writing asynchronous code -->
 <!--   in a way that "looks synchronous". But the syntax is a bit clunky and not widely used -->
 <!-- - The async and await keywords introduced in ES7 bring the same functionality as the generators -->
@@ -43,21 +47,24 @@ https://github.com/node-config/node-config
 - `express-async-errors` The 'magic' of the library allows us to eliminate the try-catch blocks completely
 - We do not need the next(exception) call anymore. The library handles everything under the hood
 
-# Optimizing the beforeEach function
-<!-- - The problem is that each iteration of the forEach loop generates its own async operation -->
-<!--   the await commands inside the forEach loop are not part of the beforeEach function -->
-  - The `forEach` method expects a synchronous function as its parameter
-- The solution is to wait for all of the asynchronous operations to finish executing with the `Promise.all`
-  - The Promise.all method can be used for transforming an array of promises into a single promise
-    that will be fulfilled once every promise in the array passed to it as an argument is resolved
-  - Use `for...of` when promises need to be executed in a particular order
+# Optimizing the beforeEach function ⚠️
+<!-- ## Problem is that each iteration of `forEach` loop generates its own async operation -->
+<!--    the await commands inside the forEach loop are not part of the beforeEach function -->
+<!--    - The `forEach` method expects a synchronous function as its parameter -->
+<!-- ## Solution is to wait for all of the async operations to finish executing with `Promise.all` -->
+<!--    - The Promise.all method can be used for transforming an array of promises into a single promise -->
+<!--      that will be fulfilled once every promise in the array passed to it as an argument is resolved -->
+<!--    - Use `for...of` when promises need to be executed in a particular order -->
 
 # A true full stack developer's oath
 - If a test does not pass, I make sure that the tested functionality for sure works in the application
 
-# Exercises
+# Exercise
 - Use async/await or .then(), but not both together
 - There is no universal best way of writing tests, as it all depends on the application being tested and available resources
+
+# To Know
+- Testing where multiple components of the system are being tested as a group is called `integration testing`
 
 # Terms
 Assert: Check

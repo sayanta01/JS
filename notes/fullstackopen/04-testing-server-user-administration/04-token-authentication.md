@@ -6,7 +6,7 @@ https://www.digitalocean.com/community/tutorials/the-ins-and-outs-of-token-based
 
 ## How JWT Works
 - JWT looks random, but it's a SECRET BOX with user info inside!
-Real Example: https://jwt.io/#Debugger
+Example: https://jwt.io/#Debugger
 - When you login, we CREATE the token
   * We put user data INSIDE the token
 - When you make a request, we DECODE the token
@@ -32,13 +32,17 @@ if invalid > return 401 error || if valid > gives you decoded user data (e.g., u
 ```
 
 # Problems of Token-based authentication
-- Once the API user, eg. a React app gets a token, the API has a blind trust to the token holder
+## Solution: Token Expiration & Refresh Token Mechanism
+- Once the API user, eg. React app gets token, the API has a blind trust to the token holder
   What if the access rights of the token holder should be revoked? There are two solutions
   - The easier one is to limit the validity period of a token
     * The error handling middleware should be extended to give a proper error in the case of an expired token
   - The other solution is to save info about each token to the backend database
     * With this scheme, access rights can be revoked at any time (server-side session)
 - JWT must be transmitted over HTTPS to avoid interception
+- Token-based > Vulnerable to Cross-Site Scripting
+  * React sanitizes all text that it renders, meaning it is not executing the rendered content as JS
+- httpOnly cookies > Vulnerable to Cross-Site Request Forgery
 
 # End notes
 - We will leave fixing the tests to a non-compulsory exercise
@@ -46,18 +50,35 @@ if invalid > return 401 error || if valid > gives you decoded user data (e.g., u
 
 # Full Lifecycle of Authentication
 ## Register
-- User provides username/password
-- Server hashes password with bcrypt and saves to database
+- User provide username/password
+- Server hashes password with bcrypt and saves user to database
 - Send success response to client
 ## Login
-- User sends username/password
+- User send username/password
 - Server finds user and checks password using bcrypt.compare()
-- if valid, generate JWT token with user's ID
-- Send token to client
-## Access Protected Routes 🚂
-- Client sends token in Authorization header (Bearer <token>)
-- Server verifies and decodes token with jwt.verify()
-- if valid, extract user ID from token payload and grant access to route handler
+- if valid, generates JWT token with user's ID, and send token to client
+- Client store it in (localStorage or React state)
+## Access Protected Routes (Authorization) 🚂
+- Client send token in the Authorization header (Bearer <token>)
+- Server extract and verifies token with jwt.verify() (tokenExtractor)
+- if valid, extract user ID > Attach to request object (userExtractor)
+- Grant access to route handler
+## Extra
+- Routes need to identify who's making the request (DRY)
+- Access Control Models (like Role-Based Access Control)
+- Email Verification & OAuth
+
+# Full Error-handling Lifecycle
+## How to handle errors?
+🔸 Use try/catch with next(error) inside routes > Pass errors to centralized middleware 🐞
+🔸 Or Just use express-async-errors to auto-forward async errors to errorHandler middleware
+
+## Exercise
+- Don't validate password with Mongoose — use Express instead (the controller)
+- `--test-concurrency=1` executed multiple test sequentially, not simultaneously
+- JWT is not related to password; bcrypt is
+<!-- app.use('/api/blogs', middleware.userExtractor, blogsRouter) // use the middleware in all routes -->
+<!-- router.post('/', userExtractor, async (request, response) => {}) // registered only for individual routes -->
 
 # Vocab
 Bearer: Thing that carries or holds something (authentication scheme)

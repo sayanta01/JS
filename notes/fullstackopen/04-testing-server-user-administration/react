@@ -1,0 +1,97 @@
+
+i want to know how does form works in react i want flow chart like Full Lifecycle of Forms in react
+
+
+i have some exammples like
+
+# Full Lifecycle of Express.js
+Client sends HTTP request
+        ↓
+Express server receives request
+        ↓
+Middleware runs in order (global > route-specific) ℹ️
+Run global middleware (parser, CORS)
+        ↓
+Match specific route (based on method and path)
+if no match > send 404 response
+if matched > execute route handler
+        ↓
+Run route-specific middleware > Authentication 🔐
+if auth fails > send 401 response
+if auth passes > proceed to route handler
+        ↓
+Execute route handler
+        ↓
+Process business logic (DB queries / validations) 🗄️>--------------------┐
+if success > send response to client                                     |
+if error > pass to error-handling middleware                             |
+                                                                         |
+# Full Lifecycle of MongoDB/Mongoose                                     |
+Define Mongoose schema and model (validation, type-checking)             |
+        ↓                                                                |
+Connect to MongoDB (during app startup)                                  |
+        ↓                                                                |
+Express receives HTTP request (CRUD operation)                           |
+        ↓                                                                ↓
+A Mongoose query is created and executed using model (.find(), .save()) 🚂🔐
+        ↓
+Query runs inside route handler or service layer❗
+        ↓
+Mongoose compiles query and sends it to MongoDB
+        ↓
+MongoDB processes operation (find, insert, update, or delete)
+        ↓
+MongoDB returns result or error to Mongoose
+        ↓
+Mongoose formats result into JavaScript objects (documents)
+        ↓
+Express handles result or passes error to error-handling middleware  
+        ↓
+Express sends response to client
+
+
+so i have to know the Full Lifecycle of Forms in react like this of mordern react i don't want classbased component
+
+-------------------------------------------------------------
+
+
+🧾 Full Lifecycle of Forms in React
+User sees form on screen (component is mounted)
+⬇
+Initial state is set (e.g. useState for input values)
+⬇
+User types into form fields
+⬇
+onChange event triggers handler function
+⬇
+Handler updates component state with new input
+⬇
+React re-renders with updated input value (controlled input)
+⬇
+(Optional) Input validation runs (real-time or onBlur)
+⬇
+User clicks Submit button
+⬇
+onSubmit event handler is triggered
+⬇
+Prevent default browser submission (event.preventDefault())
+⬇
+Validate all inputs (synchronously or asynchronously)
+if validation fails ⛔ → show errors, do not submit
+if validation passes ✅ → proceed
+⬇
+(Optional) Prepare payload from state (trim, transform, etc.)
+⬇
+Send data to backend (e.g. using fetch or axios)
+⬇
+Await response from server
+⬇
+If success → show confirmation / redirect / reset form 🟢
+If error → show error message / stay on form 🔴
+⬇
+(Optional) Reset form state (if needed)
+
+
+
+
+is this the flow chart or modern react i don't want class based component
