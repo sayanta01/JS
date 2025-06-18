@@ -50,36 +50,37 @@ if invalid > return 401 error || if valid > gives you decoded user data (e.g., u
 
 # Full Lifecycle of Authentication
 ## Register
-User provide username/password
+User provides username/password
     ↓
-Server hashes password with bcrypt and saves user to database
+Server hashes pswd using bcrypt.hash(pswd, saltRounds) and saves user to database
     ↓
-Send 201 response to client
+Send 201 Created response
 ## Login
-User send username/password
+User sends username/password
     ↓
-Server finds user and checks password using bcrypt.compare()
-- if invalid, send 401 response to client
-- if valid, generates JWT token with user's ID, and send token to client
+Server finds user in DB and checks pswd using bcrypt.compare(pswd, user.pswdHash)
+- if invalid, Send 401 Unauthorized response
+- if valid, Generate JWT token with user's ID and send token to client
     ↓
-- Client store it in (localStorage or React state)
+- Client stores token (in localStorage or React state)
 ## Access Protected Routes (Authorization) 🚂
-Client send token in the Authorization header (Bearer <token>)
+Client sends token in Authorization header (Bearer <token>)
     ↓
-Server extract and verifies token with jwt.verify() (tokenExtractor)
-- if valid, extract user ID > Attach to request object (userExtractor)
+Server verifies token using jwt.verify(token, process.env.SECRET)
+- if invalid/expired, Send 401 Unauthorized response
+- if valid, Extract user ID from token payload
     ↓
 Grant access to route handler
-
 ## Extra
 - Routes need to identify who's making the request (DRY)
+  * Create tokenExtractor & userExtractor middleware > Attach their respective objects to the request object
 - Access Control Models (like Role-Based Access Control)
 - Email Verification & OAuth
 
 # Full Error-handling Lifecycle
 ## How to handle errors?
-🔸 Use try/catch with next(error) inside routes > Pass errors to centralized middleware 🐞
-🔸 Or Just use express-async-errors to auto-forward async errors to errorHandler middleware
+- Manual: Use try/catch with next(error) inside routes > Pass errors to centralized middleware 🐞
+- Automatic: Just use express-async-errors to auto-forward async errors to errorHandler middleware
 
 ## Exercise
 - Don't validate password with Mongoose — use Express instead (the controller)

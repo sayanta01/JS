@@ -76,18 +76,18 @@ Middleware exe in order (application-level > route-level) ℹ️
 Execute application-level middleware (body parser, CORS)
     ↓
 Match route (based on method, path)
-- if no match > send 404 response
-- if matched > continue
+- if no match > Send 404 response
+- if matched > Continue
     ↓
 Execute route-level middleware (authentication, validation) 🔐
-- if fail > send 401/403 response (Unauthorized, Forbidden)
-- if pass > proceed to route handler
+- if fail > Send 401/403 Unauthorized/Forbidden response
+- if pass > Proceed to route handler
     ↓
 Execute route handler
     ↓
 Process business logic (DB queries, validations) 🗄️>---------------┐
-- if success > send JSON response to client                        |
-- if error > pass to error-handling middleware                     |
+- if success > Send JSON response to client                        |
+- if error > Pass to error-handling middleware                     |
                                                                    |
 # Lifecycle of MongoDB/Mongoose                                    |
 Define Mongoose Schema & Create Model (validation, type-checking)  |
@@ -106,7 +106,7 @@ MongoDB processes operation (find, insert, update, or delete)
     ↓
 MongoDB returns result (BSON) or error to Mongoose
     ↓
-Mongoose transforms BSON into JavaScript objects (documents)?
+Mongoose transforms BSON into JavaScript objects (documents)
     ↓
 Express handles result or passes error to error-handling middleware  
     ↓
@@ -115,30 +115,26 @@ Express sends JSON response to client
 # Lifecycle of populate Method
 Blog.find({}).populate("user", { name: 1, username: 1 })
     ↓
-Mongoose checks Blog schema: does "user" field have ref to another model?
+Mongoose checks Blog schema: does "user" field have ref to User model?
 - if Yes > Go to User collection
     ↓
-Find User by ObjectId (fetch only name, username fields)
-- ObjectId comes from request.body.userId sent in POST /api/blogs
+Find user by ObjectId (fetch only name, username fields)
+- ObjectId stored from req.body.userId during blog creation ℹ️
 ```js
 const user = await User.findById(request.body.userId);
 user: user._id, // store ObjectId in blog to link user
 ```
     ↓
-Replace ObjectId with selected User fields
+Replace ObjectId with selected user fields
     ↓
 Return populated blog documents
 
 ```js
-{
-  user: "684b39c1c22a7aab4f91157f" // <-- ObjectId
-}
-  ↓
-{
-  user: {
-    name: "Sayanta",
-    username: "bot",
-    id: "684b39c1c22a7aab4f91157f"
-  }
+user: "684b39c1c22a7aab4f91157f" // <-- ObjectId
+    ↓
+user: {
+  name: "Sayanta",
+  username: "bot",
+  id: "684b39c1c22a7aab4f91157f"
 }
 ```
