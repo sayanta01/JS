@@ -9,9 +9,9 @@
 # Implement user management functionality
 - Let's begin with the user login. Throughout this part, we will assume that new users will not be added from the frontend
 
-# Handling user login on the frontend
+# Handling user login
 ## Separating logic into services (like loginService)
-## Conditional rendering based on login status
+## Conditional rendering based on login status 💡
 - The app state has fields for username and password to store the data from the form
   The form fields have event handlers, which synchronize changes in the field to the state of the App component
 - The event handlers are simple: React by default passes an event object
@@ -49,7 +49,6 @@
 
 # To-Know
 - React re-renders component only when its state or props change
-- 500 (internal server error)
 `event.preventDefault()` // Stop default form behavior like reloading the whole page. i want to handle custom submission
 `onChange={({ target }) => setUsername(target.value)}` // Update username state as user types in input field
 
@@ -57,3 +56,13 @@
 <!-- handleLogin == event handler -->
 - An object can have one event handler for a specific event 
   but it can have multiple event listeners for the event
+
+# Exercise
+## Frontend for Blog App
+<!-- - Connect your backend with a proxy -->
+<!-- - Implement login functionality to the frontend -->
+<!--   The token returned with a successful login is saved to the application's state user -->
+<!-- - If a user is not logged in, only the login form is visible -->
+<!-- - Implement a way to log out -->
+<!-- - Expand your application to allow a logged-in user to add new blogs -->
+<!-- - Implement notifications that inform the user about successful and unsuccessful operations -->
