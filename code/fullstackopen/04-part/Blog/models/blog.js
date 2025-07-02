@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
 
 const blogSchema = mongoose.Schema({
-  url: String,
+  url: {
+    type: String,
+  },
   title: String,
   author: String,
   likes: {
@@ -10,7 +12,7 @@ const blogSchema = mongoose.Schema({
   },
   // one blog > belongs to only one user, so no array needed
   user: {
-    type: mongoose.Schema.Types.ObjectId, // store ObjectId of User document 
+    type: mongoose.Schema.Types.ObjectId, // store ObjectId of user document
     ref: "User",
   },
 });

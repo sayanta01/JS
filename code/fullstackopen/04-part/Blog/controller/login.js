@@ -8,7 +8,7 @@ loginRouter.post("/", async (request, response) => {
   const { username, password } = request.body;
 
   const user = await User.findOne({ username });
-  const passwordCorrect = user === null ? false : bcrypt.compare(password, user.passwordHash);
+  const passwordCorrect = user === null ? false : await bcrypt.compare(password, user.passwordHash);
 
   if (!(user && passwordCorrect)) {
     return response.status(401).json({
@@ -21,9 +21,9 @@ loginRouter.post("/", async (request, response) => {
     id: user._id,
   };
 
-  // token expires in one hour
+  // Generate JWT token
   const token = jwt.sign(userForToken, process.env.SECRET, {
-    // expiresIn: 60 * 60,
+    // expiresIn: 60 * 60, // token expires in one hour
   });
 
   response

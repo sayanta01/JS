@@ -3,21 +3,41 @@ GET http://localhost:3003/api/blogs/
 ###
 POST http://localhost:3003/api/blogs/
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvdCIsImlkIjoiNjg0YjM5YzFjMjJhN2FhYjRmOTExNTdmIiwiaWF0IjoxNzQ5OTI0OTU1fQ.sjIuq5x7OEV1cxAtoOe1ip6IU0FYKVYfaFtYT4dF8YU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvdCIsImlkIjoiNjg1MmVjMDJhNGEyMzhmYWMxZjVjM2NkIiwiaWF0IjoxNzUwMjY0ODQxfQ.YAf0O3ngvV4NSCiNCz6DZ3W8LV5BGWO21dXATpxVqao
 
 {
-  "title": "React patterns",
-  "author": "Michael Chan",
-  "url": "https://reactpatterns.com/",
-  "likes": 3,
-  "userId": "684b39c1c22a7aab4f91157f"
+  "title": "You’re NOT gonna need it!",
+  "author": "Ron Jeffries",
+  "url": "https://ronjeffries.com/xprog/articles/practices/pracnotneed/",
+  "likes": 2
 }
+
+# {
+#   "title": "React patterns",
+#   "author": "Michael Chan",
+#   "url": "https://reactpatterns.com",
+#   "likes": 3
+# }
 
 # {
 #   "title": "AI is Creating a Generation of Illiterate Programmers",
 #   "author": "Neo",
 #   "url": "https://nmn.gl/blog/ai-illiterate-programmers",
 #   "likes": 7
+# }
+
+# {
+#   "title": "AI is Creating a Generation of Illiterate Programmers",
+#   "author": "Neo",
+#   "url": "https://nmn.gl/blog/ai-illiterate-programmers",
+#   "likes": 7
+# }
+
+# {
+#   "title": "Microservices and the First Law of Distributed Objects",
+#   "author": "Martin Fowler",
+#   "url": "https://martinfowler.com/articles/distributed-objects-microservices.html",
+#   "likes": 1,
 # }
 
 ###
@@ -29,14 +49,16 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvd
 # },
 
 ###
-PUT http://localhost:3003/api/blogs/683e03359ffc74055bc7f4bd/upvote
+PUT http://localhost:3003/api/blogs/68603fa14a95725d987558de/upvote
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvdCIsImlkIjoiNjg1MmVjMDJhNGEyMzhmYWMxZjVjM2NkIiwiaWF0IjoxNzUwMjY0ODQxfQ.YAf0O3ngvV4NSCiNCz6DZ3W8LV5BGWO21dXATpxVqao
 
 ###
-DELETE http://localhost:3003/api/blogs/684dc649d4e32a87c267816b
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvdCIsImlkIjoiNjg0YjM5YzFjMjJhN2FhYjRmOTExNTdmIiwiaWF0IjoxNzQ5OTI0OTU1fQ.sjIuq5x7OEV1cxAtoOe1ip6IU0FYKVYfaFtYT4dF8YU
+DELETE http://localhost:3003/api/blogs/6852ec2ca4a238fac1f5c3d2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvdCIsImlkIjoiNjg1MmVjMDJhNGEyMzhmYWMxZjVjM2NkIiwiaWF0IjoxNzUwMjY0ODQxfQ.YAf0O3ngvV4NSCiNCz6DZ3W8LV5BGWO21dXATpxVqao
 
-### USER #######################################################################
+### Register User ##############################################################
 GET http://localhost:3003/api/users/
 
 ### 
@@ -46,14 +68,19 @@ Content-Type: application/json
 {
   "name": "Sayanta",
   "username": "bot",
-  "password": "idkThePswd"
+  "password": "idkthepswd"
 }
 
-### LOGIN #######################################################################
+###
+DELETE http://localhost:3003/api/users/684b39c1c22a7aab4f91157f
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImJvdCIsImlkIjoiNjg1MmVjMDJhNGEyMzhmYWMxZjVjM2NkIiwiaWF0IjoxNzUwMjY0ODQxfQ.YAf0O3ngvV4NSCiNCz6DZ3W8LV5BGWO21dXATpxVqao
+
+### Login ######################################################################
 POST http://localhost:3003/api/login
 Content-Type: application/json
 
 {
   "username": "bot",
-  "password": "idkThePswd"
+  "password": "idkthepswd"
 }
