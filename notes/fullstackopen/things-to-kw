@@ -37,7 +37,6 @@ When you use setState, you can also access the current value 💡
 
 # Pending ----------------------------------------------------------------------
 When do i need return in a function, and when not?
-- Server Components?
 - Why TCP & HTTP diff?
 
 Reconciliation: You only change the words you edited without rewriting the entire document (Efficient)

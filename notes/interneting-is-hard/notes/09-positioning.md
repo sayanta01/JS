@@ -18,5 +18,5 @@ Stacking Context and z-index - moves on the z-axis
 - Navigation menus should almost always be marked up as a <ul> list instead of a bunch of <div> elements
 
 # Vocab
-Offset: displacement or a shift
-Laid: put (something) down gently or carefully
+Offset: Displacement or a shift
+Laid: Put (something) down gently or carefully

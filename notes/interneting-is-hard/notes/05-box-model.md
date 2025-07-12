@@ -1,4 +1,6 @@
 # Pseudo-elements style parts of elements they don’t exist in HTML but behave like extra elements
+
+<link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
 *,
 *::before,
 *::after {

@@ -1,5 +1,4 @@
-/*
-# 1/day
+# 2/day
 https://github.com/lydiahallie/javascript-questions
 
 4: Type Coercion, Type Conversion
@@ -13,4 +12,3 @@ https://github.com/lydiahallie/javascript-questions
     However, if you don't add new, this refers to the global object!
 13: Capturing - Target - Bubbling
 14:?
-*/

@@ -2,7 +2,7 @@
 - Make components reusable, use the same component with different values
 - React components use props to communicate with each other
   Every parent component can pass some information to its child components by giving them props
-  like HTML attributes, but you can pass any JavaScript value through them, including objects, arrays and functions
+  like HTML attributes, but you can pass any JS value through them, including objects, arrays and functions
 
 Step 1: Pass props to the child component
 # export default function Profile() {
@@ -35,7 +35,7 @@ Usually you don’t need the whole props object itself, so you destructure it in
 #   let size = props.size;
 # }
 
-Specifying a default value for a prop: Default value to fall back on when no value is specified
+Specifying a default value for a prop: Default value to fallback on when no value is specified
 - function List({ category = "Category", items = [] }) // default props
 # function Avatar({ person, size = 100 }) {
 #   // Now, if <Avatar person={...} /> is rendered with no size prop, the size will be set to 100
@@ -62,7 +62,7 @@ Passing JSX as children: 💡
 - You can think of a component with a children prop as having a “hole” that can be “filled in” by its parent components with arbitrary JSX
   You will often use the children prop for visual wrappers: panels, grids, etc
 
-How props change over time: 💡 Update when the parent’s state changes
+How props change over time: Update when the parent’s state changes 💡
 - Component may receive different props over time. Props are not always static!
 - Props reflect a component’s data at any point in time, rather than only in the beginning
 - Props are immutable. Don’t try to “change props” — you will need to “set state”
@@ -71,4 +71,4 @@ How props change over time: 💡 Update when the parent’s state changes
   its old props will then be removed, and eventually the JavaScript engine will reclaim the memory taken by them
 
 # Vocab
-Omitted - not included
+Omitted: Not included

@@ -22,7 +22,7 @@
 
 
 # Lint: Static program analysis 🧹 Detects/Flags errors
-- In the JS universe, the current leading tool for static analysis (aka "linting") is ESlint
+<!-- - In the JS universe, the current leading tool for static analysis (aka "linting") is ESlint -->
 - Add ESLint as a development dependency for the backend
   - npm install eslint @eslint/js --save-dev
   - npx eslint --init (ESlint configuration)
@@ -54,7 +54,7 @@ export default [
     "@stylistic/js": stylisticJs,
   }`
 - Note for Windows users: The linebreak style is set to unix in the style rules
-  It is recommended to use Unix-style linebreaks (\n) regardless of your operating system
+  it is recommended to use Unix-style linebreaks (\n) regardless of your operating system
 
 
 # Running the Linter

@@ -1,15 +1,13 @@
 # Debugging Node applications
 - Printing to the console is a tried and true method, and it's always worth doing
   https://swizec.com/blog/javascript-debugging-slightly-beyond-consolelog/
-
 ## VS Code
-- This can be done by choosing Add Configuration... on the drop-down menu
+- Can be done by Add Configuration... on the drop-down menu
   https://code.visualstudio.com/docs/debugtest/debugging
 ## Chrome DevTools
 - Debugging is also possible with the Chrome developer console by starting your application with the command:
   `node --inspect index.js`
 - You can access the debugger by clicking the green icon - the node logo - that appears in the Chrome developer console
-
 
 # Question Everything
 - The key is to be systematic. Since the problem can exist anywhere
@@ -19,9 +17,11 @@
   It will guarantee that your code will soon have even more bugs, and debugging them will be even more difficult
   The Jidoka (stop and fix) principle from Toyota Production Systems is very effective in this situation as well
 
-
 # MongoDB
-<!-- Why mongoose code is async by default? -->
+- Why mongoose code is async by default?
+- The reason for using Mongo as the database is its lower complexity compared to a relational database
+  Document databases diff from relational databases in how they organize data as well as in the query languages they support
+  Document databases are usually categorized under the NoSQL umbrella term
 <!-- https://youtu.be/IFMfHhhq0ls?si=J4kSOxGnLrEjc_ss -->
 <!-- - find() -->
 <!--   Returns an array -->
@@ -34,10 +34,6 @@
 <!--   If nothing matches, it returns null -->
 <!--   Use when you only want one document -->
 <!--   You can access the result directly without looping -->
-- The reason for using Mongo as the database is its lower complexity compared to a relational database
-  Document databases differ from relational databases in how they organize data as well as in the query languages they support
-  Document databases are usually categorized under the NoSQL umbrella term
-
 
 # Schema: Tells Mongoose how the note objects are to be stored in the database
 https://mongoosejs.com/docs/ - schemas, models, documents, queries 📕
@@ -46,14 +42,14 @@ https://mongoosejs.com/docs/ - schemas, models, documents, queries 📕
 - Mongoose automatically looks for the plural, lowercased version of your model name
 - Document databases like Mongo are schemaless, meaning that the database itself does not care about
   the structure of the data that is stored in the database
-  It is possible to store documents with completely different fields in the same collection
-  That's why Mongoose exist to bring structure to MongoDB
+  * It is possible to store documents with completely different fields in the same collection
+    That's why Mongoose exist to bring structure to MongoDB
 
 <!-- ----------------------------------------------------------------------- -->
 # Things to know
 - There are two servers in backend
-  Application Server: Runs backend code (Node.js with Express) that handles routes, business logic, and APIs
-  Database Server: Stores and retrieves data (MongoDB, PostgreSQL) in response to queries from the application server
+  * Application Server: Runs backend code (Node.js with Express) that handles routes, business logic, and APIs
+  * Database Server: Stores and retrieves data (MongoDB, PostgreSQL) in response to queries from the application server
 <!-- - Postgre refers to "Post-Ingres" meaning "After-Ingres" -->
 <!--   Ingres was an early RDBMS used before PostgreSQL -->
 - The client sends request to the application, which processes it
@@ -102,8 +98,8 @@ https://mongoosejs.com/docs/ - schemas, models, documents, queries 📕
 
 
 # Creating and saving objects
-- Models are constructor functions that create new JavaScript objects based on the provided parameters
-  which also include methods for saving the object to the database
+<!-- - Models are constructor functions that create new JavaScript objects based on the provided parameters -->
+<!--   which also include methods for saving the object to the database -->
 
 # Fetching objects from the database
 - The parameter of the method is an object expressing search conditions
@@ -244,12 +240,12 @@ app.get('/api/notes/:id', async (request, response) => {
 # Sources
 https://www.mongodb.com/resources/languages/javascript
 https://www.mongodb.com/docs/manual/crud/
-https://www.mongodb.com/docs/manual/reference/operator/query/
-https://www.mongodb.com/docs/manual/indexes/
+<!-- https://www.mongodb.com/docs/manual/reference/operator/query/ -->
+<!-- https://www.mongodb.com/docs/manual/indexes/ -->
 https://www.mongodb.com/docs/manual/data-modeling/
 https://www.mongodb.com/docs/manual/reference/method/ObjectId/
 https://mongodb.github.io/node-mongodb-native/
-https://www.mongodb.com/developer/products/mongodb/cheat-sheet/
+<!-- https://www.mongodb.com/developer/products/mongodb/cheat-sheet/ -->
 
 <!-- Memorize This Mental Map -->
 <!-- You only really need to: Querying & Validating -->
@@ -269,6 +265,16 @@ https://www.mongodb.com/developer/products/mongodb/cheat-sheet/
   like filtering, transforming, grouping, or sorting the data
 - Public interface: What is exposed to external code (via module.exports)
 - CastError: ConversionError
+
+
+https://youtu.be/QPFlGswpyJY?si=P1c4UtKk6NTOK4rr
+https://youtu.be/yo6ZXsgsyBA?si=KLUHDN7UUuJ8MVa1
+https://www.mongodb.com/docs/manual/reference/operator/query/
+ACID Properties in mongodb
+- atomic operator
+Linking vs Embedding (relationship is very important)
+Aggregation Pipelines 🪨
+Joins, but this are not that powerfull like SQL
 
 # Vocab
 Map: Transform

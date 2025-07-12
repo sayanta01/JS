@@ -1,6 +1,4 @@
 #
-Variables
-- var()
 Functions
 - calc() clamp()
 Animations 
@@ -27,4 +25,18 @@ https://rehansaeed.com/css-general-rules-of-thumb
 https://youtu.be/vmJ9j6BdX_g?si=kksZx0s3l0i2C-aU
 
 Tailwind CSS: utility-first framework
-https://necolas.github.io/normalize.css/
+https://unpkg.com/modern-css-reset/dist/reset.min.css
+
+Color Theory for Web Design?
+https://youtu.be/bE2IJNHsRWQ?si=YrDCZHFaSuUpQY6C
+https://youtu.be/vvPklRN0Tco?si=YXE8uJIzZjhkKnoA
+
+- Color Harmony https://color.adobe.com/create/color-wheel
+- Color Contrast Ratio 4.5:1 https://webaim.org/resources/contrastchecker/
+- 60-30-10 Rule
+- Just use HSL
+
+https://www.instagram.com/reel/DIYvGZGSYci/?utm_source=ig_web_copy_link&igsh=cTJycmI5NWQzcmdv
+
+https://colorhunt.co/
+https://coolors.co/

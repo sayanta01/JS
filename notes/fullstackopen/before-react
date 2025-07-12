@@ -6,38 +6,8 @@ https://www.patterns.dev/react/
 Beginner React Mistakes??
 
 # Terms
-React Query ??
-Thunks for Redux
 Coupled/Decoupled ??
 Why does React use useState instead of just regular variables?
-
-# Data usage, JSX, Data flow 
-# function App() {
-#   const [count, setCount] = useState(0); // State
-#
-#   return (
-#     <div>
-#       <h1>Count: {count}</h1>            // JSX with state
-#       <Button handleClick={() => setCount(count + 1)} />
-#     </div>
-#   );
-# }
-#
-# function Button({ handleClick }) {       // Props
-#   return <button onClick={handleClick}>Click me</button>;
-# }
-
-State:
-- Manage Dynamic Data - Track changing values (e.g., form input, counters)
-- Stores dynamic data inside component and triggers re-renders when updated
-- Component-specific, (private & mutable data)
-- Trigger UI Updates - Automatically re-renders when state changes
-
-Props: - Arguments of function
-- Pass data from parent to child - Read-only (immutable)
-- Make components reusable, use the same component with different values
-# - Keep components pure (no unnecessary state)
-# - Used for: text, styles, callbacks, API data
 
 Hooks let us use state and other features in function components, making React simpler and more powerful:
 How hooks really works?
@@ -45,8 +15,6 @@ Hooks: Used to manage state and lifecycle within a React component
 - useState returns the `initial` value and `function` to update it
 - use arrow function in useState to prevent re-executing complex initial values on re-renders
  
-HTML: <table> <form> <input>
-
 Conditional statements:
 # switch - simplifies multiple if-else conditions
 # let testScore = 90;
@@ -127,9 +95,6 @@ ES6-Features:
 # Modules - file that exports code
 # <script type="module" src="main.js"></script>
 # // Default exports: No {}, one per file
-# export default function greet() { 
-#   console.log("Hello!");
-# }
 
 # // Named exports: Use {}, multiple allowed
 # export function sayBye() {
@@ -156,6 +121,5 @@ ES6-Features:
 #   write down the values that they result in
 
 # Regex - . ^ $ * - ? () [] {} \ |
-- Validate Text
-- Search through Text
+- Validate Text, Search through Text
 https://cheatography.com/davechild/cheat-sheets/regular-expressions/

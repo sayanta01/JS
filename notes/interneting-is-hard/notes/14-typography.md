@@ -1,5 +1,4 @@
-#
-Families and Faces
+# Families and Faces
 ![](https://cdn.logojoy.com/wp-content/uploads/20230525132932/types-of-fonts-infographic-600x450.png)
 - sans-serif 4 heading and serif 4 body text
 ![](https://internetingishard.netlify.app/font-weights-and-styles-9bf7f0.dca801b0.png)
@@ -32,8 +31,6 @@ Use consistent spacing throughout the page
 Don’t use text-decoration: underline except for hover states
 
 https://practicaltypography.com/summary-of-key-rules.html
-WCAG Guidelines
-- Color Contrast Ratio 4.5:1
 
 # Vocab
 Sparingly: in a restricted
