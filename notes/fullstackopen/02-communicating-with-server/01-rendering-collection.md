@@ -25,7 +25,7 @@ Key-attribute:
   This helps React update only the necessary parts of the screen instead of reloading everything
 `{notes.map(note => <li key={note.id}>{note.content}</li>)}`
 
-- If there is no unique property in the object, use the index of the array as the key:
+- if there is no unique property in the object, use the index of the array as the key:
 - Anti-pattern: Array Indexes as Keys: not recommended
 {items.map((item, index) => (
   <li key={index}>{item.name}</li>
@@ -62,9 +62,9 @@ When the Application Breaks:
   The problem often begins to solve itself when destructuring is removed and we see what the props contain
 
 Web developer's oath:
-Programming is hard, that is why I will use all the possible means to make it easier:
-- I will have my browser developer console open all the time
-- I progress with small steps
-- I will write lots of console.log statements to make sure I understand how the code behaves and to help pinpoint problems
-- If my code does not work, I will not write more code
-  Instead, I start deleting the code until it works or just return to a state when everything was still working
+Programming is hard, that is why i will use all the possible means to make it easier:
+- i will have my browser developer console open all the time
+- i progress with small steps
+- i will write lots of console.log statements to make sure i understand how the code behaves and to help pinpoint problems
+- if my code does not work, i will not write more code
+  instead, i start deleting the code until it works or just return to a state when everything was still working

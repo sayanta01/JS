@@ -1,4 +1,7 @@
 https://www.deepintodev.com/blog/how-react-works-behind-the-scenes
+https://youtu.be/7YhdqIR2Yzo?si=UAkZFaKV2QiVaT-m
+
+Why useState instead of just variables?
 
 # Virtual DOM: Just JavaScript objects
 - Why the real DOM is slow for frequent updates: When you make changes to the real DOM
@@ -9,7 +12,7 @@ https://www.deepintodev.com/blog/how-react-works-behind-the-scenes
 - An internal data structure that implements React's reconciliation algorithm with advanced scheduling capabilities
 - A linked list structure that enables incremental rendering and holds additional metadata
 
-# Reconciliation and Diffing Algorithms
+# Reconciliation & Diffing Algorithms
 Reconciliation: The overall process React uses to update the UI following data changes
 Diffing: A part of the reconciliation process, the algorithm that compares previous and new trees
 - First Rule of Diffing Algorithm: Two elements of different types will produce different trees 💡
@@ -36,5 +39,5 @@ There's also a second use case for the key prop:
 # Recap
 ![](./react-rendering-lifecycle.png) - The render phase can be asynchronous, the commit phase is strictly synchronous!
 - Figure out how the React Element will turn into an actual DOM Element?
-- If you don't want the Child to re-render when parent component renders, then you can wrap the Child in React.memo()
+- if you don't want the Child to re-render when parent component renders, then you can wrap the Child in React.memo()
 - The component that writes the results to the actual DOM is a library called ReactDOM/React Native

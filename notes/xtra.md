@@ -1,21 +1,25 @@
 # Always bet on JS!
-# https://eloquentjavascript.net/14_dom.html
-# https://www.javascripttutorial.net/
+
+https://eloquentjavascript.net/14_dom.html
+https://www.javascripttutorial.net/
 https://github.com/leonardomso/33-js-concepts
-https://www.samanthaming.com/
+https://www.joshwcomeau.com/operator-lookup/
 
 # Interview
+
 https://namastedev.com/learn/namaste-interview
 CORS - https://youtu.be/tcLW5d0KAYE?si=uRWRzTOyUVJxflVK
+CSRF - Cross-Site Request Forgery
 
 # Tools
-# https://developer.chrome.com/docs/devtools/
-https://www.joshwcomeau.com/operator-lookup/
+
+https://developer.chrome.com/docs/devtools/
 https://omatsuri.app/
-https://jsviz.klve.nl/
 
 # Blogs
+
 https://davidwalsh.name
+https://www.samanthaming.com/
 https://addyosmani.com/blog
 https://www.taniarascia.com
 https://flaviocopes.com
@@ -23,21 +27,22 @@ https://overreacted.io/things-i-dont-know-as-of-2018
 https://blog.bytebytego.com/p/79-engineering-blogs-to-level-up
 
 # Design
+
 https://www.figma.com/community
 https://dribbble.com/creativemints
 
 - Project: not-todo
   Absorb new information, Build something using that knowledge, Repeat
-- get Bro Code syntax
-  document.addEventListener(event, callback)
+---
 
-+-------------------------+
 | What problem _ solves ? |
-| Where _ used most ?     |
-| How does _ works ?      |
-+-------------------------+
+| Where _ used most ? |
+| How does \_ works ? |
+
+---
 
 # Vocab
+
 Entities: Represent individual items with specific details
 Fetch: Retrieve something or someone
 Evaluate: Process an expression to produce a result
@@ -46,12 +51,19 @@ Clause: A part of a statement that specifies a condition or action
 # Immediately Invoked Function Expressions (IIFEs) - Prevent global scope pollution
 
 # // Currying - Functions that take one argument at a time instead of all at once
+
 # const multiply = function(x) {
-#   return function(y) {
-#     console.log(x * y);
-#   };
+
+# return function(y) {
+
+# console.log(x \* y);
+
 # };
+
+# };
+
 # const multiplyByTwo = multiply(2); // Pre-setting 2 as the first argument
+
 # multiplyByTwo(3);
 
 Autoboxing & Primitive Wrapper Objects
@@ -62,5 +74,6 @@ Browser - Web Workers
 Node.js - Worker Threads
 
 To Know:
+
 - There are 2 hard problems in CS: cache invalidation, naming things, and off-by-1 errors
 - List classic problems of programming

@@ -13,8 +13,8 @@ Array Destructuring
 Spread (...) - Clone & Merge
 - Expand an array or string into individual elements or properties
 - An operator is a symbol/keyword that performs an action on values/operands
-# const str = `hello`;
-# console.log([...str]);
+# const backpack = ["shirt", "pant", "jacket"]
+# console.log([...backpack])
 
 Rest of the parameters (...) - Handle extra/unwanted data
 - Pack multiple arguments into an array
@@ -23,7 +23,7 @@ Rest of the parameters (...) - Handle extra/unwanted data
 # };
 # func(1, 2, 3, 4);
 
-Function Parameter Destructuring: (Most Common in React Props & APIs)
+Function Parameter Destructuring: Most Common in React Props & APIs
 - Cleaner function signature by avoiding obj.property everywhere inside the function
 - Only extracts needed properties instead of passing the whole object
 # const user = { name: "Alice", age: 25, city: "NY" };

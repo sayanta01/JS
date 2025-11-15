@@ -11,7 +11,7 @@ Even in an empty file, the JS engine:
 Global Scope: "this" == "window" global object, holds all global variables/functions
 - global functions/variables are properties of the global object
 
-Inner functions: "this" won’t refer to the global object unless explicitly set
+inner functions: "this" won’t refer to the global object unless explicitly set
 
 Strict mode: "this" will be `undefined` if not explicitly bound in functions
 Non-strict mode: "this" refers to the global object unless explicitly bound

@@ -1,60 +1,58 @@
-# ![](https://raw.githubusercontent.com/eludadev/css-docs/main/assets/css_grid.png)
-https://grid.malven.co
-
-https://cssgridgarden.com
-https://www.euismod.dev/#/learn
-
-https://learncssgrid.com/#grid-container
+![](https://raw.githubusercontent.com/eludadev/css-docs/main/assets/css_grid.png)
+https://grid.malven.co/
+https://cssgridgarden.com/
 https://www.joshwcomeau.com/css/interactive-guide-to-grid/
-# https://www.coltsteele.com/tutorials/mastering-css-grid
+https://learncssgrid.com/
 
-https://youtu.be/xI9G0Zh5DVA?si=fY09RWhmlsdZH4TK
-https://youtu.be/EiNiSFIPIQE?si=jVRYOQe8o_Nayht6
+# Grid Container Setup
 
-# ------------------------------------------------------------------------------
-Grid Container Setup
 .container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;  # width
+  grid-template-columns: 1fr 1fr 1fr; # width
   grid-template-rows: auto 300px auto; # height
-  grid-gap: 10px;
+  gap: 10px;
 }
 
-Grid Placement Properties
+# Grid item Placement
+
 .item {
-  grid-column: 1/2; # start/end
-  grid-row: 1/2;
-  # grid-column: span 2;
-
-  Use grid-area with grid-template-areas and named regions
-  # grid-area: 2/1/4/3; # row-start/col-start/row-end/col-end
+  grid-rows/columns: start / end;
+  grid-rows/columns: span 2;
+  grid-area: row-start / col-start / row-end / col-end
 }
 
-Responsive Grid - that adjusts based on available space - no media queries needed!
-- grid-template-columns/rows: repeat(auto-fit/fill, minmax(250px, 1fr));
-Creates exactly 3 equal columns or rows
-- grid-template-columns/rows: repeat(3, 1fr);
+# Grid Template Areas
 
-Grid Template Areas
 .container {
   grid-template-areas:
-    "header header header"
-    "sidebar content content"
-    "footer footer footer";
+  "header header header"
+  "content content sidebar"
+  "footer footer footer";
 }
 .header { grid-area: header; }
 
-Grid Alignment
-- justify-items: center; # horizontal alignment of items
-  align-items: center;   # vertical alignment of items
-  justify-content: space-between; # alignment of entire grid
-  align-content: start;  # alignment of entire grid
+# Responsive Grid - that adjusts based on available space - no media queries needed!
 
-Implicit Grid - auto-placement behavior
-- grid-auto-rows: minmax(100px, auto);
-  grid-auto-columns: minmax(100px, auto);
-  grid-auto-flow: dense; # controls auto-placement algorithm
+- grid-template-rows/columns: repeat(auto-fit, minmax(250px, 1fr));
+- grid-template-rows/columns: repeat(3, 1fr); # Creates exactly 3 equal rows or columns
 
-Terms:
-Explicit - clearly and directly defined sizes by you (e.g., width, height)
-Implicit - sizes determined by the browser based on content or context
+# Grid item Alignment
+
+- justify-items: center; # Horizontal alignment of items
+- align-items: center; # Vertical alignment of items
+- justify-content: space-between; # Alignment of entire grid
+- align-content: start; # Alignment of entire grid
+
+# The implicit Grid & Auto-placement
+
+- Controls auto-placement algorithm
+
+# Terms
+
+Explicit: Clearly and directly defined sizes by you (e.g., width, height)
+Implicit: Sizes determined by the browser based on content or context
+
+# GRID GARDEN
+
+- When pairing grid-column-start and grid-column-end, you might assume that the end value has to be greater than the start value. But this turns out not the case!
+- if you want to count grid lines from the right instead of the left, you can give grid-column-start and grid-column-end negative values. For example, you can set it to -1 to specify the first grid line from the right

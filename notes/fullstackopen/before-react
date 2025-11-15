@@ -1,17 +1,12 @@
 # https://products.thecodedose.com/javascript-mastery#curriculum
 https://kentcdodds.com/blog/javascript-to-know-for-react
-https://v3.tailwindcss.com/docs/guides/vite#react
 https://www.patterns.dev/react/
 
-Beginner React Mistakes??
-
-# Terms
-Coupled/Decoupled ??
-Why does React use useState instead of just regular variables?
+Beginner React Mistakes?
 
 Hooks let us use state and other features in function components, making React simpler and more powerful:
 How hooks really works?
-Hooks: Used to manage state and lifecycle within a React component
+Hooks used to manage state and lifecycle within a React component
 - useState returns the `initial` value and `function` to update it
 - use arrow function in useState to prevent re-executing complex initial values on re-renders
  
@@ -89,7 +84,7 @@ for (const key in user) {
 # Type Coercion
 # Falsy Values - null, undefined, NAN, 0 and ""
 
-# Web Storage APIs - ways to store data in the browser
+# Web Storage Apis - ways to store data in the browser
 
 ES6-Features:
 # Modules - file that exports code
@@ -121,5 +116,5 @@ ES6-Features:
 #   write down the values that they result in
 
 # Regex - . ^ $ * - ? () [] {} \ |
-- Validate Text, Search through Text
+- Validate text, Search through text
 https://cheatography.com/davechild/cheat-sheets/regular-expressions/

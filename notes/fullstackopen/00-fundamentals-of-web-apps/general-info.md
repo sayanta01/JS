@@ -1,5 +1,5 @@
 - The main focus is on Single-Page Applications implemented with React
-  and supporting them with RESTful and GraphQL web services implemented with Node.js
+  and supporting them with RESTful & GraphQL web services implemented with Node.js
 
 ![HTTP GET](https://fullstackopen.com/static/22b2a40c65af76b2b4b28e57d186a9af/5a190/7m.png)
 - Network Tab: Preserve log can also be useful & Disable cache
@@ -16,7 +16,7 @@
 - The browser sends initial HTTP GET request and receives HTML with JavaScript links
   then browser loads and runs the JS, which may include event handlers that trigger additional requests (to fetch JSON data)
 
-# Document Object Model: (API) that enables programmatic modification of the element trees
+# Document Object Model: Api that enables programmatic modification of the element trees
 <!-- - The following code creates a new node, assigns it to the variable ul, and adds some child nodes to it: -->
 <!-- `var ul = document.createElement('ul') -->
 <!--  data.forEach(function(note) { -->
@@ -29,7 +29,7 @@
 
 # Manipulating the document object from console
 <!-- - The topmost node of the DOM tree of an HTML document is called the document object -->
-<!--   We can perform various operations on a webpage using the DOM-API -->
+<!--   We can perform various operations on a webpage using the DOM-Api -->
 <!-- - Get the list of notes from the page. The list is in the first ul-element of the page: -->
 <!-- `list = document.getElementsByTagName('ul')[0]` -->
 <!-- - Then create a new li-element and add some text content to it: -->
@@ -42,14 +42,14 @@
 # Loading a page containing JavaScript
 ![](https://fullstackopen.com/static/15a8e6a030a5d6b3d2b4b459c3f2f10f/5a190/19m.png)
 - The browser executes the JavaScript code. The code makes an HTTP GET request, which returns the notes as JSON data
-- When the data has been fetched, the browser executes an event handler, which renders the notes to the page using the DOM-API
+- When the data has been fetched, the browser executes an event handler, which renders the notes to the page using the DOM-Api
 
 # Forms and HTTP POST: Examine how adding a new note is done
 <!-- https://www.restapitutorial.com/httpstatuscodes -->
 
 # AJAX: Asynchronous JavaScript and XML
 <!-- - JSON data is fetched from the URL `exampleapp/data.json` and new notes are sent to the URL `exampleapp/new_note` -->
-<!--   Nowadays URLs like these would not be considered acceptable, as they don't follow the generally acknowledged conventions of `RESTful APIs` -->
+<!--   Nowadays URLs like these would not be considered acceptable, as they don't follow the generally acknowledged conventions of `RESTful Apis` -->
 
 # Single page app: Does not reload the whole page
 - SPA-style websites don't fetch all of their pages separately from the server like our sample application does

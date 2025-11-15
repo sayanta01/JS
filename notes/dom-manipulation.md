@@ -69,18 +69,18 @@ https://youtu.be/Mi4EF9K87aM?si=YVidfFERBjnAWyWp
 Event Propagation (Bubbling & Capturing): Trickling Down, Bubbling Up
 https://youtu.be/aVSf0b1jVKk?si=n2ynQYLnPjfFYlVZ
 - Mechanism that dictates how events travel through the Document Object Model (DOM)
-# document.querySelector("#grandParent").addEventListener("click", () => {
-#   console.log("Grandparent Clicked!");
-# }, true);
-#
-# document.querySelector("#parent").addEventListener("click", () => {
-#   console.log("Parent Clicked!");
-# }, false ); // default is Bubbling up
-#
-# document.querySelector("#child").addEventListener("click", (e) => {
-#   console.log("Child Clicked!");
-#   e.stopPropagation();
-# }, false);
+<!-- document.querySelector("#grandParent").addEventListener("click", () => { -->
+<!--   console.log("Grandparent Clicked!"); -->
+<!-- }, true); -->
+<!---->
+<!-- document.querySelector("#parent").addEventListener("click", () => { -->
+<!--   console.log("Parent Clicked!"); -->
+<!-- }, false ); // default is Bubbling up -->
+<!---->
+<!-- document.querySelector("#child").addEventListener("click", (e) => { -->
+<!--   console.log("Child Clicked!"); -->
+<!--   e.stopPropagation(); -->
+<!-- }, false); -->
 
 Event Delegation way to handle events more efficiently in JavaScript
 https://youtu.be/3KJI1WZGDrg?si=RUiB_nLPozfzGx8y

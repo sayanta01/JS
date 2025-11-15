@@ -30,7 +30,7 @@ BUT WAIT: The returned inner() still REMEMBERS "message"!
 You call myFunc() (which is inner())
  ↓
 inner() runs:
-  - It PRINTS "Hello from outer!" because it remembers message!
+- it PRINTS "Hello from outer!" because it remembers message!
 
 # function x() {
 #   var a = 7;
@@ -43,16 +43,16 @@ inner() runs:
 # console.log(z); // z holds the entire function y, including its lexical scope
 
 Advantages of Closure:
-Data hiding and Encapsulation
-Module Design Pattern
-Memoization - saving function results to avoid re-computing
-Curring - transforming
-setTimeouts and Asynchronous Programming
+- Data hiding & Encapsulation
+- Module Design Pattern
+- Memoization - Saving function results to avoid re-computing
+- Curring - Transforming
+- setTimeout & Asynchronous Programming
 
 Disadvantages of Closure:
-Memory Consumption
-Potential for Memory Leaks
+- Memory Consumption
+- Potential for Memory Leaks
 
 # Terms
-Object: group related data and properties
+Object: group related data & properties
 Symbol: unique identifier for object properties

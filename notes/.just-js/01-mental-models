@@ -26,7 +26,7 @@ Inferred - Assumed
 Laborious - Requiring considerable time and effort
 
 # ------------------------------------------------------------------------------
-Mental model of how JavaScript works??
+Mental model of how JavaScript works?
 How variables, values, and object mutations really work:
 - what happens in your mind when you see an assignment?
 - what does nested object really mean?

@@ -17,8 +17,8 @@ Best Practices:
 - Modularity: break logic into independent functions
 
 https://youtu.be/E7Fbf7R3x6I?si=AboUNn0ewmSDvqzd
-- Imperative = "How"
-- Declarrative = "What"
+- imperative = "How"
+- declarrative = "What"
 
 Array.prototype: refers to the prototype object of the Array constructor
 Array and Function are constructor functions that create new instances of arrays and functions:

@@ -1,7 +1,7 @@
 # 7
 Scope in JS is directly related to Lexical Environment
 Lexical Scope: variables are found based on where they're written, not where the functions are called
-Lex Env = local memory  lex env of its ^parent
+Lex Env = local memory & ref to lex-env of ^parent
 Lexical: in hierarchy, in order of scope
 
 How it Works:

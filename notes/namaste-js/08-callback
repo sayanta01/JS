@@ -4,10 +4,11 @@ Callback: function passed to another function to be executed later # hey, when y
 # setTimeout(function () {
 #   console.log("timer");
 # }, 3000);
-# function x(y) { // x runs first, then calls the y function passed as a parameter
+# function x(y) {
 #   console.log("x");
 #   y();
 # }
+# // x runs first, then calls the y function passed as an parameter
 # x(function y() {
 #   console.log("y");
 # });
@@ -15,7 +16,7 @@ Callback: function passed to another function to be executed later # hey, when y
 Functions run on the call stack, blocking it blocks the main thread # Call Stack = Main Thread
 Never block the main thread, use async "setTimeout" for time-consuming tasks
 - document.getElementById("clickMe").addEventListener("click", function callback() { console.log("Button clicked!"); });
-- cb() registered inside the Web-API-Env and event(click) is attached to it
+- cb() registered inside the Web-API-Env & event(click) is attached to it
 
 Event listeners are heavy because they form closures, Remove them to improve performance and free memory
 - button.removeEventListener("click", handleClick); // garbage collection

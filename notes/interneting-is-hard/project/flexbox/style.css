@@ -1,14 +1,14 @@
 * {
   margin: 0px;
   padding: 0px;
-  box-sizing: jorder-box;
+  box-sizing: border-box;
 }
 
 .menu-container {
   display: flex;
-  color: #fff;
-  background-color: #5995da;
-  padding: 20px 0;
+  color: aliceblue;
+  background-color: lavenderblush;
+  padding: 20px 0px;
   justify-content: center;
 }
 

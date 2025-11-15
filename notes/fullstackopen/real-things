@@ -1,15 +1,13 @@
 #
-Authentication, Chat & Profile Managment
-
 🧱 Reusable, Modular Components = 🔑
 
 1. User Authentication & Authorization
-2. CRUD UIs (Create, Read, Update, Delete)
-3. APIs (Usually REST or GraphQL)
-4. State Management (Client-Side)
-5. Styling and Layout
-6. Basic Database Modeling
-7. Deployment / Hosting
+2. CRUD (Create, Read, Update, Delete)
+3. Api (Usually REST or GraphQL)
+4. State Management
+5. Styling & Layout
+6. Database Modeling
+7. Deployment & Hosting
 
 - Reusable Components (buttons, inputs, form controls)
   Build once, use everywhere. Saves time, improves consistency

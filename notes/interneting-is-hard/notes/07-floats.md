@@ -1,9 +1,10 @@
 # https://youtu.be/xara4Z1b18I?si=Ec2TEUDmte-vtw54
+
 Fl🎈ats - let things stack horizontally instead of vertically
 Clearing Floats - don't want any elements beside the floated element; everything should start below it
 Overflow - hides content that overflows the box
 
-Common layout patterns - sidebar layout and full-bleed layout
+Common layout patterns - Sidebar layout & Full-bleed layout
 
 Inline boxes are aligned with the text-align property
 Percentages are relative to the width of the parent element

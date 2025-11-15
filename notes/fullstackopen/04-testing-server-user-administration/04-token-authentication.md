@@ -4,7 +4,7 @@
 https://www.digitalocean.com/community/tutorials/the-ins-and-outs-of-token-based-authentication#how-token-based-works
 ![Token-Based Authentication](https://fullstackopen.com/static/259c9dce6b3d1d77bedb04e799ac7dd3/5a190/16new.png)
 ## How JWT Works
-- JWT looks random, but it's a SIGNED token with user info inside!
+- JWT looks random, but it's a Signed token with user info inside!
   * https://jwt.io/#Debugger
 <!-- - When you login, we CREATE the token -->
 <!--   * We put user data INSIDE the token -->
@@ -88,7 +88,7 @@ Grant access to route handler
 # Full Error-handling Lifecycle
 ## How to handle errors?
 - Manual: Use try/catch with next(error) inside routes > Pass errors to centralized middleware 🐞
-- Automatic: Just use express-async-errors to auto-forward async errors to errorHandler middleware
+- Automatic: Just use `express-async-errors` to auto-forward async errors to errorHandler middleware
 
 ## Exercise
 - Don't validate password with Mongoose — use Express instead (the controller)

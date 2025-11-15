@@ -1,7 +1,7 @@
 https://www.deepintodev.com/blog/how-javascript-works-behind-the-scenes
 
-----------------       --------------------------------- 
-|  Call Stack  |       |           Web APIs            |
+----------------       ---------------------------------
+|  Call Stack  |       |           Web Apis            |
 |              |       |  callback             delay   |
 |              |       |  () => log("1000ms")  1000ms  |
 |              |       |                               |
@@ -23,11 +23,11 @@ https://www.deepintodev.com/blog/how-javascript-works-behind-the-scenes
   Also some other functions like queueMicrotask, new mutationObserver
 
 ```js
-Promise.resolve().then(() => console.log(32)); // Promise-based APIs
+Promise.resolve().then(() => console.log(32)); // Promise-based Api
 
 setTimeout(() => console.log(9), 5);
 
-// Callback-based APIs
+// Callback-based Api
 queueMicrotask(() => {
   console.log(11);
   queueMicrotask(() => console.log(4)); // Function passed as argument

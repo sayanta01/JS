@@ -18,7 +18,7 @@ https://github.com/node-config/node-config
 - NODE_ENV config flow `package.json > note_api.test.js > app.js > config.js`
   - Run a single test file with `NODE_ENV=test node --test tests/note_api.test.js`
 
-# Initializing the database before tests
+# initializing the database before tests
 - Reset the test database and generate the needed test data before testing
   So that tests don’t depend on whatever data was there before `beforeEach`
 
@@ -27,14 +27,14 @@ https://github.com/node-config/node-config
   Accomplishing this with the `only` method & `npm test -- --test-only` ⚠️
 
 # async/await
-<!-- ## Problem: http://callbackhell.com/ -->
-<!-- ## Solution: https://javascript.info/promise-chaining (The then-chain is alright, but we can do better) -->
-<!-- - The generator functions introduced in ES6 provided a clever way of writing asynchronous code -->
-<!--   in a way that "looks synchronous". But the syntax is a bit clunky and not widely used -->
-<!-- - The async and await keywords introduced in ES7 bring the same functionality as the generators -->
-<!--   but in an understandable and syntactically cleaner way to the hands of all citizens of the JS world -->
-<!-- - Await only works on functions that return a Promise 💡 -->
-<!--   won't work on callback-based functions unless wrapped in a Promise -->
+Problem: http://callbackhell.com/
+Solution: https://javascript.info/promise-chaining (The then-chain is alright, but we can do better)
+- The generator functions introduced in ES6 provided a clever way of writing asynchronous code
+  in a way that "looks synchronous". But the syntax is a bit clunky and not widely used
+- The async and await keywords introduced in ES7 bring the same functionality as the generators
+  but in an understandable and syntactically cleaner way to the hands of all citizens of the JS world
+- Await only works on functions that return a Promise 💡
+  won't work on callback-based functions unless wrapped in a Promise
 
 # More tests and refactoring the backend
 - When code gets refactored, there is always the risk of regression, meaning that existing functionality may break
@@ -55,11 +55,11 @@ https://github.com/node-config/node-config
 <!--    - Use `for...of` when promises need to be executed in a particular order -->
 
 # A true full stack developer's oath
-- If a test does not pass, I make sure that the tested functionality for sure works in the application
+- if a test does not pass, i make sure that the tested functionality for sure works in the application
 
 # Exercise
 - Use async/await or .then(), but not both together
-- There is no universal best way of writing tests, as it all depends on the application being tested and available resources
+- There is no universal best way of writing tests, it all depends on the application being tested & available resources
 
 # To Know
 - Testing where multiple components of the system are being tested as a group is called `integration testing`

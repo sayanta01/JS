@@ -1,10 +1,9 @@
-#
 Constructor functions & Classes
 - class hoisting
 - extends, super
 
-Objects v Maps
-Arrays v Sets
+Objects vs Maps
+Arrays vs Sets
 
 Encapsulation - Getters/Setters??
 Factory functions
